@@ -2,34 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>三仙台即時影像｜Sanxiantai Live Cam</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Sanxiantai Live Cam | Taitung, Taiwan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="即時觀看台灣台東三仙台的現場影像、天氣與旅遊資訊，探索太平洋海岸的美景與風情。">
-  <meta name="keywords" content="三仙台, sanxiantai, 即時影像, 台東旅遊, live cam, Taitung live camera, Taiwan nature view">
-  <meta property="og:title" content="三仙台即時影像 Sanxiantai Live Cam" />
-  <meta property="og:description" content="即時觀看台灣台東三仙台的現場影像、天氣與旅遊資訊。" />
+  <meta name="description" content="Watch the live view of Sanxiantai, a scenic coastal area in Taitung, Taiwan. Enjoy real-time weather, location map, and visitor information.">
+  <meta name="keywords" content="Sanxiantai, live cam, Taitung, Taiwan, scenic view, weather, travel, ocean, bridge">
+  <meta property="og:title" content="Sanxiantai Live Cam - Taiwan" />
+  <meta property="og:description" content="Live camera view from Sanxiantai, Taitung. Includes real-time weather and travel information." />
   <meta property="og:image" content="https://wahaha232.github.io/preview.jpg" />
   <meta property="og:url" content="https://wahaha232.github.io/" />
   <meta property="og:type" content="website" />
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; text-align: center; background: #f5faff; }
-    h1 { padding: 30px 0; color: #0077cc; }
-    iframe { width: 90%; max-width: 720px; height: 405px; border: none; }
-    .counter { margin: 40px 0 20px; font-size: 0.9em; color: #666; }
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #e6f2ff; color: #333; }
+    header { background: #0077cc; color: white; padding: 1em; text-align: center; }
+    nav { background: #004c99; padding: 0.5em; text-align: center; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; }
+    iframe { width: 95%; max-width: 800px; height: 450px; border: none; display: block; margin: 1em auto; }
+    .weather, .info, .map, .counter, .footer { max-width: 800px; margin: 1em auto; padding: 1em; text-align: center; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .footer { font-size: 0.9em; color: #666; }
+    .map a { text-decoration: none; font-weight: bold; color: #0077cc; }
+    .weather-icon { font-size: 3em; }
+    #weather-icon { width: 48px; vertical-align: middle; }
   </style>
 </head>
 <body>
-  <h1>Sanxiantai Live Cam</h1>
+  <header>
+    <h1>Sanxiantai Live Camera</h1>
+    <p>Live coastal view from Taitung, Taiwan</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="#">EN</a>
+  </nav>
+
+  <!-- YouTube Live -->
   <iframe src="https://www.youtube.com/embed/dQ7Sd6PGLdA" allowfullscreen></iframe>
 
+  <!-- Weather -->
+  <div class="weather">
+    <h2>Current Weather</h2>
+    <p><span id="weather-location">Taitung</span> • <span id="weather-date"></span></p>
+    <p><img id="weather-icon" alt="Weather Icon"> <span id="weather-temp">--°C</span></p>
+  </div>
+
+  <!-- Map -->
+  <div class="map">
+    <h2>Location</h2>
+    <p><a href="https://www.google.com/maps/place/Sanxiantai/" target="_blank">
+      📍 View on Google Maps
+    </a></p>
+  </div>
+
+  <!-- Info -->
+  <div class="info">
+    <h2>Visitor Information</h2>
+    <p><strong>Phone:</strong> +886-89-854097</p>
+    <p><strong>Address:</strong> No. 74, Jihui Road, Chenggong Township, Taitung County, Taiwan</p>
+    <p><strong>Opening Hours:</strong> Open 24/7</p>
+    <p><strong>Admission:</strong> Large vehicle: NT$200/170 • Small vehicle: NT$60/50 • Scooter: NT$20/15</p>
+  </div>
+
+  <!-- Counter -->
   <div class="counter">
     Visitors:<br>
     <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwahaha232.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=eye.svg&icon_color=%23FFFFFF&title=Visitors&edge_flat=false" alt="visitor counter" />
   </div>
 
-<!-- Adsterra Native Banner -->
-<script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"></script>
-<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
+  <!-- Adsterra -->
+  <div class="footer">
+    <script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"></script>
+    <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
+    <p>&copy; 2025 Sanxiantai Live Cam</p>
+  </div>
 
+  <script>
+    // Auto update date and fetch OpenWeatherMap
+    const apiKey = '39125b68b267d03f08f70580b5a476cd';
+    const lat = 23.1222;
+    const lon = 121.4157;
+
+    const icons = {
+      'Clear': '☀️',
+      'Clouds': '☁️',
+      'Rain': '🌧️',
+      'Thunderstorm': '⛈️',
+      'Snow': '❄️',
+      'Drizzle': '🌦️',
+      'Mist': '🌫️',
+      'Fog': '🌫️'
+    };
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('weather-temp').textContent = Math.round(data.main.temp) + '°C';
+        const icon = icons[data.weather[0].main] || '🌈';
+        document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+        document.getElementById('weather-icon').alt = data.weather[0].main;
+      });
+
+    const today = new Date().toDateString();
+    document.getElementById('weather-date').textContent = today;
+  </script>
 </body>
 </html>
