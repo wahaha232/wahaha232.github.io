@@ -5,140 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>London Bus Tour Live Cam</title>
-  <meta name="description" content="Watch a real-time London bus tour live stream, see city sights, weather updates, and more.">
-  <meta name="keywords" content="London, live cam, bus tour, sightseeing, weather, traffic">
-  <meta property="og:title" content="London Bus Tour Live Cam" />
-  <meta property="og:description" content="Enjoy live streaming from a London bus tour, with weather and maps." />
-  <meta property="og:image" content="https://wahaha232.github.io/preview.jpg" />
-  <meta property="og:url" content="https://wahaha232.github.io/" />
-  <meta property="og:type" content="website" />
-  <style>
-    
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      color: #333;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/London_Bridge_and_Houses_of_Parliament.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-    body > * {
-      background-color: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
-    }
-
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
-      margin: 0;
-      color: #333;
-    }
-    header, nav, main, footer {
-      max-width: 960px;
-      margin: auto;
-      padding: 1rem;
-    }
-    nav {
-      background: #d00;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    h1 {
-      text-align: center;
-      color: #d00;
-    }
-    iframe {
-      width: 100%;
-      max-width: 900px;
-      height: 500px;
-      border: none;
-      display: block;
-      margin: 1em auto;
-    }
-    .weather, .info, .map, .footer, .ads {
-      background: white;
-      margin: 1em auto;
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    .footer {
-      font-size: 0.9em;
-      text-align: center;
-      color: #777;
-    }
-  </style>
 </head>
 <body>
-  <nav>
-    <div><strong>London Bus Tour Live</strong></div>
-    <div>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
+  <h1>London Bus Tour Live Stream</h1>
+  
+  
+<div style="display: flex; gap: 30px; align-items: flex-start; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 300px;">
+    <div class="description" style="font-size: 1.1em; color: #333;">
+      <p><strong>Hop on and explore London live!</strong><br>
+      Watch the city unfold in real time from the top of a classic red bus — from Big Ben to Tower Bridge, feel the heartbeat of London wherever you are.</p>
     </div>
-  </nav>
+    <div class="weather-banner" style="background: #1e1e2f; color: white; padding: 20px; border-radius: 12px; margin-top: 20px;">
+      <h2 style="margin: 0; font-size: 1.5em; text-align: center;">LONDON</h2>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <div style="font-size: 3em; font-weight: bold;" id="weather-temp">--°C</div>
+        <div><img id="weather-icon" src="" alt="icon" style="width: 64px;"></div>
+        <div style="text-align: right;">
+          <div id="weather-date">--</div>
+          <div id="weather-day">--</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="flex: 1; min-width: 320px;">
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/KSsfLxP-A9g?autoplay=1&mute=1" allowfullscreen></iframe>
+  </div>
+</div>
+ style="max-width: 500px; float: left; padding: 1em; font-size: 1.1em; color: #333;">
+    <p><strong>Hop on and explore London live!</strong><br>
+    Watch the city unfold in real time from the top of a classic red bus — from Big Ben to Tower Bridge, feel the heartbeat of London wherever you are.</p>
+  
+<div class="weather-banner" style="background: #1e1e2f; color: white; padding: 20px; border-radius: 12px; max-width: 600px; margin: 20px 0;">
+  <h2 style="margin: 0; font-size: 1.5em; text-align: center;">LONDON</h2>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+    <div style="font-size: 3em; font-weight: bold;" id="weather-temp">--°C</div>
+    <div><img id="weather-icon" src="" alt="icon" style="width: 64px;"></div>
+    <div style="text-align: right;">
+      <div id="weather-date">--</div>
+      <div id="weather-day">--</div>
+    </div>
+  </div>
+</div>
 
-  <header>
-    <h1>London Bus Tour - Live Stream</h1>
-    <p>Enjoy a virtual ride through London with real-time views from a tour bus</p>
-  </header>
+  </div>
 
-  <iframe src="https://www.youtube.com/embed/KSsfLxP-A9g?autoplay=1&mute=1" allowfullscreen></iframe>
-
-  <section class="weather">
-    <h2>Live Weather - London</h2>
-    <p><span id="weekday">--</span>, <span id="date">--</span></p>
-    <p><img id="weather-icon" src="" alt="Weather icon" style="vertical-align: middle; width: 48px;"> 
-       <span id="weather-temp">--°C</span></p>
-  </section>
-
-  <section class="map">
-    <h2>Explore the Route</h2>
-    <p><a href="https://www.google.com/maps/place/London+UK" target="_blank">
-      View on Google Maps</a></p>
-  </section>
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+  </div>
+  <div class="weather-card" style="width: 320px; background: #1e1e2f; color: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); font-family: Arial, sans-serif;">
+    <h2 style="text-align: center;">LONDON</h2>
+    <div style="text-align: center; font-size: 48px;"><span id="weather-temp">--°C</span></div>
+    <div style="text-align: center;"><img id="weather-icon" src="" alt="icon" style="width: 60px;"></div>
+    <div style="text-align: center; font-size: 1.1em;"><span id="weather-date">--</span><br><span id="weather-day">--</span></div>
+  </div>
+</div>
 
   <section class="info">
     <h2>Visitor Info</h2>
     <p><strong>City:</strong> London, United Kingdom</p>
     <p><strong>Tour Type:</strong> Open-top sightseeing bus</p>
     <p><strong>Tour Schedule:</strong> Daily from 9 AM to 6 PM</p>
+    <p><a href="https://www.visitlondon.com/" target="_blank">Visit London Official Website</a></p>
   </section>
 
-  <section class="ads">
-    <!-- Adsterra Native Banner -->
-    <script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"></script>
-    <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
-  </section>
+<script>
+  const apiKey = '39125b68b267d03f08f70580b5a476cd';
+  const lat = 51.5074;
+  const lon = -0.1278;
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+    .then(res => res.json())
+    .then(data => {
+      const temp = Math.round(data.main.temp);
+      const icon = data.weather[0].icon;
+      const now = new Date();
+      document.getElementById('weather-temp').textContent = temp + '°C';
+      document.getElementById('weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
+      document.getElementById('weather-date').textContent = now.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('weather-day').textContent = now.toLocaleDateString('en-GB', { weekday: 'long' });
+    });
+</script>
 
-  <div class="footer">
-    Visitors:<br>
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fwahaha232.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=eye.svg&icon_color=%23FFFFFF&title=Visitors&edge_flat=false" alt="visitor counter" />
-    <p>&copy; 2025 London Bus Tour Cam</p>
-  </div>
+<script>
+  const apiKey = '39125b68b267d03f08f70580b5a476cd';
+  const lat = 51.5074;
+  const lon = -0.1278;
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+    .then(res => res.json())
+    .then(data => {
+      const temp = Math.round(data.main.temp);
+      const icon = data.weather[0].icon;
+      const now = new Date();
+      document.getElementById('weather-temp').textContent = temp + '°C';
+      document.getElementById('weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
+      document.getElementById('weather-date').textContent = now.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('weather-day').textContent = now.toLocaleDateString('en-GB', { weekday: 'long' });
+    });
+</script>
 
-  <script>
-    const apiKey = '39125b68b267d03f08f70580b5a476cd';
-    const lat = 51.5074;
-    const lon = -0.1278;
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
-      .then(res => res.json())
-      .then(data => {
-        const temp = Math.round(data.main.temp);
-        const icon = data.weather[0].icon;
-        const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        const now = new Date();
-        document.getElementById('weather-temp').textContent = temp + '°C';
-        document.getElementById('weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '.png';
-        document.getElementById('weekday').textContent = days[now.getDay()];
-        document.getElementById('date').textContent = now.getDate() + '/' + (now.getMonth()+1);
-      });
-  </script>
+<script>
+  const apiKey = '39125b68b267d03f08f70580b5a476cd';
+  const lat = 51.5074;
+  const lon = -0.1278;
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
+    .then(res => res.json())
+    .then(data => {
+      const temp = Math.round(data.main.temp);
+      const icon = data.weather[0].icon;
+      const now = new Date();
+      document.getElementById('weather-temp').textContent = temp + '°C';
+      document.getElementById('weather-icon').src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
+      document.getElementById('weather-date').textContent = now.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.getElementById('weather-day').textContent = now.toLocaleDateString('en-GB', { weekday: 'long' });
+    });
+</script>
 </body>
 </html>
+
+
