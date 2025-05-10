@@ -56,6 +56,29 @@
       text-align: center;
       color: #d00;
     }
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .weather-card {
+      background: #2a3b5b;
+      color: white;
+      padding: 1em;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .ads {
+      text-align: center;
+      margin: 20px 0;
+    }
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -71,5 +94,23 @@
     <h1>London Bus Tour - Live Stream</h1>
     <p style="text-align: center;">Enjoy a virtual ride through London with real-time views from a tour bus</p>
   </header>
+  <div class="content-wrapper">
+    <div class="weather-card">
+      <h3>London Weather</h3>
+      <p>Temperature: <span id="weather-temp">--°C</span></p>
+      <p>Condition: <span id="weather-condition">--</span></p>
+      <p>Wind Speed: <span id="wind-speed">-- km/h</span></p>
+      <p>Wind Direction: <span id="wind-direction">--</span></p>
+    </div>
+    <iframe src="https://www.youtube.com/embed/KSsfLxP-A9g?autoplay=1&mute=1" allowfullscreen></iframe>
+  </div>
+  <div class="ads">
+    <!-- Adsterra Native Banner -->
+    <script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/invoke.js"></script>
+    <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
+  </div>
+  <footer>
+    <p>© 2025 London Bus Tour Cam</p>
+  </footer>
 </body>
 </html>
