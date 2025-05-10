@@ -23,6 +23,32 @@
     gtag('config', 'G-R5KWYK2Y7D');
   </script>
 
+  <script>
+    const apiKey = '39125b68b267d03f08f70580b5a476cd';
+    const lat = 51.5074;
+    const lon = -0.1278;
+
+    async function updateWeather() {
+      try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`);
+        const data = await response.json();
+        const temp = data.main.temp;
+        const condition = data.weather[0].description;
+        const windSpeed = data.wind.speed;
+        const windDirection = data.wind.deg;
+
+        document.getElementById('weather-temp').textContent = `${temp}°C`;
+        document.getElementById('weather-condition').textContent = condition;
+        document.getElementById('wind-speed').textContent = `${windSpeed} km/h`;
+        document.getElementById('wind-direction').textContent = `${windDirection}°`;
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    }
+
+    updateWeather();
+  </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -69,9 +95,16 @@
       border-radius: 10px;
       text-align: center;
     }
-    .ads {
+    .ads, .ads-bottom {
       text-align: center;
       margin: 20px 0;
+    }
+    .info {
+      background: #f0f4f8;
+      padding: 1em;
+      margin: 20px auto;
+      border-radius: 8px;
+      text-align: center;
     }
     iframe {
       width: 100%;
@@ -94,6 +127,11 @@
     <h1>London Bus Tour - Live Stream</h1>
     <p style="text-align: center;">Enjoy a virtual ride through London with real-time views from a tour bus</p>
   </header>
+  <div class="ads">
+    <!-- Adsterra Native Banner Top -->
+    <script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"></script>
+    <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
+  </div>
   <div class="content-wrapper">
     <div class="weather-card">
       <h3>London Weather</h3>
@@ -104,9 +142,16 @@
     </div>
     <iframe src="https://www.youtube.com/embed/KSsfLxP-A9g?autoplay=1&mute=1" allowfullscreen></iframe>
   </div>
-  <div class="ads">
-    <!-- Adsterra Native Banner -->
-    <script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/invoke.js"></script>
+  <div class="info">
+    <h2>Visitor Info</h2>
+    <p><strong>City:</strong> London, United Kingdom</p>
+    <p><strong>Tour Type:</strong> Open-top sightseeing bus</p>
+    <p><strong>Tour Schedule:</strong> Daily from 9 AM to 6 PM</p>
+    <p><strong>Official Website:</strong> <a href="https://www.visitlondon.com/" target="_blank">Visit London</a></p>
+  </div>
+  <div class="ads-bottom">
+    <!-- Adsterra Native Banner Bottom -->
+    <script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"></script>
     <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
   </div>
   <footer>
