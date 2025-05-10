@@ -1,43 +1,5 @@
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
 
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -51,6 +13,16 @@
   <meta property="og:image" content="https://wahaha232.github.io/preview.jpg" />
   <meta property="og:url" content="https://wahaha232.github.io/" />
   <meta property="og:type" content="website" />
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R5KWYK2Y7D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R5KWYK2Y7D');
+  </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -84,77 +56,6 @@
       text-align: center;
       color: #d00;
     }
-    .content-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin: 1em auto;
-    }
-    iframe {
-      flex: 1;
-      width: 100%;
-      max-width: 600px;
-      height: 400px;
-      border: none;
-      display: block;
-    }
-    .info, .map, .footer, .ads {
-      background: white;
-      margin: 1em auto;
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    .ads {
-      text-align: center;
-    }
-    .ads #container-7d9bb8a39fc580ee58de14d8a8e63eab {
-      width: 300px !important;
-      height: 250px !important;
-      margin: 0 auto;
-      overflow: hidden;
-    }
-    .weather-card {
-      flex: 0 0 300px;
-      background: #2a3b5b;
-      color: white;
-      padding: 1em;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .weather-card h3 {
-      margin: 0;
-      font-size: 1.5em;
-    }
-    .weather-card .temp {
-      font-size: 3em;
-      margin: 0.5em 0;
-    }
-    .weather-details {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin-top: 1em;
-    }
-    .weather-details span {
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-    }
-    .weather-details img {
-      width: 24px;
-      height: 24px;
-    }
-    .footer {
-      font-size: 0.9em;
-      text-align: center;
-      color: #777;
-    }
-    .counter-fallback {
-      display: none;
-      color: #777;
-    }
   </style>
 </head>
 <body>
@@ -166,91 +67,9 @@
       <a href="privacy.html">Privacy</a>
     </div>
   </nav>
-
   <header>
     <h1>London Bus Tour - Live Stream</h1>
     <p style="text-align: center;">Enjoy a virtual ride through London with real-time views from a tour bus</p>
   </header>
-
-  <div class="content-wrapper">
-    <div class="weather-card">
-      <p><span id="weekday-card">--</span>, <span id="date-card">--</span></p>
-      <h3>London</h3>
-      <div class="temp"><span id="weather-temp-card">--°C</span></div>
-      <img id="weather-icon-card" src="" alt="Weather icon" style="width: 48px;">
-      <div class="weather-details">
-        <span><img src="https://img.icons8.com/ios-filled/50/ffffff/rain.png" alt="Rain"> <span id="rain-chance">0%</span></span>
-        <span><img src="https://img.icons8.com/ios-filled/50/ffffff/wind.png" alt="Wind"> <span id="wind-speed">--km/h</span></span>
-        <span><img src="https://img.icons8.com/ios-filled/50/ffffff/compass.png" alt="Wind Direction"> <span id="wind-direction">--</span></span>
-      </div>
-    </div>
-    <iframe src="https://www.youtube.com/embed/KSsfLxP-A9g?autoplay=1&mute=1" allowfullscreen></iframe>
-  </div>
-
-  <section class="map">
-    <h2>Explore the Route</h2>
-    <p><a href="https://www.google.com/maps/place/London+UK" target="_blank">
-      View on Google Maps</a></p>
-  </section>
-
-  <section class="info">
-    <h2>Visitor Info</h2>
-    <p><strong>City:</strong> London, United Kingdom</p>
-    <p><strong>Tour Type:</strong> Open-top sightseeing bus</p>
-    <p><strong>Tour Schedule:</strong> Daily from 9 AM to 6 PM</p>
-    <p><strong>Official Website:</strong> <a href="https://www.visitlondon.com/" target="_blank">Visit London</a></p>
-  </section>
-
-  <section class="ads">
-    <!-- Adsterra Native Banner -->
-    <script async="async" data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"></script>
-    <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
-  </section>
-
-  <div class="footer">
-    <a href="https://cn.web-counter.net" title="Visitor Counter"><img src="https://www.web-counter.net/count_20091204.php?c=NwUeLvdhF75" style="border:0;padding:0;margin:0;" alt="visitor count" /></a>
-    <p>© 2025 London Bus Tour Cam</p>
-  </div>
-
-  <script>
-    const apiKey = '39125b68b267d03f08f70580b5a476cd';
-    const lat = 51.5074;
-    const lon = -0.1278;
-
-    // Function to convert wind degrees to direction
-    function getWindDirection(deg) {
-      const directions = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
-      const index = Math.round(deg / 22.5) % 16;
-      return directions[index];
-    }
-
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`)
-      .then(res => res.json())
-      .then(data => {
-        const temp = Math.round(data.main.temp);
-        const icon = data.weather[0].icon;
-        const rain = data.rain ? (data.rain['1h'] || 0) : 0;
-        const windSpeed = Math.round(data.wind.speed * 3.6); // Convert m/s to km/h
-        const windDirection = getWindDirection(data.wind.deg);
-        const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-        const now = new Date();
-
-        // Update weather card
-        document.getElementById('weather-temp-card').textContent = temp + '°C';
-        document.getElementById('weather-icon-card').src = 'https://openweathermap.org/img/wn/' + icon + '.png';
-        document.getElementById('weekday-card').textContent = days[now.getDay()];
-        document.getElementById('date-card').textContent = now.getDate() + '/' + (now.getMonth()+1);
-        document.getElementById('rain-chance').textContent = Math.round(rain * 100) + '%';
-        document.getElementById('wind-speed').textContent = windSpeed + 'km/h';
-        document.getElementById('wind-direction').textContent = windDirection;
-      });
-
-    // Check if the visitor counter loads, show fallback if it fails
-    const counterImage = document.getElementById('visitor-counter');
-    counterImage.onerror = function() {
-      counterImage.style.display = 'none';
-      document.querySelector('.counter-fallback').style.display = 'block';
-    };
-  </script>
 </body>
 </html>
