@@ -234,8 +234,9 @@
   <footer>© 2025 London Bus Tour Live Cam</footer>
 
   <script>
-    const apiKey = '39125b68b267d03f08f70580b5a476cd'; // Replace with a new valid OpenWeatherMap API key
     const lat = 51.5074, lon = -0.1278;
+    let lastWeatherFetch = 0;
+    let cachedWeatherData = null;
 
     function updateLocalTime() {
       console.log('Updating local time');
@@ -255,57 +256,95 @@
       }
     }
 
-    async function updateWeather() {
+    async function fetchWeatherData() {
       try {
-        const res = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&exclude=hourly,daily,alerts`);
+        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Europe/London`);
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const d = await res.json();
 
-        const { temp, feels_like, uvi, weather, sunrise, sunset } = d.current;
-        const cond = weather[0].main;
+        const temp = d.current.temperature_2m;
+        const feels_like = d.current.apparent_temperature;
+        const uvi = d.current.uv_index;
+        const weather_code = d.current.weather_code;
+        const sunrise = d.daily.sunrise[0];
+        const sunset = d.daily.sunset[0];
 
-        document.getElementById('weather-temp').textContent = `${temp.toFixed(1)}°C`;
-        document.getElementById('weather-feels').textContent = `${feels_like.toFixed(1)}°C`;
-        document.getElementById('weather-condition').textContent = cond;
-        document.getElementById('weather-uv').textContent = uvi.toFixed(1);
-        document.getElementById('weather-sunrise').textContent = new Date(sunrise * 1000).toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour12: false, hour: '2-digit', minute: '2-digit' });
-        document.getElementById('weather-sunset').textContent = new Date(sunset * 1000).toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour12: false, hour: '2-digit', minute: '2-digit' });
-
-        const ico = document.getElementById('weather-animation');
-        let emoji = '☁️';
-        if (/clear/i.test(cond)) emoji = '☀️';
-        else if (/rain/i.test(cond)) emoji = '🌧️';
-        else if (/snow/i.test(cond)) emoji = '❄️';
-        ico.textContent = emoji;
+        return {
+          temp,
+          feels_like,
+          uvi,
+          weather_code,
+          sunrise: new Date(sunrise).toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour12: false, hour: '2-digit', minute: '2-digit' }),
+          sunset: new Date(sunset).toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour12: false, hour: '2-digit', minute: '2-digit' })
+        };
       } catch (err) {
         console.error('Weather fetch failed:', err.message);
+        return null;
+      }
+    }
+
+    async function updateWeather() {
+      const now = Date.now();
+      // 快取 30 分鐘，避免過多請求
+      if (cachedWeatherData && (now - lastWeatherFetch) < 1800000) {
+        console.log('Using cached weather data');
+      } else {
+        console.log('Fetching new weather data');
+        cachedWeatherData = await fetchWeatherData();
+        lastWeatherFetch = now;
+      }
+
+      const d = cachedWeatherData;
+      if (!d) {
         document.getElementById('weather-temp').textContent = '--°C';
         document.getElementById('weather-feels').textContent = '--°C';
         document.getElementById('weather-condition').textContent = 'N/A';
         document.getElementById('weather-uv').textContent = '--';
         document.getElementById('weather-sunrise').textContent = '--:--';
         document.getElementById('weather-sunset').textContent = '--:--';
+        return;
       }
+
+      document.getElementById('weather-temp').textContent = `${d.temp.toFixed(1)}°C`;
+      document.getElementById('weather-feels').textContent = `${d.feels_like.toFixed(1)}°C`;
+      document.getElementById('weather-uv').textContent = d.uvi.toFixed(1);
+      document.getElementById('weather-sunrise').textContent = d.sunrise;
+      document.getElementById('weather-sunset').textContent = d.sunset;
+
+      // 根據 WMO 天氣碼判斷條件
+      let cond = 'Clouds';
+      let emoji = '☁️';
+      if (d.weather_code === 0) {
+        cond = 'Clear';
+        emoji = '☀️';
+      } else if ([1, 2, 3].includes(d.weather_code)) {
+        cond = 'Clouds';
+        emoji = '☁️';
+      } else if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(d.weather_code)) {
+        cond = 'Rain';
+        emoji = '🌧️';
+      } else if ([71, 73, 75, 85, 86].includes(d.weather_code)) {
+        cond = 'Snow';
+        emoji = '❄️';
+      }
+      document.getElementById('weather-condition').textContent = cond;
+      document.getElementById('weather-animation').textContent = emoji;
     }
 
     function updateVisitorCount() {
       let count = localStorage.getItem('visitorCount') || 0;
       count = parseInt(count) + 1;
       localStorage.setItem('visitorCount', count);
-      // 新計數器已由外部服務處理，移除本地更新
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       console.log('DOMContentLoaded event fired');
       updateLocalTime();
       updateVisitorCount();
-      setInterval(updateWeather, 1800000);
+      updateWeather(); // 初次載入時獲取天氣數據
+      setInterval(updateWeather, 1800000); // 每 30 分鐘檢查一次
       setInterval(updateLocalTime, 1000);
     });
-
-    // 備用方案：確保即使 DOMContentLoaded 失敗也能執行
-    updateLocalTime();
-    setInterval(updateLocalTime, 1000);
   </script>
 </body>
 </html>
