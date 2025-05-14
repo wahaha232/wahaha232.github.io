@@ -128,7 +128,13 @@
     .info p { margin: .2em 0; }
     .info p strong { margin-right: 0.5em; }
     .info p a { margin-right: 1em; }
-    .info .no-wrap { white-space: nowrap; } /* 防止換行 */
+    .info .no-wrap { white-space: nowrap; }
+    .info .airport-row {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
     .ads-container {
       display: flex;
       justify-content: center;
@@ -144,6 +150,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 250px; /* 確保佔位高度 */
+      position: relative;
+    }
+    .ad-slot .ad-placeholder {
+      display: none;
+      text-align: center;
+      color: #666;
+      font-size: 1em;
+      padding: 10px;
+      background: #f0f0f0;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .ad-slot.ad-error .ad-placeholder {
+      display: block;
+    }
+    .ad-slot img {
+      width: 300px;
+      height: 250px;
+      display: none;
+    }
+    .ad-slot.ad-error img {
+      display: block;
     }
     .visitor-counter {
       text-align: center;
@@ -207,24 +239,32 @@
     <p><strong>Tour Type:</strong> Open-top sightseeing bus</p>
     <p><strong>Tour Schedule:</strong> Daily from 9 AM to 6 PM</p>
     <p><strong>Official Website:</strong> <a href="https://www.visitlondon.com/" target="_blank">Visit London</a></p>
-    <p><strong>Airports:</strong>
-       <a href="https://www.heathrow.com" target="_blank">Heathrow</a>
-       <a href="https://www.gatwickairport.com" target="_blank">Gatwick</a>
+    <p class="no-wrap"><strong>Airports:</strong>
+      <span class="airport-row">
+        <a href="https://www.heathrow.com" target="_blank">Heathrow</a>
+        <a href="https://www.gatwickairport.com" target="_blank">Gatwick</a>
+      </span>
     </p>
     <p><strong>Eurostar:</strong> <a href="https://www.eurostar.com" target="_blank">Eurostar</a></p>
     <p class="no-wrap"><strong>London Underground:</strong> <a href="https://tfl.gov.uk/modes/tube/" target="_blank">London Underground Website</a></p>
   </div>
   <div class="ads-container">
-    <div class="ad-slot">
-      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="console.log('Ad script failed to load');"></script>
+    <div class="ad-slot" id="ad-slot-1">
+      <div class="ad-placeholder">Ad loading failed or blocked.</div>
+      <img src="https://via.placeholder.com/300x250.png?text=Visit+London+Ad" alt="Placeholder Ad">
+      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-1').classList.add('ad-error'); console.log('Ad script failed to load for slot 1');"></script>
       <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
     </div>
-    <div class="ad-slot">
-      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="console.log('Ad script failed to load');"></script>
+    <div class="ad-slot" id="ad-slot-2">
+      <div class="ad-placeholder">Ad loading failed or blocked.</div>
+      <img src="https://via.placeholder.com/300x250.png?text=Visit+London+Ad" alt="Placeholder Ad">
+      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-2').classList.add('ad-error'); console.log('Ad script failed to load for slot 2');"></script>
       <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-2"></div>
     </div>
-    <div class="ad-slot">
-      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="console.log('Ad script failed to load');"></script>
+    <div class="ad-slot" id="ad-slot-3">
+      <div class="ad-placeholder">Ad loading failed or blocked.</div>
+      <img src="https://via.placeholder.com/300x250.png?text=Visit+London+Ad" alt="Placeholder Ad">
+      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-3').classList.add('ad-error'); console.log('Ad script failed to load for slot 3');"></script>
       <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-3"></div>
     </div>
   </div>
@@ -258,7 +298,7 @@
 
     async function fetchWeatherData() {
       try {
-        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Europe/London`);
+        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}¤t=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Europe/London`);
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const d = await res.json();
 
@@ -285,7 +325,6 @@
 
     async function updateWeather() {
       const now = Date.now();
-      // 快取 30 分鐘，避免過多請求
       if (cachedWeatherData && (now - lastWeatherFetch) < 1800000) {
         console.log('Using cached weather data');
       } else {
@@ -311,7 +350,6 @@
       document.getElementById('weather-sunrise').textContent = d.sunrise;
       document.getElementById('weather-sunset').textContent = d.sunset;
 
-      // 根據 WMO 天氣碼判斷條件
       let cond = 'Clouds';
       let emoji = '☁️';
       if (d.weather_code === 0) {
@@ -341,8 +379,8 @@
       console.log('DOMContentLoaded event fired');
       updateLocalTime();
       updateVisitorCount();
-      updateWeather(); // 初次載入時獲取天氣數據
-      setInterval(updateWeather, 1800000); // 每 30 分鐘檢查一次
+      updateWeather();
+      setInterval(updateWeather, 1800000);
       setInterval(updateLocalTime, 1000);
     });
   </script>
