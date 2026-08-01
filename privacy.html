@@ -1,32 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>Privacy Policy - London Bus Tour Live Cam</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Privacy Policy - Shibuya Scramble Crossing Live Cam</title>
+  <meta name="description" content="Privacy Policy for Shibuya Scramble Crossing 24/7 Live Cam website.">
+
+  <!-- Google Font for Handwritten Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Caveat', cursive;
       margin: 0;
-      padding: 2rem;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/London_Bridge_and_Houses_of_Parliament.jpg') no-repeat center center fixed;
+      color: #1a1a1a;
+      background: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
     }
     body > * {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 800px;
-      margin: auto;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
     }
-    a { color: #fff; text-decoration: underline; }
+    nav, header, main, footer { max-width: 1200px; margin: auto; padding: 1rem; }
+    nav { display: flex; justify-content: flex-end; background: #2c2c2c; }
+    nav a {
+      color: #f5f5e6;
+      margin: 0 10px;
+      text-decoration: none;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      font-weight: bold;
+    }
+    h1 {
+      text-align: center;
+      color: #222222;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      font-size: 3em;
+      font-weight: bold;
+      margin: 0;
+    }
+    header p {
+      text-align: center;
+      margin: .5em 0 0;
+      font-size: 1.2em;
+    }
+    .privacy-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 2em;
+      text-align: center;
+      font-size: 1.4em;
+      line-height: 1.6;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      background: none;
+      backdrop-filter: none;
+    }
+    .privacy-container h2 {
+      font-size: 2em;
+      margin-top: 1em;
+      margin-bottom: 0.3em;
+      color: #ffffff;
+    }
+    .privacy-container p {
+      margin-bottom: 1em;
+      color: #ffffff;
+    }
+    .privacy-container a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .privacy-container a:visited {
+      color: #ffffff;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #333333;
+      font-size: 1.6em;
+      background: none;
+      backdrop-filter: none;
+    }
   </style>
-
 </head>
 <body>
-  <h1>Privacy Policy</h1>
-  <p>This site does not collect or store any personal information. Visitor counts are anonymously collected for statistical purposes using a third-party counter service. Embedded content such as YouTube and weather widgets may collect data according to their own policies.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+  <header>
+    <h1>Privacy Policy</h1>
+    <p>Your privacy is important to us. Learn how we handle information on our website.</p>
+  </header>
+  <main>
+    <div class="privacy-container">
+      <h2>Information Collection and Use</h2>
+      <p>
+        We do not collect personal identifiable information (PII) directly from visitors. We use standard web technologies and third-party services to enhance user experience and provide real-time weather and visitor stats.
+      </p>
+
+      <h2>Cookies and Local Storage</h2>
+      <p>
+        This website utilizes browser LocalStorage solely to maintain a basic page visitor counter. Third-party providers (such as YouTube and ad network scripts) may place cookies on your browser for analytics and ad rendering.
+      </p>
+
+      <h2>Third-Party Embedded Content</h2>
+      <p>
+        Pages on this site may include embedded content (e.g., YouTube live video streams). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please feel free to contact us via our main homepage or GitHub repository.
+      </p>
+    </div>
+  </main>
+  <footer>© 2025 Shibuya Live Cam</footer>
 </body>
 </html>
