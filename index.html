@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>London Bus Tour Live Cam</title>
-  <meta name="description" content="Watch a real-time London bus tour live stream, see city sights, weather updates, and more.">
-  <meta name="keywords" content="London, live cam, bus tour, sightseeing, weather">
+  <title>Shibuya Scramble Crossing Live Cam 24/7</title>
+  <meta name="description" content="Watch real-time Tokyo Shibuya Scramble Crossing live stream, see city sights, weather updates, and more.">
+  <meta name="keywords" content="Tokyo, Shibuya, live cam, scramble crossing, Japan weather, sightseeing">
 
   <!-- Google Font for Handwritten Style -->
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
@@ -15,16 +15,16 @@
     body {
       font-family: 'Caveat', cursive;
       margin: 0;
-      color: #333333;
-      background: url('https://raw.githubusercontent.com/wahaha232/wahaha232.github.io/refs/heads/main/londonclassic.png') no-repeat center center fixed;
+      color: #1a1a1a;
+      background: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
       background-size: cover;
     }
     body > * {
-      background: rgba(245,245,230,0.85);
-      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
     }
     nav, header, main, footer { max-width: 1200px; margin: auto; padding: 1rem; }
-    nav { display: flex; justify-content: flex-end; background: #5a5a5a; }
+    nav { display: flex; justify-content: flex-end; background: #2c2c2c; }
     nav a {
       color: #f5f5e6;
       margin: 0 10px;
@@ -34,7 +34,7 @@
     }
     h1 {
       text-align: center;
-      color: #444444;
+      color: #222222;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
       font-size: 3em;
       font-weight: bold;
@@ -55,11 +55,11 @@
     }
     .weather-card {
       width: 240px;
-      background: #6b7280;
+      background: #4b5563;
       color: #f5f5e6;
       padding: 1em;
       border-radius: 10px;
-      border: 2px solid #444444;
+      border: 2px solid #333333;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -113,7 +113,7 @@
     iframe {
       width: 100%;
       height: 440px;
-      border: 2px solid #444444;
+      border: 2px solid #333333;
       border-radius: 8px;
     }
     .info {
@@ -122,12 +122,15 @@
       border-radius: 8px; text-align: center;
       font-size: 1.6em; font-weight: bold;
       max-width: 600px; line-height: 1.2em;
-      color: #4a4a4a;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     }
-    .info h2 { font-size: 2em; margin-bottom: .5em; }
-    .info p { margin: .2em 0; }
-    .info p strong { margin-right: 0.5em; }
-    .info p a { margin-right: 1em; }
+    .info h2 { font-size: 2em; margin-bottom: .5em; color: #ffffff; }
+    .info p { margin: .2em 0; color: #ffffff; }
+    .info p strong { margin-right: 0.5em; color: #ffffff; }
+    /* 超連結字體改為白色並保有底線 */
+    .info p a { margin-right: 1em; color: #ffffff; text-decoration: underline; }
+    .info p a:visited { color: #ffffff; }
     .info .no-wrap { white-space: nowrap; }
     .info .airport-row {
       display: inline-flex;
@@ -150,7 +153,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 250px; /* 確保佔位高度 */
+      min-height: 250px;
       position: relative;
     }
     .ad-slot .ad-placeholder {
@@ -181,7 +184,7 @@
       text-align: center;
       margin: 20px 0;
       font-size: 1.4em;
-      color: #444444;
+      color: #333333;
       background: none;
       backdrop-filter: none;
     }
@@ -195,7 +198,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      color: #444444;
+      color: #333333;
       font-size: 1.6em;
       background: none;
       backdrop-filter: none;
@@ -209,13 +212,13 @@
     <a href="privacy.html">Privacy Policy</a>
   </nav>
   <header>
-    <h1>London Bus Tour - Live Stream</h1>
-    <p>Welcome to London! Experience the city’s iconic sights live on our virtual bus tour, anytime, anywhere.</p>
+    <h1>Shibuya Scramble Crossing - Live Stream</h1>
+    <p>Welcome to Tokyo! Experience the iconic Shibuya Scramble Crossing live, anytime, anywhere.</p>
   </header>
   <main class="content-wrapper">
     <div class="weather-card">
       <div>
-        <h3>London Weather</h3>
+        <h3>Tokyo Weather</h3>
         <div id="weather-animation" class="weather-animation">☁️</div>
         <p>Temperature: <span id="weather-temp">--°C</span></p>
         <p>Feels Like: <span id="weather-feels">--°C</span></p>
@@ -226,44 +229,51 @@
       </div>
       <div>
         <p class="datetime">Date: <span id="local-date">0000/00/00</span></p>
-        <p class="datetime">Time: <span id="local-time">--:--:-- GMT</span></p>
+        <p class="datetime">Time: <span id="local-time">--:--:-- JST</span></p>
       </div>
     </div>
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/KSsfLxP-A9g?autoplay=1&mute=1" allowfullscreen></iframe>
+      <iframe 
+        src="https://www.youtube.com/embed/dfVK7ld38Ys?autoplay=1&mute=1&enablejsapi=1" 
+        title="Shibuya Scramble Crossing Live Cam"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
     </div>
   </main>
   <div class="info">
     <h2>Visitor Info</h2>
-    <p><strong>City:</strong> London, United Kingdom</p>
-    <p><strong>Tour Type:</strong> Open-top sightseeing bus</p>
-    <p><strong>Tour Schedule:</strong> Daily from 9 AM to 6 PM</p>
-    <p><strong>Official Website:</strong> <a href="https://www.visitlondon.com/" target="_blank">Visit London</a></p>
+    <p><strong>City:</strong> Shibuya, Tokyo, Japan</p>
+    <p><strong>Location:</strong> Shibuya Scramble Crossing</p>
+    <p><strong>Stream Type:</strong> 24/7 Live Camera</p>
+    <p><strong>Official Tourism:</strong> <a href="https://www.gotokyo.org/" target="_blank">Go Tokyo</a></p>
     <p class="no-wrap"><strong>Airports:</strong>
       <span class="airport-row">
-        <a href="https://www.heathrow.com" target="_blank">Heathrow</a>
-        <a href="https://www.gatwickairport.com" target="_blank">Gatwick</a>
+        <a href="https://tokyo-haneda.com/" target="_blank">Haneda</a>
+        <a href="https://www.narita-airport.jp/" target="_blank">Narita</a>
       </span>
     </p>
-    <p><strong>Eurostar:</strong> <a href="https://www.eurostar.com" target="_blank">Eurostar</a></p>
-    <p class="no-wrap"><strong>London Underground:</strong> <a href="https://tfl.gov.uk/modes/tube/" target="_blank">London Underground Website</a></p>
+    <p><strong>Train:</strong> <a href="https://www.jreast.co.jp/" target="_blank">JR East</a></p>
+    <p class="no-wrap"><strong>Tokyo Metro:</strong> <a href="https://www.tokyometro.jp/" target="_blank">Tokyo Metro Website</a></p>
   </div>
   <div class="ads-container">
     <div class="ad-slot" id="ad-slot-1">
       <div class="ad-placeholder">Ad loading failed or blocked.</div>
-      <img src="https://via.placeholder.com/300x250.png?text=Visit+London+Ad" alt="Placeholder Ad">
+      <img src="https://via.placeholder.com/300x250.png?text=Visit+Tokyo+Ad" alt="Placeholder Ad">
       <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-1').classList.add('ad-error'); console.log('Ad script failed to load for slot 1');"></script>
       <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
     </div>
     <div class="ad-slot" id="ad-slot-2">
       <div class="ad-placeholder">Ad loading failed or blocked.</div>
-      <img src="https://via.placeholder.com/300x250.png?text=Visit+London+Ad" alt="Placeholder Ad">
+      <img src="https://via.placeholder.com/300x250.png?text=Visit+Tokyo+Ad" alt="Placeholder Ad">
       <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-2').classList.add('ad-error'); console.log('Ad script failed to load for slot 2');"></script>
       <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-2"></div>
     </div>
     <div class="ad-slot" id="ad-slot-3">
       <div class="ad-placeholder">Ad loading failed or blocked.</div>
-      <img src="https://via.placeholder.com/300x250.png?text=Visit+London+Ad" alt="Placeholder Ad">
+      <img src="https://via.placeholder.com/300x250.png?text=Visit+Tokyo+Ad" alt="Placeholder Ad">
       <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-3').classList.add('ad-error'); console.log('Ad script failed to load for slot 3');"></script>
       <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-3"></div>
     </div>
@@ -271,10 +281,10 @@
   <div class="visitor-counter">
     <a href="https://cn.web-counter.net" title=""><img src="https://www.web-counter.net/count_20091204.php?c=1cTKaiN1EVX" style="border:0;padding:0;margin:0;" alt=""></a><br/><font size="1" face="Arial"><a href="https://cn.web-counter.net" title=""></a></font>
   </div>
-  <footer>© 2025 London Bus Tour Live Cam</footer>
+  <footer>© 2025 Shibuya Live Cam</footer>
 
   <script>
-    const lat = 51.5074, lon = -0.1278;
+    const lat = 35.6595, lon = 139.7004;
     let lastWeatherFetch = 0;
     let cachedWeatherData = null;
 
@@ -288,7 +298,7 @@
       const timeElement = document.getElementById('local-time');
       if (dateElement && timeElement) {
         dateElement.textContent = `${year}/${month}/${day}`;
-        const opts = { timeZone: 'Europe/London', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+        const opts = { timeZone: 'Asia/Tokyo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
         timeElement.textContent = now.toLocaleTimeString('en-GB', opts);
         console.log(`Updated date: ${dateElement.textContent}, time: ${timeElement.textContent}`);
       } else {
@@ -298,7 +308,7 @@
 
     async function fetchWeatherData() {
       try {
-        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}¤t=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Europe/London`);
+        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Asia%2FTokyo`);
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const d = await res.json();
 
@@ -314,8 +324,8 @@
           feels_like,
           uvi,
           weather_code,
-          sunrise: new Date(sunrise).toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour12: false, hour: '2-digit', minute: '2-digit' }),
-          sunset: new Date(sunset).toLocaleTimeString('en-GB', { timeZone: 'Europe/London', hour12: false, hour: '2-digit', minute: '2-digit' })
+          sunrise: new Date(sunrise).toLocaleTimeString('en-GB', { timeZone: 'Asia/Tokyo', hour12: false, hour: '2-digit', minute: '2-digit' }),
+          sunset: new Date(sunset).toLocaleTimeString('en-GB', { timeZone: 'Asia/Tokyo', hour12: false, hour: '2-digit', minute: '2-digit' })
         };
       } catch (err) {
         console.error('Weather fetch failed:', err.message);
