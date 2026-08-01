@@ -1,32 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>About - London Bus Tour Live Cam</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>About Us - Shibuya Scramble Crossing Live Cam</title>
+  <meta name="description" content="Learn more about our 24/7 Shibuya Scramble Crossing live stream and real-time Tokyo weather service.">
+
+  <!-- Google Font for Handwritten Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Caveat', cursive;
       margin: 0;
-      padding: 2rem;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/London_Bridge_and_Houses_of_Parliament.jpg') no-repeat center center fixed;
+      color: #1a1a1a;
+      background: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
     }
     body > * {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 2rem;
-      border-radius: 12px;
-      max-width: 800px;
-      margin: auto;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
     }
-    a { color: #fff; text-decoration: underline; }
+    nav, header, main, footer { max-width: 1200px; margin: auto; padding: 1rem; }
+    nav { display: flex; justify-content: flex-end; background: #2c2c2c; }
+    nav a {
+      color: #f5f5e6;
+      margin: 0 10px;
+      text-decoration: none;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      font-weight: bold;
+    }
+    h1 {
+      text-align: center;
+      color: #222222;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      font-size: 3em;
+      font-weight: bold;
+      margin: 0;
+    }
+    header p {
+      text-align: center;
+      margin: .5em 0 0;
+      font-size: 1.2em;
+    }
+    .about-container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 2em;
+      text-align: center;
+      font-size: 1.5em;
+      line-height: 1.6;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      background: none;
+      backdrop-filter: none;
+    }
+    .about-container h2 {
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
+      color: #ffffff;
+    }
+    .about-container p {
+      margin-bottom: 1.2em;
+      color: #ffffff;
+    }
+    .about-container a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .about-container a:visited {
+      color: #ffffff;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #333333;
+      font-size: 1.6em;
+      background: none;
+      backdrop-filter: none;
+    }
   </style>
-
 </head>
 <body>
-  <h1>About This Site</h1>
-  <p>This website provides a live camera view of a London sightseeing bus. You can enjoy real-time sights of the city, get weather updates, and find useful visitor information. It is built using HTML and hosted on GitHub Pages for easy access worldwide.</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+  <header>
+    <h1>About This Project</h1>
+    <p>Bringing Tokyo’s vibrant Shibuya Scramble Crossing directly to your screen, 24/7.</p>
+  </header>
+  <main>
+    <div class="about-container">
+      <h2>Welcome to Tokyo Live View</h2>
+      <p>
+        Our goal is to provide travelers, Tokyo enthusiasts, and virtual sightseers with a seamless 24/7 real-time view of the famous Shibuya Scramble Crossing, paired with up-to-date local weather information.
+      </p>
+      <p>
+        Whether you are planning your upcoming trip to Japan, checking local weather conditions, or simply enjoying the bustling urban scenery of Tokyo as background ambience, our live cam portal brings the heartbeat of Shibuya to you anytime, anywhere.
+      </p>
+      <p>
+        Thank you for visiting! Feel free to explore our travel links and enjoy the real-time live stream.
+      </p>
+    </div>
+  </main>
+  <footer>© 2025 Shibuya Live Cam</footer>
 </body>
 </html>
