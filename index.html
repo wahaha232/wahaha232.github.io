@@ -1,398 +1,1170 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Shibuya Scramble Crossing Live Cam 24/7</title>
-  <meta name="description" content="Watch real-time Tokyo Shibuya Scramble Crossing live stream, see city sights, weather updates, and more.">
-  <meta name="keywords" content="Tokyo, Shibuya, live cam, scramble crossing, Japan weather, sightseeing">
 
-  <!-- Google Font for Handwritten Style -->
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
 
-  <style>
-    body {
-      font-family: 'Caveat', cursive;
-      margin: 0;
-      color: #1a1a1a;
-      background: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
-      background-size: cover;
-    }
-    body > * {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(6px);
-    }
-    nav, header, main, footer { max-width: 1200px; margin: auto; padding: 1rem; }
-    nav { display: flex; justify-content: flex-end; background: #2c2c2c; }
-    nav a {
-      color: #f5f5e6;
-      margin: 0 10px;
-      text-decoration: none;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-      font-weight: bold;
-    }
-    h1 {
-      text-align: center;
-      color: #222222;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-      font-size: 3em;
-      font-weight: bold;
-      margin: 0;
-    }
-    header p {
-      text-align: center;
-      margin: .5em 0 0;
-      font-size: 1.2em;
-    }
-    .content-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1rem;
-      max-width: 1200px;
-    }
-    .weather-card {
-      width: 240px;
-      background: #4b5563;
-      color: #f5f5e6;
-      padding: 1em;
-      border-radius: 10px;
-      border: 2px solid #333333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
-      min-height: 440px;
-    }
-    .weather-card > div {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
-    .weather-card h3 {
-      margin: 0;
-      font-size: 1.6em;
-      text-align: center;
-    }
-    .weather-card p {
-      margin: 0;
-      font-size: 1.3em;
-      line-height: 1.2;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .weather-card .datetime {
-      font-size: 1.1em;
-      line-height: 1.2;
-      margin: 0;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .weather-animation {
-      font-size: 3rem;
-      animation: float 2s ease-in-out infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-8px); } }
-    .video-wrapper {
-      flex: 1;
-      width: 100%;
-    }
-    iframe {
-      width: 100%;
-      height: 440px;
-      border: 2px solid #333333;
-      border-radius: 8px;
-    }
-    .info {
-      background: none; backdrop-filter: none;
-      padding: 1.5em; margin: 20px auto;
-      border-radius: 8px; text-align: center;
-      font-size: 1.6em; font-weight: bold;
-      max-width: 600px; line-height: 1.2em;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    }
-    .info h2 { font-size: 2em; margin-bottom: .5em; color: #ffffff; }
-    .info p { margin: .2em 0; color: #ffffff; }
-    .info p strong { margin-right: 0.5em; color: #ffffff; }
-    /* 超連結字體改為白色並保有底線 */
-    .info p a { margin-right: 1em; color: #ffffff; text-decoration: underline; }
-    .info p a:visited { color: #ffffff; }
-    .info .no-wrap { white-space: nowrap; }
-    .info .airport-row {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      white-space: nowrap;
-    }
-    .ads-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin: 20px auto;
-      max-width: 1200px;
-      background: none;
-      backdrop-filter: none;
-    }
-    .ad-slot {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 250px;
-      position: relative;
-    }
-    .ad-slot .ad-placeholder {
-      display: none;
-      text-align: center;
-      color: #666;
-      font-size: 1em;
-      padding: 10px;
-      background: #f0f0f0;
-      border-radius: 5px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .ad-slot.ad-error .ad-placeholder {
-      display: block;
-    }
-    .ad-slot img {
-      width: 300px;
-      height: 250px;
-      display: none;
-    }
-    .ad-slot.ad-error img {
-      display: block;
-    }
-    .visitor-counter {
-      text-align: center;
-      margin: 20px 0;
-      font-size: 1.4em;
-      color: #333333;
-      background: none;
-      backdrop-filter: none;
-    }
-    .visitor-counter a {
-      font-family: 'Caveat', cursive;
-    }
-    .visitor-counter font {
-      font-family: 'Caveat', cursive;
-      font-size: 1em;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: #333333;
-      font-size: 1.6em;
-      background: none;
-      backdrop-filter: none;
-    }
-  </style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<title>
+Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
+</title>
+
+
+<meta name="description" content="
+Watch the Shibuya Scramble Crossing live camera in Tokyo, Japan.
+Experience the famous Tokyo intersection, city lights, traffic and real-time street views 24/7.
+">
+
+
+<meta name="robots" content="index, follow">
+
+<meta name="googlebot" content="index, follow">
+
+
+<!-- Change this to your real domain -->
+<link rel="canonical" href="https://YOUR-DOMAIN.COM/">
+
+
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="Shibuya Scramble Crossing Live Cam 24/7">
+
+<meta property="og:description" content="Live view of Shibuya Scramble Crossing Tokyo Japan.">
+
+<meta property="og:url" content="https://YOUR-DOMAIN.COM/">
+
+<meta property="og:image" content="https://YOUR-DOMAIN.COM/preview.jpg">
+
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Shibuya Scramble Crossing Live Cam">
+
+<meta name="twitter:description" content="Watch Tokyo Shibuya live stream 24/7.">
+
+<meta name="twitter:image" content="https://YOUR-DOMAIN.COM/preview.jpg">
+
+
+
+<!-- Structured Data -->
+
+<script type="application/ld+json">
+
+{
+ "@context":"https://schema.org",
+ "@type":"VideoObject",
+ "name":"Shibuya Scramble Crossing Live Cam",
+ "description":"24/7 live camera showing Shibuya Scramble Crossing Tokyo Japan.",
+ "thumbnailUrl":"https://YOUR-DOMAIN.COM/preview.jpg",
+ "uploadDate":"2026-01-01",
+ "contentUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
+ "locationCreated":{
+   "@type":"Place",
+   "name":"Shibuya Scramble Crossing",
+   "address":{
+     "@type":"PostalAddress",
+     "addressLocality":"Tokyo",
+     "addressCountry":"Japan"
+   }
+ }
+}
+
+</script>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+html {
+ scroll-behavior:smooth;
+}
+
+
+body {
+
+font-family:'Caveat', cursive;
+
+margin:0;
+
+color:#1a1a1a;
+
+background:
+linear-gradient(
+rgba(255,255,255,.86),
+rgba(255,255,255,.86)
+),
+url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop')
+no-repeat center center fixed;
+
+background-size:cover;
+
+}
+
+
+nav,
+header,
+main,
+footer {
+
+max-width:1200px;
+
+margin:auto;
+
+padding:1rem;
+
+}
+
+
+
+nav {
+
+display:flex;
+
+justify-content:flex-end;
+
+background:#2c2c2c;
+
+}
+
+
+nav a {
+
+color:#f5f5e6;
+
+margin:0 10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+
+
+h1 {
+
+text-align:center;
+
+font-size:3em;
+
+margin:0;
+
+color:#222;
+
+}
+
+
+
+header p {
+
+text-align:center;
+
+font-size:1.2em;
+
+}
+
+
+
+.content-wrapper {
+
+display:flex;
+
+justify-content:center;
+
+align-items:flex-start;
+
+gap:1rem;
+
+padding:1rem;
+
+max-width:1200px;
+
+}
+
+
+
+.weather-card {
+
+width:240px;
+
+background:#4b5563;
+
+color:white;
+
+padding:1em;
+
+border-radius:10px;
+
+border:2px solid #333;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:space-between;
+
+align-items:center;
+
+min-height:440px;
+
+}
+
+
+
+.weather-card h3 {
+
+font-size:1.6em;
+
+}
+
+
+
+.weather-card p {
+
+font-size:1.2em;
+
+margin:.4em;
+
+text-align:center;
+
+}
+
+
+
+.weather-animation {
+
+font-size:3rem;
+
+animation:float 2s infinite ease-in-out;
+
+}
+
+
+@keyframes float {
+
+50% {
+
+transform:translateY(-8px);
+
+}
+
+}
+
+
+
+.video-wrapper {
+
+flex:1;
+
+}
+
+
+
+iframe {
+
+width:100%;
+
+height:440px;
+
+border:2px solid #333;
+
+border-radius:8px;
+
+}
+
+
+
+.info {
+
+max-width:650px;
+
+margin:20px auto;
+
+text-align:center;
+
+font-size:1.5em;
+
+font-weight:bold;
+
+color:white;
+
+text-shadow:1px 1px 3px black;
+
+}
+
+
+
+.info a {
+
+color:white;
+
+text-decoration:underline;
+
+}
+
+
+
+.ads-container {
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+max-width:1200px;
+
+margin:20px auto;
+
+}
+
+
+
+.ad-slot {
+
+width:300px;
+
+min-height:250px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+
+
+.visitor-counter {
+
+text-align:center;
+
+margin:20px;
+
+}
+
+
+
+footer {
+
+text-align:center;
+
+font-size:1.5em;
+
+}
+
+
+
+@media(max-width:768px){
+
+.content-wrapper{
+
+flex-direction:column;
+
+}
+
+
+.weather-card{
+
+width:auto;
+
+}
+
+
+iframe{
+
+height:300px;
+
+}
+
+
+.ads-container{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+}
+
+
+
+</style>
 </head>
+
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-  <header>
-    <h1>Shibuya Scramble Crossing - Live Stream</h1>
-    <p>Welcome to Tokyo! Experience the iconic Shibuya Scramble Crossing live, anytime, anywhere.</p>
-  </header>
-  <main class="content-wrapper">
-    <div class="weather-card">
-      <div>
-        <h3>Tokyo Weather</h3>
-        <div id="weather-animation" class="weather-animation">☁️</div>
-        <p>Temperature: <span id="weather-temp">--°C</span></p>
-        <p>Feels Like: <span id="weather-feels">--°C</span></p>
-        <p>Condition: <span id="weather-condition">--</span></p>
-        <p>UV Index: <span id="weather-uv">--</span></p>
-        <p>Sunrise: <span id="weather-sunrise">--:--</span></p>
-        <p>Sunset: <span id="weather-sunset">--:--</span></p>
-      </div>
-      <div>
-        <p class="datetime">Date: <span id="local-date">0000/00/00</span></p>
-        <p class="datetime">Time: <span id="local-time">--:--:-- JST</span></p>
-      </div>
-    </div>
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/dfVK7ld38Ys?autoplay=1&mute=1&enablejsapi=1" 
-        title="Shibuya Scramble Crossing Live Cam"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </main>
-  <div class="info">
-    <h2>Visitor Info</h2>
-    <p><strong>City:</strong> Shibuya, Tokyo, Japan</p>
-    <p><strong>Location:</strong> Shibuya Scramble Crossing</p>
-    <p><strong>Stream Type:</strong> 24/7 Live Camera</p>
-    <p><strong>Official Tourism:</strong> <a href="https://www.gotokyo.org/" target="_blank">Go Tokyo</a></p>
-    <p class="no-wrap"><strong>Airports:</strong>
-      <span class="airport-row">
-        <a href="https://tokyo-haneda.com/" target="_blank">Haneda</a>
-        <a href="https://www.narita-airport.jp/" target="_blank">Narita</a>
-      </span>
-    </p>
-    <p><strong>Train:</strong> <a href="https://www.jreast.co.jp/" target="_blank">JR East</a></p>
-    <p class="no-wrap"><strong>Tokyo Metro:</strong> <a href="https://www.tokyometro.jp/" target="_blank">Tokyo Metro Website</a></p>
-  </div>
-  <div class="ads-container">
-    <div class="ad-slot" id="ad-slot-1">
-      <div class="ad-placeholder">Ad loading failed or blocked.</div>
-      <img src="https://via.placeholder.com/300x250.png?text=Visit+Tokyo+Ad" alt="Placeholder Ad">
-      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-1').classList.add('ad-error'); console.log('Ad script failed to load for slot 1');"></script>
-      <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
-    </div>
-    <div class="ad-slot" id="ad-slot-2">
-      <div class="ad-placeholder">Ad loading failed or blocked.</div>
-      <img src="https://via.placeholder.com/300x250.png?text=Visit+Tokyo+Ad" alt="Placeholder Ad">
-      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-2').classList.add('ad-error'); console.log('Ad script failed to load for slot 2');"></script>
-      <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-2"></div>
-    </div>
-    <div class="ad-slot" id="ad-slot-3">
-      <div class="ad-placeholder">Ad loading failed or blocked.</div>
-      <img src="https://via.placeholder.com/300x250.png?text=Visit+Tokyo+Ad" alt="Placeholder Ad">
-      <script async data-cfasync="false" src="//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js" onerror="document.getElementById('ad-slot-3').classList.add('ad-error'); console.log('Ad script failed to load for slot 3');"></script>
-      <div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-3"></div>
-    </div>
-  </div>
-  <div class="visitor-counter">
-    <a href="https://cn.web-counter.net" title=""><img src="https://www.web-counter.net/count_20091204.php?c=1cTKaiN1EVX" style="border:0;padding:0;margin:0;" alt=""></a><br/><font size="1" face="Arial"><a href="https://cn.web-counter.net" title=""></a></font>
-  </div>
-  <footer>© 2025 Shibuya Live Cam</footer>
 
-  <script>
-    const lat = 35.6595, lon = 139.7004;
-    let lastWeatherFetch = 0;
-    let cachedWeatherData = null;
 
-    function updateLocalTime() {
-      console.log('Updating local time');
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const day = String(now.getDate()).padStart(2, '0');
-      const dateElement = document.getElementById('local-date');
-      const timeElement = document.getElementById('local-time');
-      if (dateElement && timeElement) {
-        dateElement.textContent = `${year}/${month}/${day}`;
-        const opts = { timeZone: 'Asia/Tokyo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
-        timeElement.textContent = now.toLocaleTimeString('en-GB', opts);
-        console.log(`Updated date: ${dateElement.textContent}, time: ${timeElement.textContent}`);
-      } else {
-        console.error('Date or time element not found');
-      }
-    }
+<nav aria-label="Main navigation">
 
-    async function fetchWeatherData() {
-      try {
-        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Asia%2FTokyo`);
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        const d = await res.json();
+<a href="index.html">Home</a>
 
-        const temp = d.current.temperature_2m;
-        const feels_like = d.current.apparent_temperature;
-        const uvi = d.current.uv_index;
-        const weather_code = d.current.weather_code;
-        const sunrise = d.daily.sunrise[0];
-        const sunset = d.daily.sunset[0];
+<a href="about.html">About</a>
 
-        return {
-          temp,
-          feels_like,
-          uvi,
-          weather_code,
-          sunrise: new Date(sunrise).toLocaleTimeString('en-GB', { timeZone: 'Asia/Tokyo', hour12: false, hour: '2-digit', minute: '2-digit' }),
-          sunset: new Date(sunset).toLocaleTimeString('en-GB', { timeZone: 'Asia/Tokyo', hour12: false, hour: '2-digit', minute: '2-digit' })
-        };
-      } catch (err) {
-        console.error('Weather fetch failed:', err.message);
-        return null;
-      }
-    }
+<a href="privacy.html">Privacy Policy</a>
 
-    async function updateWeather() {
-      const now = Date.now();
-      if (cachedWeatherData && (now - lastWeatherFetch) < 1800000) {
-        console.log('Using cached weather data');
-      } else {
-        console.log('Fetching new weather data');
-        cachedWeatherData = await fetchWeatherData();
-        lastWeatherFetch = now;
-      }
+</nav>
 
-      const d = cachedWeatherData;
-      if (!d) {
-        document.getElementById('weather-temp').textContent = '--°C';
-        document.getElementById('weather-feels').textContent = '--°C';
-        document.getElementById('weather-condition').textContent = 'N/A';
-        document.getElementById('weather-uv').textContent = '--';
-        document.getElementById('weather-sunrise').textContent = '--:--';
-        document.getElementById('weather-sunset').textContent = '--:--';
-        return;
-      }
 
-      document.getElementById('weather-temp').textContent = `${d.temp.toFixed(1)}°C`;
-      document.getElementById('weather-feels').textContent = `${d.feels_like.toFixed(1)}°C`;
-      document.getElementById('weather-uv').textContent = d.uvi.toFixed(1);
-      document.getElementById('weather-sunrise').textContent = d.sunrise;
-      document.getElementById('weather-sunset').textContent = d.sunset;
 
-      let cond = 'Clouds';
-      let emoji = '☁️';
-      if (d.weather_code === 0) {
-        cond = 'Clear';
-        emoji = '☀️';
-      } else if ([1, 2, 3].includes(d.weather_code)) {
-        cond = 'Clouds';
-        emoji = '☁️';
-      } else if ([51, 53, 55, 61, 63, 65, 80, 81, 82].includes(d.weather_code)) {
-        cond = 'Rain';
-        emoji = '🌧️';
-      } else if ([71, 73, 75, 85, 86].includes(d.weather_code)) {
-        cond = 'Snow';
-        emoji = '❄️';
-      }
-      document.getElementById('weather-condition').textContent = cond;
-      document.getElementById('weather-animation').textContent = emoji;
-    }
+<header>
 
-    function updateVisitorCount() {
-      let count = localStorage.getItem('visitorCount') || 0;
-      count = parseInt(count) + 1;
-      localStorage.setItem('visitorCount', count);
-    }
+<h1>
+Shibuya Scramble Crossing Live Cam Tokyo Japan
+</h1>
 
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOMContentLoaded event fired');
-      updateLocalTime();
-      updateVisitorCount();
-      updateWeather();
-      setInterval(updateWeather, 1800000);
-      setInterval(updateLocalTime, 1000);
-    });
-  </script>
+
+<p>
+Welcome to Tokyo! Experience the iconic Shibuya Scramble Crossing live anytime, anywhere.
+</p>
+
+
+</header>
+
+
+
+
+<main class="content-wrapper">
+
+
+<section class="weather-card" aria-label="Tokyo Weather">
+
+
+<div>
+
+<h3>
+Tokyo Weather
+</h3>
+
+
+<div id="weather-animation" class="weather-animation">
+☁️
+</div>
+
+
+
+<p>
+Temperature:
+<span id="weather-temp">--°C</span>
+</p>
+
+
+<p>
+Feels Like:
+<span id="weather-feels">--°C</span>
+</p>
+
+
+<p>
+Condition:
+<span id="weather-condition">--</span>
+</p>
+
+
+<p>
+UV Index:
+<span id="weather-uv">--</span>
+</p>
+
+
+<p>
+Sunrise:
+<span id="weather-sunrise">--:--</span>
+</p>
+
+
+<p>
+Sunset:
+<span id="weather-sunset">--:--</span>
+</p>
+
+
+</div>
+
+
+
+<div>
+
+
+<p>
+Date:
+<span id="local-date">
+0000/00/00
+</span>
+</p>
+
+
+<p>
+Time:
+<span id="local-time">
+--:--:-- JST
+</span>
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="video-wrapper" aria-label="Live Camera">
+
+
+<iframe
+
+src="https://www.youtube.com/embed/dfVK7ld38Ys?autoplay=1&mute=1"
+
+title="Shibuya Scramble Crossing Live Stream Camera"
+
+loading="lazy"
+
+allow="autoplay; encrypted-media; picture-in-picture"
+
+referrerpolicy="strict-origin-when-cross-origin"
+
+allowfullscreen>
+
+</iframe>
+
+
+</section>
+
+
+</main>
+
+
+
+
+
+
+
+<section class="info" aria-label="About Shibuya Live Camera">
+
+
+<h2>
+Visitor Information
+</h2>
+
+
+
+<p>
+<strong>City:</strong>
+Shibuya, Tokyo, Japan
+</p>
+
+
+
+<p>
+<strong>Location:</strong>
+Shibuya Scramble Crossing
+</p>
+
+
+
+<p>
+<strong>Stream Type:</strong>
+24/7 Live Camera
+</p>
+
+
+
+<p>
+<strong>Experience:</strong>
+Watch Tokyo traffic, pedestrians, weather and city lights in real time.
+</p>
+
+
+
+<p>
+<strong>Official Tourism:</strong>
+
+<a href="https://www.gotokyo.org/" target="_blank" rel="noopener">
+Go Tokyo
+</a>
+
+</p>
+
+
+
+
+<p>
+
+<strong>Airports:</strong>
+
+
+<a href="https://tokyo-haneda.com/" target="_blank" rel="noopener">
+Haneda Airport
+</a>
+
+
+&nbsp;
+
+
+<a href="https://www.narita-airport.jp/" target="_blank" rel="noopener">
+Narita Airport
+</a>
+
+
+</p>
+
+
+
+
+
+<p>
+
+<strong>Train:</strong>
+
+<a href="https://www.jreast.co.jp/" target="_blank" rel="noopener">
+JR East
+</a>
+
+
+</p>
+
+
+
+
+
+
+<p>
+
+<strong>Tokyo Metro:</strong>
+
+<a href="https://www.tokyometro.jp/" target="_blank" rel="noopener">
+Tokyo Metro
+</a>
+
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Advertisement Area -->
+
+<div class="ads-container">
+
+
+
+<div class="ad-slot" id="ad-slot-1">
+
+<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
+
+</div>
+
+
+
+<div class="ad-slot" id="ad-slot-2">
+
+<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-2"></div>
+
+</div>
+
+
+
+
+<div class="ad-slot" id="ad-slot-3">
+
+<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-3"></div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="visitor-counter">
+
+
+<a href="https://cn.web-counter.net" target="_blank" rel="noopener">
+
+<img
+
+src="https://www.web-counter.net/count_20091204.php?c=1cTKaiN1EVX"
+
+alt="Visitor Counter"
+
+style="border:0">
+
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+<footer>
+
+© <span id="year"></span>
+Shibuya Live Cam Tokyo Japan
+
+</footer>
+<script>
+
+
+// Dynamic year
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+
+
+// Tokyo coordinates
+
+const lat = 35.6595;
+
+const lon = 139.7004;
+
+
+let cachedWeatherData = null;
+
+let lastWeatherFetch = 0;
+
+
+
+
+
+// Tokyo local time
+
+function updateLocalTime(){
+
+
+const now = new Date();
+
+
+
+const dateElement =
+document.getElementById("local-date");
+
+
+const timeElement =
+document.getElementById("local-time");
+
+
+
+if(dateElement && timeElement){
+
+
+dateElement.textContent =
+now.toLocaleDateString(
+"en-CA",
+{
+timeZone:"Asia/Tokyo"
+}
+);
+
+
+
+timeElement.textContent =
+now.toLocaleTimeString(
+"en-GB",
+{
+timeZone:"Asia/Tokyo",
+hour12:false,
+hour:"2-digit",
+minute:"2-digit",
+second:"2-digit"
+}
+)
++
+" JST";
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+// Weather API
+
+
+async function fetchWeatherData(){
+
+
+try{
+
+
+const url =
+
+`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Asia%2FTokyo`;
+
+
+
+
+const response =
+await fetch(
+url,
+{
+cache:"force-cache"
+}
+);
+
+
+
+if(!response.ok)
+throw new Error("Weather API error");
+
+
+
+const data =
+await response.json();
+
+
+
+return {
+
+
+temperature:
+data.current.temperature_2m,
+
+
+feels:
+data.current.apparent_temperature,
+
+
+uv:
+data.current.uv_index,
+
+
+code:
+data.current.weather_code,
+
+
+sunrise:
+new Date(
+data.daily.sunrise[0]
+)
+.toLocaleTimeString(
+"en-GB",
+{
+timeZone:"Asia/Tokyo",
+hour:"2-digit",
+minute:"2-digit"
+}
+),
+
+
+
+sunset:
+new Date(
+data.daily.sunset[0]
+)
+.toLocaleTimeString(
+"en-GB",
+{
+timeZone:"Asia/Tokyo",
+hour:"2-digit",
+minute:"2-digit"
+}
+)
+
+};
+
+
+
+}
+
+catch(error){
+
+
+console.log(
+"Weather loading failed:",
+error
+);
+
+
+return null;
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+async function updateWeather(){
+
+
+
+const now =
+Date.now();
+
+
+
+
+if(
+!cachedWeatherData ||
+now-lastWeatherFetch > 1800000
+){
+
+
+cachedWeatherData =
+await fetchWeatherData();
+
+
+lastWeatherFetch =
+now;
+
+
+}
+
+
+
+
+
+const weather =
+cachedWeatherData;
+
+
+
+if(!weather)
+return;
+
+
+
+
+
+document.getElementById("weather-temp")
+.textContent =
+weather.temperature.toFixed(1)+"°C";
+
+
+
+document.getElementById("weather-feels")
+.textContent =
+weather.feels.toFixed(1)+"°C";
+
+
+
+document.getElementById("weather-uv")
+.textContent =
+weather.uv.toFixed(1);
+
+
+
+document.getElementById("weather-sunrise")
+.textContent =
+weather.sunrise;
+
+
+
+document.getElementById("weather-sunset")
+.textContent =
+weather.sunset;
+
+
+
+
+
+let condition="Clouds";
+
+let icon="☁️";
+
+
+
+
+if(weather.code===0){
+
+condition="Clear";
+
+icon="☀️";
+
+}
+
+
+else if(
+[51,53,55,61,63,65,80,81,82]
+.includes(weather.code)
+){
+
+condition="Rain";
+
+icon="🌧️";
+
+}
+
+
+else if(
+[71,73,75,85,86]
+.includes(weather.code)
+){
+
+condition="Snow";
+
+icon="❄️";
+
+}
+
+
+
+
+document.getElementById("weather-condition")
+.textContent =
+condition;
+
+
+
+document.getElementById("weather-animation")
+.textContent =
+icon;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// Delay advertisement loading
+
+window.addEventListener(
+"load",
+function(){
+
+
+
+setTimeout(
+function(){
+
+
+
+const script =
+document.createElement("script");
+
+
+
+script.async=true;
+
+
+
+script.src =
+"//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js";
+
+
+
+document.body.appendChild(script);
+
+
+
+},
+5000
+);
+
+
+
+}
+
+);
+
+
+
+
+
+
+
+
+// Start
+
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+
+updateLocalTime();
+
+
+updateWeather();
+
+
+
+setInterval(
+updateLocalTime,
+1000
+);
+
+
+
+setInterval(
+updateWeather,
+1800000
+);
+
+
+
+}
+
+);
+
+
+
+</script>
+
+
+
 </body>
+
 </html>
