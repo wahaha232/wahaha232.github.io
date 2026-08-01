@@ -14,10 +14,7 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
 </title>
 
 
-<meta name="description" content="
-Watch the Shibuya Scramble Crossing live camera in Tokyo, Japan.
-Experience the famous Tokyo intersection, city lights, traffic and real-time street views 24/7.
-">
+<meta name="description" content="Watch Shibuya Scramble Crossing live camera in Tokyo Japan. Experience the famous Tokyo intersection, traffic, pedestrians, weather and city lights 24/7.">
 
 
 <meta name="robots" content="index, follow">
@@ -25,24 +22,25 @@ Experience the famous Tokyo intersection, city lights, traffic and real-time str
 <meta name="googlebot" content="index, follow">
 
 
-<!-- Change this to your real domain -->
-<link rel="canonical" href="https://YOUR-DOMAIN.COM/">
+<link rel="canonical" href="https://wahaha232.github.io/">
 
 
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="sitemap" type="application/xml" href="https://wahaha232.github.io/sitemap.xml">
+
 
 
 <!-- Open Graph -->
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="video.other">
 
 <meta property="og:title" content="Shibuya Scramble Crossing Live Cam 24/7">
 
-<meta property="og:description" content="Live view of Shibuya Scramble Crossing Tokyo Japan.">
+<meta property="og:description" content="Live view of Shibuya Scramble Crossing Tokyo Japan with real-time weather information.">
 
-<meta property="og:url" content="https://YOUR-DOMAIN.COM/">
+<meta property="og:url" content="https://wahaha232.github.io/">
 
-<meta property="og:image" content="https://YOUR-DOMAIN.COM/preview.jpg">
+<meta property="og:site_name" content="Shibuya Live Cam">
+
 
 
 <!-- Twitter -->
@@ -53,7 +51,6 @@ Experience the famous Tokyo intersection, city lights, traffic and real-time str
 
 <meta name="twitter:description" content="Watch Tokyo Shibuya live stream 24/7.">
 
-<meta name="twitter:image" content="https://YOUR-DOMAIN.COM/preview.jpg">
 
 
 
@@ -66,9 +63,15 @@ Experience the famous Tokyo intersection, city lights, traffic and real-time str
  "@type":"VideoObject",
  "name":"Shibuya Scramble Crossing Live Cam",
  "description":"24/7 live camera showing Shibuya Scramble Crossing Tokyo Japan.",
- "thumbnailUrl":"https://YOUR-DOMAIN.COM/preview.jpg",
- "uploadDate":"2026-01-01",
+ "thumbnailUrl":"https://wahaha232.github.io/preview.jpg",
+ "uploadDate":"2026-08-02",
  "contentUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
+ "embedUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
+ "publisher":{
+   "@type":"Organization",
+   "name":"Shibuya Live Cam",
+   "url":"https://wahaha232.github.io/"
+ },
  "locationCreated":{
    "@type":"Place",
    "name":"Shibuya Scramble Crossing",
@@ -84,6 +87,20 @@ Experience the famous Tokyo intersection, city lights, traffic and real-time str
 
 
 
+<script type="application/ld+json">
+
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"Shibuya Live Cam",
+ "url":"https://wahaha232.github.io/"
+}
+
+</script>
+
+
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,14 +112,18 @@ Experience the famous Tokyo intersection, city lights, traffic and real-time str
 
 <style>
 
+
 html {
- scroll-behavior:smooth;
+
+scroll-behavior:smooth;
+
 }
+
 
 
 body {
 
-font-family:'Caveat', cursive;
+font-family:'Caveat',cursive;
 
 margin:0;
 
@@ -114,11 +135,10 @@ rgba(255,255,255,.86),
 rgba(255,255,255,.86)
 ),
 url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop')
-no-repeat center center fixed;
-
-background-size:cover;
+center/cover fixed no-repeat;
 
 }
+
 
 
 nav,
@@ -145,6 +165,7 @@ justify-content:flex-end;
 background:#2c2c2c;
 
 }
+
 
 
 nav a {
@@ -196,8 +217,6 @@ align-items:flex-start;
 gap:1rem;
 
 padding:1rem;
-
-max-width:1200px;
 
 }
 
@@ -260,9 +279,10 @@ animation:float 2s infinite ease-in-out;
 }
 
 
+
 @keyframes float {
 
-50% {
+50%{
 
 transform:translateY(-8px);
 
@@ -324,38 +344,6 @@ text-decoration:underline;
 
 
 
-.ads-container {
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-max-width:1200px;
-
-margin:20px auto;
-
-}
-
-
-
-.ad-slot {
-
-width:300px;
-
-min-height:250px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-
-
 .visitor-counter {
 
 text-align:center;
@@ -378,11 +366,13 @@ font-size:1.5em;
 
 @media(max-width:768px){
 
+
 .content-wrapper{
 
 flex-direction:column;
 
 }
+
 
 
 .weather-card{
@@ -392,6 +382,7 @@ width:auto;
 }
 
 
+
 iframe{
 
 height:300px;
@@ -399,24 +390,16 @@ height:300px;
 }
 
 
-.ads-container{
-
-flex-direction:column;
-
-align-items:center;
-
 }
-
-}
-
 
 
 </style>
+
 </head>
 
+
+
 <body>
-
-
 <nav aria-label="Main navigation">
 
 <a href="index.html">Home</a>
@@ -464,7 +447,6 @@ Tokyo Weather
 </div>
 
 
-
 <p>
 Temperature:
 <span id="weather-temp">--°C</span>
@@ -507,20 +489,15 @@ Sunset:
 
 <div>
 
-
 <p>
 Date:
-<span id="local-date">
-0000/00/00
-</span>
+<span id="local-date">0000/00/00</span>
 </p>
 
 
 <p>
 Time:
-<span id="local-time">
---:--:-- JST
-</span>
+<span id="local-time">--:--:-- JST</span>
 </p>
 
 
@@ -533,8 +510,7 @@ Time:
 
 
 
-
-<section class="video-wrapper" aria-label="Live Camera">
+<section class="video-wrapper" aria-label="Shibuya Live Camera">
 
 
 <iframe
@@ -565,7 +541,7 @@ allowfullscreen>
 
 
 
-<section class="info" aria-label="About Shibuya Live Camera">
+<section class="info">
 
 
 <h2>
@@ -602,6 +578,7 @@ Watch Tokyo traffic, pedestrians, weather and city lights in real time.
 
 
 
+
 <p>
 <strong>Official Tourism:</strong>
 
@@ -615,98 +592,47 @@ Go Tokyo
 
 
 <p>
-
 <strong>Airports:</strong>
-
 
 <a href="https://tokyo-haneda.com/" target="_blank" rel="noopener">
 Haneda Airport
 </a>
 
-
 &nbsp;
-
 
 <a href="https://www.narita-airport.jp/" target="_blank" rel="noopener">
 Narita Airport
 </a>
-
 
 </p>
 
 
 
 
-
 <p>
-
 <strong>Train:</strong>
 
 <a href="https://www.jreast.co.jp/" target="_blank" rel="noopener">
 JR East
 </a>
 
-
 </p>
 
 
 
 
-
-
 <p>
-
 <strong>Tokyo Metro:</strong>
 
 <a href="https://www.tokyometro.jp/" target="_blank" rel="noopener">
 Tokyo Metro
 </a>
 
-
 </p>
 
 
 
 </section>
-
-
-
-
-
-
-
-<!-- Advertisement Area -->
-
-<div class="ads-container">
-
-
-
-<div class="ad-slot" id="ad-slot-1">
-
-<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>
-
-</div>
-
-
-
-<div class="ad-slot" id="ad-slot-2">
-
-<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-2"></div>
-
-</div>
-
-
-
-
-<div class="ad-slot" id="ad-slot-3">
-
-<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab-3"></div>
-
-</div>
-
-
-
-</div>
 
 
 
@@ -742,10 +668,15 @@ style="border:0">
 Shibuya Live Cam Tokyo Japan
 
 </footer>
+
+
+
+
+
 <script>
 
 
-// Dynamic year
+// Auto year
 
 document.getElementById("year").textContent =
 new Date().getFullYear();
@@ -754,11 +685,12 @@ new Date().getFullYear();
 
 
 
-// Tokyo coordinates
+// Tokyo location
 
 const lat = 35.6595;
 
 const lon = 139.7004;
+
 
 
 let cachedWeatherData = null;
@@ -769,7 +701,7 @@ let lastWeatherFetch = 0;
 
 
 
-// Tokyo local time
+// Tokyo time
 
 function updateLocalTime(){
 
@@ -777,20 +709,16 @@ function updateLocalTime(){
 const now = new Date();
 
 
-
-const dateElement =
+const date =
 document.getElementById("local-date");
 
 
-const timeElement =
+const time =
 document.getElementById("local-time");
 
 
 
-if(dateElement && timeElement){
-
-
-dateElement.textContent =
+date.textContent =
 now.toLocaleDateString(
 "en-CA",
 {
@@ -800,7 +728,7 @@ timeZone:"Asia/Tokyo"
 
 
 
-timeElement.textContent =
+time.textContent =
 now.toLocaleTimeString(
 "en-GB",
 {
@@ -819,15 +747,11 @@ second:"2-digit"
 
 
 
-}
-
-
 
 
 
 
 // Weather API
-
 
 async function fetchWeatherData(){
 
@@ -835,25 +759,17 @@ async function fetchWeatherData(){
 try{
 
 
-const url =
-
-`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Asia%2FTokyo`;
-
-
-
-
 const response =
 await fetch(
-url,
-{
-cache:"force-cache"
-}
+
+`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Asia%2FTokyo`
+
 );
 
 
 
 if(!response.ok)
-throw new Error("Weather API error");
+throw new Error("Weather API failed");
 
 
 
@@ -882,9 +798,7 @@ data.current.weather_code,
 
 
 sunrise:
-new Date(
-data.daily.sunrise[0]
-)
+new Date(data.daily.sunrise[0])
 .toLocaleTimeString(
 "en-GB",
 {
@@ -895,11 +809,8 @@ minute:"2-digit"
 ),
 
 
-
 sunset:
-new Date(
-data.daily.sunset[0]
-)
+new Date(data.daily.sunset[0])
 .toLocaleTimeString(
 "en-GB",
 {
@@ -909,8 +820,8 @@ minute:"2-digit"
 }
 )
 
-};
 
+};
 
 
 }
@@ -919,7 +830,7 @@ catch(error){
 
 
 console.log(
-"Weather loading failed:",
+"Weather error:",
 error
 );
 
@@ -931,240 +842,3 @@ return null;
 
 
 }
-
-
-
-
-
-
-
-
-async function updateWeather(){
-
-
-
-const now =
-Date.now();
-
-
-
-
-if(
-!cachedWeatherData ||
-now-lastWeatherFetch > 1800000
-){
-
-
-cachedWeatherData =
-await fetchWeatherData();
-
-
-lastWeatherFetch =
-now;
-
-
-}
-
-
-
-
-
-const weather =
-cachedWeatherData;
-
-
-
-if(!weather)
-return;
-
-
-
-
-
-document.getElementById("weather-temp")
-.textContent =
-weather.temperature.toFixed(1)+"°C";
-
-
-
-document.getElementById("weather-feels")
-.textContent =
-weather.feels.toFixed(1)+"°C";
-
-
-
-document.getElementById("weather-uv")
-.textContent =
-weather.uv.toFixed(1);
-
-
-
-document.getElementById("weather-sunrise")
-.textContent =
-weather.sunrise;
-
-
-
-document.getElementById("weather-sunset")
-.textContent =
-weather.sunset;
-
-
-
-
-
-let condition="Clouds";
-
-let icon="☁️";
-
-
-
-
-if(weather.code===0){
-
-condition="Clear";
-
-icon="☀️";
-
-}
-
-
-else if(
-[51,53,55,61,63,65,80,81,82]
-.includes(weather.code)
-){
-
-condition="Rain";
-
-icon="🌧️";
-
-}
-
-
-else if(
-[71,73,75,85,86]
-.includes(weather.code)
-){
-
-condition="Snow";
-
-icon="❄️";
-
-}
-
-
-
-
-document.getElementById("weather-condition")
-.textContent =
-condition;
-
-
-
-document.getElementById("weather-animation")
-.textContent =
-icon;
-
-
-
-}
-
-
-
-
-
-
-
-
-
-// Delay advertisement loading
-
-window.addEventListener(
-"load",
-function(){
-
-
-
-setTimeout(
-function(){
-
-
-
-const script =
-document.createElement("script");
-
-
-
-script.async=true;
-
-
-
-script.src =
-"//pl26441868.profitableratecpm.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js";
-
-
-
-document.body.appendChild(script);
-
-
-
-},
-5000
-);
-
-
-
-}
-
-);
-
-
-
-
-
-
-
-
-// Start
-
-
-document.addEventListener(
-"DOMContentLoaded",
-function(){
-
-
-
-updateLocalTime();
-
-
-updateWeather();
-
-
-
-setInterval(
-updateLocalTime,
-1000
-);
-
-
-
-setInterval(
-updateWeather,
-1800000
-);
-
-
-
-}
-
-);
-
-
-
-</script>
-
-
-
-</body>
-
-</html>
