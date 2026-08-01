@@ -1,3 +1,7 @@
+# robots.txt for Shibuya Scramble Crossing 24/7 Live Cam
+
 User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://wahaha232.github.io/sitemap.xml
