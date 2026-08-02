@@ -1,12 +1,7 @@
-# robots.txt
 # Shibuya Scramble Crossing Live Cam
-# https://wahaha232.github.io/
 
 User-agent: *
+
 Allow: /
 
-# Sitemap
 Sitemap: https://wahaha232.github.io/sitemap.xml
-
-# Host (optional, mainly for Yandex and some crawlers)
-Host: https://wahaha232.github.io/
