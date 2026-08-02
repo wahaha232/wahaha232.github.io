@@ -1,60 +1,111 @@
 # Shibuya Scramble Crossing 24/7 Live Cam 🌆🎥
 
-A real-time 24/7 live camera web application featuring Tokyo's iconic Shibuya Scramble Crossing, paired with live JST time, real-time Tokyo weather updates via Open-Meteo API, and essential travel information.
+A responsive website featuring a **24/7 live stream of Shibuya Scramble
+Crossing** in Tokyo, Japan, together with **real-time Tokyo weather**,
+**Japan Standard Time (JST)**, and helpful travel information.
 
-## 🌟 Features
+## 🌐 Live Demo
 
-* **24/7 Live Stream**: Embedded high-definition live stream of Tokyo Shibuya Scramble Crossing (FNN Prime Online) with optimized cross-origin and autoplay parameters.
-* **Real-Time Tokyo Weather**: Fetches dynamic weather metrics (Temperature, Feels Like, UV Index, Sunrise/Sunset, Conditions) for Shibuya, Tokyo via the Open-Meteo API.
-* **JST Live Clock**: Real-time Japanese Standard Time (JST) clock automatically formatted for accurate local timekeeping.
-* **Visitor Info Links**: Quick access links for Official Tourism, Airports (Haneda/Narita), JR East, and Tokyo Metro.
-* **Cohesive Sightseeing Theme**: Customized responsive design featuring handwritten Google Fonts (`Caveat`), blurred glassmorphism overlay, and Tokyo city backdrop.
-* **Multi-Page Layout**: Includes `index.html`, `about.html`, and `privacy.html`.
+https://wahaha232.github.io/
 
-## 📁 File Structure
+## ✨ Features
 
-```text
+-   🎥 24/7 YouTube live stream of Shibuya Scramble Crossing
+-   🌤 Real-time Tokyo weather powered by Open-Meteo
+-   🕒 Live Japan Standard Time clock
+-   🚉 Visitor information and useful travel links
+-   📱 Responsive layout for desktop and mobile
+-   🔍 SEO optimized (Canonical, Open Graph, Twitter Card, Schema.org)
+-   🗺 XML Sitemap and robots.txt ready for Google Search Console
+
+## 📁 Project Structure
+
+``` text
 .
-├── index.html       # Main landing page with live video embed & weather widget
-├── about.html       # About page detailing project goals
-├── privacy.html     # Privacy Policy & third-party content disclaimer
-└── README.md        # Project documentation
+├── index.html
+├── about.html
+├── privacy.html
+├── sitemap.xml
+├── robots.txt
+├── 404.html
+├── preview.jpg
+├── LICENSE
+└── README.md
 ```
 
-## 🚀 Quick Start / Local Setup
+## 🚀 Getting Started
 
-1. **Clone or Download** this repository:
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.github.io.git
-   ```
+Clone the repository:
 
-2. **Run locally using an HTTP server**:
-   Due to YouTube Embed and Cross-Origin API security restrictions (`referrerpolicy`), running directly via `file://` might trigger Player Error 153. It is recommended to use a local server:
+``` bash
+git clone https://github.com/wahaha232/wahaha232.github.io.git
+```
 
-   * **Using VS Code**: Right-click `index.html` and select **Open with Live Server**.
-   * **Using Python**:
-     ```bash
-     python -m http.server 8000
-     ```
-     Then open `http://localhost:8000` in your web browser.
+Open the project with a local web server.
 
-3. **Deploying to GitHub Pages**:
-   * Push your files to your GitHub repository.
-   * Go to **Settings > Pages**.
-   * Set Source to `main` branch and `/ (root)`.
-   * Click **Save** to publish your live site!
+Example using Python:
 
-## 🛠️ Built With
+``` bash
+python -m http.server 8000
+```
 
-* **HTML5 / CSS3**: Flexbox, Glassmorphism backdrop-filters, responsive layouts.
-* **JavaScript (ES6+)**: Dynamic DOM manipulation, Fetch API, LocalStorage.
-* **APIs**:
-  * [Open-Meteo Weather API](https://open-meteo.com/) (Free, no API key required)
-  * [YouTube IFrame Player API](https://developers.google.com/youtube/iframe_api_reference)
-* **Fonts & Imagery**:
-  * [Google Fonts - Caveat](https://fonts.google.com/specimen/Caveat)
-  * Unsplash Photography
+Then visit:
+
+    http://localhost:8000
+
+## 🌍 Deployment
+
+This project is designed for GitHub Pages.
+
+1.  Push the repository to GitHub.
+2.  Open **Settings → Pages**.
+3.  Select **Deploy from a branch**.
+4.  Choose the **main** branch and the **/(root)** folder.
+5.  Save the settings.
+
+Your website will be available at:
+
+https://wahaha232.github.io/
+
+## 🛠 Built With
+
+-   HTML5
+-   CSS3
+-   JavaScript (ES6+)
+-   Fetch API
+-   Open-Meteo Weather API
+-   YouTube Embed Player
+-   Google Fonts (Caveat)
+
+## 🔍 SEO
+
+The website includes:
+
+-   Canonical URL
+-   XML Sitemap
+-   robots.txt
+-   Open Graph
+-   Twitter Card
+-   Schema.org VideoObject
+-   Schema.org WebSite
+-   Mobile-friendly responsive design
+
+## 🌤 Weather Data
+
+Weather information is provided by:
+
+https://open-meteo.com/
+
+No API key is required.
 
 ## 📄 License
 
-This project is open source and available for personal or educational use.
+Released under the MIT License.
+
+## ❤️ Acknowledgements
+
+-   Tokyo
+-   Open-Meteo
+-   Google Fonts
+-   YouTube
+-   GitHub Pages
