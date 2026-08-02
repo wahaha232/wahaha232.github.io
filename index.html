@@ -10,74 +10,68 @@
 
 
 <title>
-Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan Live View
+Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
 </title>
 
 
-<meta name="description" content="
-Watch Shibuya Scramble Crossing live camera 24/7 from Tokyo Japan.
-Experience one of the world's busiest intersections with real-time views,
-Tokyo city atmosphere, and travel information.
-">
+<meta name="description" content="Watch the Shibuya Scramble Crossing live camera in Tokyo, Japan. Experience the famous Tokyo intersection, city lights, traffic and real-time street views 24/7.">
 
 
-<meta name="keywords" content="
-Shibuya Scramble Crossing Live Cam,
-Tokyo Live Camera,
-Japan Webcam,
-Shibuya Crossing,
-Tokyo Travel,
-Japan Live Stream
-">
-
-
-<meta name="author" content="Shibuya Scramble Crossing Live Cam">
+<meta name="robots" content="index,follow">
 
 
 <link rel="canonical" href="https://wahaha232.github.io/">
 
 
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<!-- Open Graph -->
+
 
 <meta property="og:type" content="website">
 
 <meta property="og:title" content="Shibuya Scramble Crossing Live Cam 24/7">
 
-<meta property="og:description" content="
-Watch Tokyo Shibuya Crossing live camera 24 hours a day.
-">
+<meta property="og:description" content="Live view of Shibuya Scramble Crossing Tokyo Japan.">
 
 <meta property="og:url" content="https://wahaha232.github.io/">
 
-<meta property="og:site_name" content="Shibuya Scramble Crossing Live Cam">
 
-
-<!-- Twitter Card -->
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="Shibuya Scramble Crossing Live Cam 24/7">
+<meta name="twitter:title" content="Shibuya Scramble Crossing Live Cam">
 
-<meta name="twitter:description" content="
-Live view of Tokyo Shibuya Scramble Crossing Japan.
-">
+<meta name="twitter:description" content="Watch Tokyo Shibuya live stream 24/7.">
 
 
-
-<!-- JSON-LD -->
 
 <script type="application/ld+json">
-
 {
  "@context":"https://schema.org",
- "@type":"WebSite",
+ "@type":"VideoObject",
  "name":"Shibuya Scramble Crossing Live Cam",
- "url":"https://wahaha232.github.io/",
- "description":"Live camera view of Shibuya Scramble Crossing Tokyo Japan."
+ "description":"24/7 live camera showing Shibuya Scramble Crossing Tokyo Japan.",
+ "contentUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
+ "locationCreated":{
+  "@type":"Place",
+  "name":"Shibuya Scramble Crossing",
+  "address":{
+   "@type":"PostalAddress",
+   "addressLocality":"Tokyo",
+   "addressCountry":"Japan"
+  }
+ }
 }
-
 </script>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
 
 
@@ -88,44 +82,44 @@ box-sizing:border-box;
 }
 
 
+html{
+scroll-behavior:smooth;
+}
+
+
 body{
 
 margin:0;
 
-font-family:
-Arial,
-Helvetica,
-sans-serif;
+font-family:'Caveat',cursive;
 
-background:#f5f5f5;
+color:#1a1a1a;
 
-color:#222;
+background:
 
-line-height:1.6;
+linear-gradient(
+rgba(255,255,255,.86),
+rgba(255,255,255,.86)
+),
 
-}
+url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop')
 
-
-
-header{
-
-background:#111;
-
-color:white;
-
-padding:25px 15px;
-
-text-align:center;
+center/cover fixed no-repeat;
 
 }
 
 
 
-header h1{
+nav,
+header,
+main,
+footer{
 
-margin:0;
+max-width:1200px;
 
-font-size:32px;
+margin:auto;
+
+padding:1rem;
 
 }
 
@@ -133,79 +127,121 @@ font-size:32px;
 
 nav{
 
-margin-top:15px;
+display:flex;
+
+justify-content:flex-end;
+
+background:#2c2c2c;
 
 }
+
 
 
 nav a{
 
-color:white;
-
-text-decoration:none;
+color:#f5f5e6;
 
 margin:0 10px;
 
-font-size:15px;
+text-decoration:none;
+
+font-weight:bold;
 
 }
 
 
 
-main{
+nav a:hover{
 
-max-width:1000px;
-
-margin:auto;
-
-padding:20px;
+text-decoration:underline;
 
 }
 
 
 
-.hero{
+h1{
 
-background:white;
+text-align:center;
 
-padding:25px;
+font-size:3em;
 
-border-radius:12px;
-
-box-shadow:
-0 2px 10px rgba(0,0,0,.08);
+margin:0;
 
 }
 
 
 
-.camera{
+header p{
 
-margin-top:25px;
+text-align:center;
 
-position:relative;
-
-padding-bottom:56.25%;
-
-height:0;
-
-overflow:hidden;
-
-border-radius:12px;
+font-size:1.2em;
 
 }
 
 
 
-.camera iframe{
+.content-wrapper{
 
-position:absolute;
+display:flex;
+
+justify-content:center;
+
+align-items:flex-start;
+
+gap:1rem;
+
+padding:1rem;
+
+}
+
+
+
+.weather-card{
+
+width:240px;
+
+background:#4b5563;
+
+color:white;
+
+padding:1em;
+
+border-radius:10px;
+
+border:2px solid #333;
+
+text-align:center;
+
+}
+
+
+
+.weather-animation{
+
+font-size:3rem;
+
+}
+
+
+
+.video-wrapper{
+
+flex:1;
+
+}
+
+
+
+iframe{
 
 width:100%;
 
-height:100%;
+height:440px;
 
-border:0;
+border:2px solid #333;
+
+border-radius:8px;
 
 }
 
@@ -213,13 +249,27 @@ border:0;
 
 .info{
 
-background:white;
+max-width:650px;
 
-margin-top:25px;
+margin:20px auto;
 
-padding:25px;
+text-align:center;
 
-border-radius:12px;
+font-size:1.5em;
+
+font-weight:bold;
+
+color:white;
+
+text-shadow:1px 1px 3px black;
+
+}
+
+
+
+.info a{
+
+color:white;
 
 }
 
@@ -229,40 +279,31 @@ footer{
 
 text-align:center;
 
-padding:25px;
-
-background:#111;
-
-color:white;
-
-margin-top:40px;
+font-size:1.5em;
 
 }
 
 
 
-footer a{
+@media(max-width:768px){
 
-color:white;
+.content-wrapper{
 
-}
-
-
-
-@media(max-width:600px){
-
-header h1{
-
-font-size:24px;
+flex-direction:column;
 
 }
 
 
-nav a{
+.weather-card{
 
-display:inline-block;
+width:auto;
 
-margin:5px;
+}
+
+
+iframe{
+
+height:300px;
 
 }
 
@@ -271,23 +312,10 @@ margin:5px;
 
 </style>
 
-
 </head>
-
-
-
 <body>
 
-
-
-<header>
-
-<h1>
-Shibuya Scramble Crossing Live Cam 24/7
-</h1>
-
-
-<nav>
+<nav aria-label="Main navigation">
 
 <a href="index.html">
 Home
@@ -298,52 +326,125 @@ About
 </a>
 
 <a href="privacy.html">
-Privacy
+Privacy Policy
 </a>
 
-
 </nav>
+
+
+<header>
+
+<h1>
+Shibuya Scramble Crossing Live Cam Tokyo Japan
+</h1>
+
+<p>
+Welcome to Tokyo! Experience the iconic Shibuya Scramble Crossing live anytime, anywhere.
+</p>
 
 </header>
 
 
 
-<main>
+<main class="content-wrapper">
 
 
-<section class="hero">
+<section class="weather-card">
 
 
-<h2>
-Tokyo Shibuya Crossing Live View
-</h2>
+<h3>
+Tokyo Weather
+</h3>
+
+
+<div id="weather-animation" class="weather-animation">
+☁️
+</div>
 
 
 <p>
-Experience the famous Shibuya Scramble Crossing in Tokyo, Japan.
-Watch the city lights, pedestrians, and daily life through a live camera view.
+Temperature:
+<span id="weather-temp">--°C</span>
 </p>
 
 
+<p>
+Feels Like:
+<span id="weather-feels">--°C</span>
+</p>
 
-<div class="camera">
+
+<p>
+Condition:
+<span id="weather-condition">--</span>
+</p>
 
 
-<!-- Replace the URL below with your own live stream source -->
+<p>
+UV Index:
+<span id="weather-uv">--</span>
+</p>
+
+
+<p>
+Sunrise:
+<span id="weather-sunrise">--:--</span>
+</p>
+
+
+<p>
+Sunset:
+<span id="weather-sunset">--:--</span>
+</p>
+
+
+<hr>
+
+
+<p>
+Date:
+<span id="local-date">
+--
+</span>
+</p>
+
+
+<p>
+Time:
+<span id="local-time">
+--:--:--
+</span>
+JST
+</p>
+
+
+</section>
+
+
+
+
+<section class="video-wrapper">
+
 
 <iframe
 
-src="https://www.youtube.com/embed/live_stream"
+src="https://www.youtube.com/embed/dfVK7ld38Ys?autoplay=1&mute=1"
+
+title="Shibuya Scramble Crossing Live Stream"
+
+loading="lazy"
+
+allow="autoplay; encrypted-media; picture-in-picture"
 
 allowfullscreen>
 
 </iframe>
 
 
-</div>
-
-
 </section>
+
+
+</main>
 
 
 
@@ -352,23 +453,70 @@ allowfullscreen>
 
 
 <h2>
-About Shibuya Crossing
+Visitor Information
 </h2>
 
 
 <p>
+<strong>City:</strong>
+Shibuya, Tokyo, Japan
+</p>
 
-Shibuya Scramble Crossing is one of Tokyo's most iconic landmarks.
-Thousands of people cross the intersection every time the traffic lights change,
-creating a unique symbol of modern Tokyo.
+
+<p>
+<strong>Location:</strong>
+Shibuya Scramble Crossing
+</p>
+
+
+<p>
+<strong>Stream Type:</strong>
+24/7 Live Camera
+</p>
+
+
+<p>
+<strong>Experience:</strong>
+Watch Tokyo traffic, pedestrians, weather and city lights in real time.
+</p>
+
+
+<p>
+<strong>Official Tourism:</strong>
+
+<a href="https://www.gotokyo.org/" target="_blank" rel="noopener">
+Go Tokyo
+</a>
 
 </p>
 
 
 <p>
+<strong>Airport:</strong>
 
-This website provides information and access to live views of Shibuya,
-helping travelers around the world experience Tokyo anytime.
+<a href="https://tokyo-haneda.com/" target="_blank" rel="noopener">
+Haneda Airport
+</a>
+
+</p>
+
+
+<p>
+<strong>Train:</strong>
+
+<a href="https://www.jreast.co.jp/" target="_blank" rel="noopener">
+JR East
+</a>
+
+</p>
+
+
+<p>
+<strong>Tokyo Metro:</strong>
+
+<a href="https://www.tokyometro.jp/" target="_blank" rel="noopener">
+Tokyo Metro
+</a>
 
 </p>
 
@@ -377,32 +525,210 @@ helping travelers around the world experience Tokyo anytime.
 
 
 
-</main>
-
-
 
 
 <footer>
 
+© <span id="year"></span>
 
-<p>
-
-© 2026 Shibuya Scramble Crossing Live Cam
-
-</p>
-
-
-<p>
-
-<a href="privacy.html">
-Privacy Policy
-</a>
-
-</p>
-
+Shibuya Live Cam Tokyo Japan
 
 </footer>
 
+
+
+
+
+<script>
+
+
+// Year
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+
+// Tokyo time
+
+function updateLocalTime(){
+
+const now=new Date();
+
+
+document.getElementById("local-date").textContent =
+
+now.toLocaleDateString(
+"en-CA",
+{
+timeZone:"Asia/Tokyo"
+}
+);
+
+
+
+document.getElementById("local-time").textContent =
+
+now.toLocaleTimeString(
+"en-GB",
+{
+timeZone:"Asia/Tokyo",
+hour12:false
+}
+);
+
+
+}
+
+
+updateLocalTime();
+
+
+setInterval(
+updateLocalTime,
+1000
+);
+
+
+
+
+
+// Weather
+
+async function updateWeather(){
+
+
+try{
+
+
+const url =
+
+"https://api.open-meteo.com/v1/forecast?latitude=35.6595&longitude=139.7004&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Asia%2FTokyo";
+
+
+
+const response =
+await fetch(url);
+
+
+
+const data =
+await response.json();
+
+
+
+
+document.getElementById("weather-temp")
+.textContent =
+
+data.current.temperature_2m+"°C";
+
+
+
+
+document.getElementById("weather-feels")
+.textContent =
+
+data.current.apparent_temperature+"°C";
+
+
+
+
+document.getElementById("weather-uv")
+.textContent =
+
+data.current.uv_index;
+
+
+
+
+document.getElementById("weather-sunrise")
+.textContent =
+
+data.daily.sunrise[0]
+.split("T")[1];
+
+
+
+
+document.getElementById("weather-sunset")
+.textContent =
+
+data.daily.sunset[0]
+.split("T")[1];
+
+
+
+
+
+let condition="Cloudy";
+
+let icon="☁️";
+
+
+
+if(data.current.weather_code===0){
+
+condition="Clear";
+
+icon="☀️";
+
+}
+
+
+else if(
+[51,53,55,61,63,65,80,81,82]
+.includes(data.current.weather_code)
+){
+
+condition="Rain";
+
+icon="🌧️";
+
+}
+
+
+
+document.getElementById("weather-condition")
+.textContent =
+condition;
+
+
+
+document.getElementById("weather-animation")
+.textContent =
+icon;
+
+
+
+}
+
+catch(error){
+
+console.log(
+"Weather loading error",
+error
+);
+
+}
+
+
+}
+
+
+
+updateWeather();
+
+
+setInterval(
+updateWeather,
+1800000
+);
+
+
+
+</script>
 
 
 </body>
