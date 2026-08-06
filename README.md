@@ -25,13 +25,22 @@ https://wahaha232.github.io/
 ├── index.html
 ├── about.html
 ├── privacy.html
+├── 404.html
+├── ping.html
+├── style.css
 ├── sitemap.xml
 ├── robots.txt
-├── 404.html
+├── favicon.ico
+├── apple-touch-icon.png
 ├── preview.jpg
 ├── LICENSE
 └── README.md
 ```
+
+`favicon.ico`, `apple-touch-icon.png` and `preview.jpg` included in this repo are
+simple placeholder graphics — swap them for real branded artwork /
+a screenshot of the live stream before relying on them for social sharing
+previews.
 
 ## 🚀 Getting Started
 
