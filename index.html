@@ -17,7 +17,7 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
 <meta name="description" content="Watch the Shibuya Scramble Crossing live camera in Tokyo, Japan. Experience the famous Tokyo intersection, city lights, traffic and real-time street views 24/7.">
 
 
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index, follow">
 
 
 <link rel="canonical" href="https://wahaha232.github.io/">
@@ -25,6 +25,8 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
 
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 
 <meta property="og:type" content="website">
@@ -35,6 +37,10 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
 
 <meta property="og:url" content="https://wahaha232.github.io/">
 
+<meta property="og:site_name" content="Shibuya Scramble Crossing Live Cam">
+
+<meta property="og:image" content="https://wahaha232.github.io/preview.jpg">
+
 
 
 <meta name="twitter:card" content="summary_large_image">
@@ -42,6 +48,8 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
 <meta name="twitter:title" content="Shibuya Scramble Crossing Live Cam">
 
 <meta name="twitter:description" content="Watch Tokyo Shibuya live stream 24/7.">
+
+<meta name="twitter:image" content="https://wahaha232.github.io/preview.jpg">
 
 
 
@@ -52,6 +60,8 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
  "name":"Shibuya Scramble Crossing Live Cam",
  "description":"24/7 live camera showing Shibuya Scramble Crossing Tokyo Japan.",
  "contentUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
+ "thumbnailUrl":"https://wahaha232.github.io/preview.jpg",
+ "uploadDate":"2026-01-01",
  "locationCreated":{
   "@type":"Place",
   "name":"Shibuya Scramble Crossing",
@@ -70,247 +80,14 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link rel="preconnect" href="https://www.youtube.com">
+
+<link rel="preconnect" href="https://api.open-meteo.com">
+
 
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
-
-
-<style>
-
-*{
-box-sizing:border-box;
-}
-
-
-html{
-scroll-behavior:smooth;
-}
-
-
-body{
-
-margin:0;
-
-font-family:'Caveat',cursive;
-
-color:#1a1a1a;
-
-background:
-
-linear-gradient(
-rgba(255,255,255,.86),
-rgba(255,255,255,.86)
-),
-
-url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1920&auto=format&fit=crop')
-
-center/cover fixed no-repeat;
-
-}
-
-
-
-nav,
-header,
-main,
-footer{
-
-max-width:1200px;
-
-margin:auto;
-
-padding:1rem;
-
-}
-
-
-
-nav{
-
-display:flex;
-
-justify-content:flex-end;
-
-background:#2c2c2c;
-
-}
-
-
-
-nav a{
-
-color:#f5f5e6;
-
-margin:0 10px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-}
-
-
-
-nav a:hover{
-
-text-decoration:underline;
-
-}
-
-
-
-h1{
-
-text-align:center;
-
-font-size:3em;
-
-margin:0;
-
-}
-
-
-
-header p{
-
-text-align:center;
-
-font-size:1.2em;
-
-}
-
-
-
-.content-wrapper{
-
-display:flex;
-
-justify-content:center;
-
-align-items:flex-start;
-
-gap:1rem;
-
-padding:1rem;
-
-}
-
-
-
-.weather-card{
-
-width:240px;
-
-background:#4b5563;
-
-color:white;
-
-padding:1em;
-
-border-radius:10px;
-
-border:2px solid #333;
-
-text-align:center;
-
-}
-
-
-
-.weather-animation{
-
-font-size:3rem;
-
-}
-
-
-
-.video-wrapper{
-
-flex:1;
-
-}
-
-
-
-iframe{
-
-width:100%;
-
-height:440px;
-
-border:2px solid #333;
-
-border-radius:8px;
-
-}
-
-
-
-.info{
-
-max-width:650px;
-
-margin:20px auto;
-
-text-align:center;
-
-font-size:1.5em;
-
-font-weight:bold;
-
-color:white;
-
-text-shadow:1px 1px 3px black;
-
-}
-
-
-
-.info a{
-
-color:white;
-
-}
-
-
-
-footer{
-
-text-align:center;
-
-font-size:1.5em;
-
-}
-
-
-
-@media(max-width:768px){
-
-.content-wrapper{
-
-flex-direction:column;
-
-}
-
-
-.weather-card{
-
-width:auto;
-
-}
-
-
-iframe{
-
-height:300px;
-
-}
-
-}
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -357,7 +134,7 @@ Tokyo Weather
 </h3>
 
 
-<div id="weather-animation" class="weather-animation">
+<div id="weather-animation" class="weather-animation" role="img" aria-label="Current weather condition icon">
 ☁️
 </div>
 
@@ -593,8 +370,61 @@ updateLocalTime,
 
 
 
-
 // Weather
+//
+// Condition/icon mapping based on Open-Meteo's WMO weather_code values:
+// https://open-meteo.com/en/docs (see "WMO Weather interpretation codes")
+//   0            = Clear
+//   1,2,3        = Partly cloudy / Overcast
+//   45,48        = Fog
+//   51,53,55,
+//   56,57        = Drizzle
+//   61,63,65,
+//   66,67,80,
+//   81,82        = Rain
+//   71,73,75,
+//   77,85,86     = Snow
+//   95,96,99     = Thunderstorm
+//
+// Previously only Clear (0) and a handful of rain codes were handled;
+// everything else silently fell back to "Cloudy", which mislabels snow,
+// thunderstorms and fog. All groups are now covered explicitly.
+
+function getWeatherDisplay(code){
+
+if(code===0){
+return {condition:"Clear", icon:"☀️"};
+}
+
+if([1,2,3].includes(code)){
+return {condition:"Cloudy", icon:"☁️"};
+}
+
+if([45,48].includes(code)){
+return {condition:"Fog", icon:"🌫️"};
+}
+
+if([51,53,55,56,57].includes(code)){
+return {condition:"Drizzle", icon:"🌦️"};
+}
+
+if([61,63,65,66,67,80,81,82].includes(code)){
+return {condition:"Rain", icon:"🌧️"};
+}
+
+if([71,73,75,77,85,86].includes(code)){
+return {condition:"Snow", icon:"❄️"};
+}
+
+if([95,96,99].includes(code)){
+return {condition:"Thunderstorm", icon:"⛈️"};
+}
+
+// Unknown/unlisted code: fall back to a neutral label rather than
+// guessing "Cloudy", so it is clear the value is unmapped.
+return {condition:"Unknown", icon:"❓"};
+
+}
 
 async function updateWeather(){
 
@@ -611,6 +441,10 @@ const url =
 const response =
 await fetch(url);
 
+
+if(!response.ok){
+throw new Error("Weather API responded with status "+response.status);
+}
 
 
 const data =
@@ -661,44 +495,19 @@ data.daily.sunset[0]
 
 
 
-
-let condition="Cloudy";
-
-let icon="☁️";
-
-
-
-if(data.current.weather_code===0){
-
-condition="Clear";
-
-icon="☀️";
-
-}
-
-
-else if(
-[51,53,55,61,63,65,80,81,82]
-.includes(data.current.weather_code)
-){
-
-condition="Rain";
-
-icon="🌧️";
-
-}
+const display = getWeatherDisplay(data.current.weather_code);
 
 
 
 document.getElementById("weather-condition")
 .textContent =
-condition;
+display.condition;
 
 
 
 document.getElementById("weather-animation")
 .textContent =
-icon;
+display.icon;
 
 
 
@@ -710,6 +519,11 @@ console.log(
 "Weather loading error",
 error
 );
+
+// Surface the failure in the UI instead of leaving "--" forever
+// with no indication that the request failed.
+document.getElementById("weather-condition").textContent =
+"Unavailable";
 
 }
 
@@ -725,7 +539,6 @@ setInterval(
 updateWeather,
 1800000
 );
-
 
 
 </script>
