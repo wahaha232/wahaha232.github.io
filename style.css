@@ -13,7 +13,7 @@ scroll-behavior:smooth;
 
 body{
 margin:0;
-font-family:'Caveat',cursive;
+font-family:'Caveat',cursive,sans-serif;
 color:#1a1a1a;
 background:
 linear-gradient(
@@ -36,6 +36,8 @@ padding:1rem;
 nav{
 display:flex;
 justify-content:flex-end;
+flex-wrap:wrap;
+gap:8px;
 background:#2c2c2c;
 }
 
@@ -95,13 +97,22 @@ text-align:center;
 font-size:3rem;
 }
 
+/* Responsive 16:9 video container — keeps correct aspect ratio at any
+   width instead of relying on a fixed pixel height. */
 .video-wrapper{
 flex:1;
+position:relative;
+padding-bottom:56.25%; /* 16:9 */
+height:0;
+overflow:hidden;
 }
 
-iframe{
+.video-wrapper iframe{
+position:absolute;
+top:0;
+left:0;
 width:100%;
-height:440px;
+height:100%;
 border:2px solid #333;
 border-radius:8px;
 }
@@ -175,6 +186,24 @@ font-size:1.2rem;
 color:#555;
 }
 
+/* ---- Ad Slot (Google AdSense) ---- */
+
+.ad-slot{
+max-width:1200px;
+margin:2rem auto;
+padding:1rem;
+text-align:center;
+min-height:100px; /* reserve space to avoid layout shift while ad loads */
+}
+
+.ad-slot .ad-label{
+font-size:0.85rem;
+color:#666;
+margin-bottom:6px;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
 /* ---- 404.html ---- */
 
 .error-container{
@@ -191,7 +220,7 @@ font-size:4rem;
 margin:0;
 }
 
-/* ---- Responsive ---- */
+/* ---- Responsive: tablet / small laptop ---- */
 
 @media(max-width:768px){
 
@@ -203,7 +232,6 @@ background-attachment:scroll;
 
 nav{
 justify-content:center;
-flex-wrap:wrap;
 }
 
 nav a{
@@ -222,10 +250,6 @@ flex-direction:column;
 width:auto;
 }
 
-iframe{
-height:300px;
-}
-
 .about-container{
 font-size:1.2em;
 }
@@ -237,6 +261,51 @@ padding:20px;
 
 .container p{
 font-size:1.15rem;
+}
+
+}
+
+/* ---- Responsive: phones ---- */
+
+@media(max-width:480px){
+
+h1{
+font-size:1.5em;
+}
+
+header p{
+font-size:1em;
+}
+
+.weather-animation{
+font-size:2rem;
+}
+
+.weather-card{
+padding:0.75em;
+}
+
+.info{
+font-size:1.2em;
+}
+
+.about-container{
+font-size:1.05em;
+padding:1.2em;
+}
+
+.error-container{
+font-size:1.2em;
+padding:1em;
+}
+
+.error-container .code{
+font-size:3rem;
+}
+
+.ad-slot{
+padding:0.5rem;
+min-height:80px;
 }
 
 }
