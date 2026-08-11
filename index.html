@@ -59,9 +59,8 @@ Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
  "@type":"VideoObject",
  "name":"Shibuya Scramble Crossing Live Cam",
  "description":"24/7 live camera showing Shibuya Scramble Crossing Tokyo Japan.",
- "contentUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
+ "embedUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
  "thumbnailUrl":"https://wahaha232.github.io/preview.jpg",
- "uploadDate":"2026-01-01",
  "locationCreated":{
   "@type":"Place",
   "name":"Shibuya Scramble Crossing",
@@ -306,10 +305,11 @@ Tokyo Metro
 
 <div class="ad-slot">
 <div class="ad-label">Advertisement</div>
+<!-- LIVE1 -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-1512317781873771"
-     data-ad-slot="XXXXXXXXXX"
+     data-ad-slot="5701870466"
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
 <script>
@@ -325,6 +325,10 @@ Tokyo Metro
 © <span id="year"></span>
 
 Shibuya Live Cam Tokyo Japan
+
+<p class="visitor-counter">
+<img src="https://visitor-badge.laobi.icu/badge?page_id=wahaha232.github.io" alt="Visitor count" loading="lazy">
+</p>
 
 </footer>
 
@@ -524,6 +528,9 @@ display.condition;
 document.getElementById("weather-animation")
 .textContent =
 display.icon;
+
+document.getElementById("weather-animation")
+.setAttribute("aria-label", "Current weather: "+display.condition);
 
 
 

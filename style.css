@@ -73,6 +73,10 @@ text-align:center;
 font-size:1.5em;
 }
 
+.visitor-counter{
+margin-top:10px;
+}
+
 /* ---- index.html ---- */
 
 .content-wrapper{
@@ -125,6 +129,9 @@ font-size:1.5em;
 font-weight:bold;
 color:white;
 text-shadow:1px 1px 3px black;
+background:rgba(0,0,0,.55);
+border-radius:12px;
+padding:1.5em;
 }
 
 .info a{
