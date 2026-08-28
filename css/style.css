@@ -221,18 +221,6 @@ a {
   color: var(--dark);
 }
 
-.featured__viewall {
-  color: var(--blue);
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  transition: color 0.15s ease;
-}
-
-.featured__viewall:hover {
-  color: var(--accent);
-}
-
 /* ═══════════════════════════════════════════════════════════════
    遊戲卡片：縮圖 + 名稱/說明/按鈕
    ═══════════════════════════════════════════════════════════════ */
