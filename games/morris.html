@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Nine Men's Morris - Play Free | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Nine Men's Morris — place, slide and fly your pieces to form mills and capture the opponent. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Nine Men's Morris - Play Free | Mindboard Games" />
+  <meta property="og:description" content="Play free online Nine Men's Morris — form mills and capture the opponent's pieces." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/morris.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/morris.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>⚫⚪ Nine Men's Morris</h1>
+      <p>Play Free Online · Two Players</p>
+    </header>
+
+    <div class="bg-status" id="mo-status">Black to place a piece</div>
+    <div class="mo-pile">
+      <span id="mo-pile-b">Black to place: 9</span>
+      <span id="mo-pile-w">White to place: 9</span>
+    </div>
+
+    <div class="mo-board-wrap" id="mo-board-wrap">
+      <svg id="mo-lines" aria-hidden="true"></svg>
+    </div>
+
+    <div class="bg-controls">
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+      <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+    </div>
+
+    <div class="ad-slot ad-slot--rect">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Nine Men's Morris</h2>
+      <ul>
+        <li><strong>Placing phase:</strong> each player has 9 pieces. Take turns placing one on any empty point.</li>
+        <li>Line up 3 of your own pieces in a row along one of the board's lines (a "mill") and you immediately remove one of the opponent's pieces — pieces already in one of <em>their</em> mills are safe unless every one of their pieces is in a mill.</li>
+        <li><strong>Moving phase:</strong> once all 18 pieces are placed, slide a piece to an empty point connected to it by a line. Forming a mill by moving also lets you remove a piece.</li>
+        <li><strong>Flying:</strong> when you're down to exactly 3 pieces, you may move any piece to any empty point, not just an adjacent one.</li>
+        <li>You win by reducing the opponent to 2 pieces, or by leaving them with no legal move on their turn.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/morris.js"></script>
+  <script src="../js/morris-ui.js"></script>
+</body>
+</html>

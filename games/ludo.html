@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Ludo - Play Free | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Ludo — roll the dice, race your tokens around the board, and get all four home first. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Ludo - Play Free | Mindboard Games" />
+  <meta property="og:description" content="Play free online Ludo — roll the dice and race your tokens home." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/ludo.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/ludo.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>🎲 Ludo</h1>
+      <p>Play Free Online · Two Players (Red vs Yellow)</p>
+    </header>
+
+    <div class="lu-layout">
+      <div class="lu-main">
+        <div class="bg-status" id="lu-status">Red to roll</div>
+        <div class="lu-board-wrap" id="lu-board-wrap" aria-label="Ludo board"></div>
+        <div class="bg-controls">
+          <button type="button" class="btn-new" id="btn-new">New Game</button>
+          <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+        </div>
+      </div>
+
+      <aside class="lu-side">
+        <div class="lu-dice-panel">
+          <div>Last roll</div>
+          <div class="lu-die" id="lu-die">–</div>
+          <button type="button" class="lu-roll-btn" id="lu-roll">🎲 Roll Dice</button>
+          <div class="lu-event" id="lu-event"></div>
+        </div>
+
+        <div class="lu-yard">
+          <h3>🔴 Red in yard</h3>
+          <div class="lu-yard-tokens" id="lu-yard-red"></div>
+        </div>
+        <div class="lu-yard">
+          <h3>🟡 Yellow in yard</h3>
+          <div class="lu-yard-tokens" id="lu-yard-yellow"></div>
+        </div>
+
+        <div class="ad-slot ad-slot--rect">
+          <span class="ad-slot__label">Advertisement</span>
+        </div>
+      </aside>
+    </div>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Ludo</h2>
+      <ul>
+        <li>Each player has 4 tokens waiting in their yard. Roll a 6 to bring one out onto the board, landing on your own start square (a safe square, shown highlighted).</li>
+        <li>On any other roll, move one of your tokens already on the board forward that many squares around the shared track.</li>
+        <li>Land exactly on an opponent's token on a non-safe square and you send it back to their yard.</li>
+        <li>Rolling a 6 earns an extra roll — but three 6s in a row forfeits your turn.</li>
+        <li>Once a token completes the lap, it turns into your own 6-square home stretch — you must roll the <em>exact</em> number to bring it all the way home.</li>
+        <li>First player to get all 4 tokens home wins.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/ludo.js"></script>
+  <script src="../js/ludo-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Dominoes - Play Free | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Dominoes (double-six) — match the ends, draw when you're stuck, and race to empty your hand. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Dominoes - Play Free | Mindboard Games" />
+  <meta property="og:description" content="Play free online Dominoes (double-six) — match the ends and race to empty your hand." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/dominoes.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/dominoes.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>🁫 Dominoes</h1>
+      <p>Play Free Online · Two Players (double-six set)</p>
+    </header>
+
+    <div class="bg-status" id="dm-status">Player 1 to play</div>
+
+    <div class="dm-opponent-count" id="dm-opponent-count"></div>
+    <div class="dm-board">
+      <div class="dm-line" id="dm-line"></div>
+    </div>
+    <div class="dm-dropzones" id="dm-dropzones"></div>
+
+    <div class="dm-hand-panel">
+      <h3 id="dm-hand-title">Player 1's hand</h3>
+      <div class="dm-hand" id="dm-hand"></div>
+    </div>
+
+    <div class="bg-controls">
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+      <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+      <button type="button" id="dm-draw">Draw (<span id="dm-boneyard-count">14</span> left)</button>
+    </div>
+
+    <div class="ad-slot ad-slot--rect">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Dominoes</h2>
+      <ul>
+        <li>Each player starts with 7 tiles from a double-six set (28 tiles total); the rest form the draw pile (boneyard).</li>
+        <li>On your turn, play a tile from your hand onto either end of the line so that one of its numbers matches the exposed number at that end. Tap a tile, then choose which end if more than one is possible.</li>
+        <li>If you have no playable tile, draw from the boneyard until you can play — or until it runs out.</li>
+        <li>Only your own hand is shown; your opponent's tiles stay hidden until they're played, just like a real game.</li>
+        <li>First to play their last tile wins. If both players get stuck with an empty boneyard, whoever holds the fewest total pips wins.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/dominoes.js"></script>
+  <script src="../js/dominoes-ui.js"></script>
+</body>
+</html>

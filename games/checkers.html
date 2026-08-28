@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Checkers - Play Free Draughts | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Checkers (Draughts) — mandatory captures, multi-jumps and king promotion, fully supported. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Checkers - Play Free Draughts | Mindboard Games" />
+  <meta property="og:description" content="Play free online Checkers (Draughts) — mandatory captures, multi-jumps and king promotion, fully supported." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/checkers.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>⛃ Checkers</h1>
+      <p>Play Free Online · Two Players</p>
+    </header>
+
+    <div class="bg-layout">
+      <div class="bg-main">
+        <div class="bg-status" id="checkers-status">Black to move</div>
+        <div class="bg-board" id="checkers-board" role="grid" aria-label="Checkers board"></div>
+        <div class="bg-controls">
+          <button type="button" class="btn-new" id="btn-new">New Game</button>
+          <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+        </div>
+      </div>
+
+      <aside class="bg-side">
+        <div class="bg-score">
+          <h2>Pieces left</h2>
+          <div class="bg-score__row"><span>⛃ Black</span><span id="checkers-score-b">12</span></div>
+          <div class="bg-score__row"><span>⛁ White</span><span id="checkers-score-w">12</span></div>
+        </div>
+
+        <div class="ad-slot ad-slot--rect">
+          <span class="ad-slot__label">Advertisement</span>
+        </div>
+      </aside>
+    </div>
+
+    <p class="game-note">
+      Black moves first. Select a piece, then tap a highlighted square to move. Capturing is
+      mandatory whenever it's available, and a piece that can keep jumping must keep jumping.
+      Reach the far row to crown a king.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Checkers</h2>
+      <ul>
+        <li>Each side starts with 12 pieces on the dark squares of the three rows closest to them. Black moves first.</li>
+        <li>Regular pieces ("men") move one square diagonally forward only. To capture, jump diagonally over an adjacent opposing piece into the empty square beyond it — the jumped piece is removed.</li>
+        <li>Capturing is mandatory whenever it's available: if any of your pieces can jump, you must play a jump instead of a quiet move. If a piece can keep jumping after landing, it must keep going in the same turn.</li>
+        <li>Reach the farthest row and your piece is crowned a <strong>king</strong>, which can move and jump diagonally both forward and backward. Landing on the crowning row always ends your turn there, even if another jump would technically be possible.</li>
+        <li>You win when your opponent has no pieces left, or no legal move on their turn.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/checkers.js"></script>
+  <script src="../js/checkers-ui.js"></script>
+</body>
+</html>

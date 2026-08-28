@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Battleship - Play Free | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Classic Battleship — fire on the grid, sink the enemy fleet. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Battleship - Play Free | Mindboard Games" />
+  <meta property="og:description" content="Play free online Classic Battleship — fire on the grid, sink the enemy fleet." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/battleship.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/battleship.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>🚢 Classic Battleship</h1>
+      <p>Play Free Online · Two Players (pass and play)</p>
+    </header>
+
+    <div class="bg-status" id="bs-status">Player 1 to fire</div>
+
+    <div class="bs-grids" id="bs-grids">
+      <div class="bs-transition" id="bs-transition">
+        <p id="bs-transition-text">Pass the device to Player 1, then tap Ready.</p>
+        <button type="button" id="bs-transition-ready">I'm ready</button>
+      </div>
+      <div class="bs-grid-panel">
+        <h2 id="bs-own-title">Your fleet</h2>
+        <div class="bs-grid" id="bs-own-grid" aria-label="Your fleet"></div>
+      </div>
+      <div class="bs-grid-panel">
+        <h2 id="bs-enemy-title">Enemy waters — click to fire</h2>
+        <div class="bs-grid" id="bs-enemy-grid" aria-label="Enemy waters"></div>
+      </div>
+    </div>
+
+    <div class="bg-controls">
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+      <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+    </div>
+
+    <div class="ad-slot ad-slot--rect">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Battleship</h2>
+      <ul>
+        <li>Each player's 5 ships (lengths 5, 4, 3, 3, 2) are placed randomly at the start of the game.</li>
+        <li>Players alternate turns firing at a cell on the opponent's grid (right-hand board). A behind-the-scenes screen hides the boards between turns — pass the device and tap Ready when it's your turn.</li>
+        <li>Red means a hit, white means a miss. Once every cell of a ship has been hit, it's sunk.</li>
+        <li>The first player to sink the opponent's entire fleet wins.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/battleship.js"></script>
+  <script src="../js/battleship-ui.js"></script>
+</body>
+</html>

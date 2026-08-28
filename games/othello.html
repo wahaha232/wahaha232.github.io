@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Othello / Reversi - Play Free | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Othello (Reversi) — classic disc-flipping strategy on an 8x8 board. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Othello / Reversi - Play Free | Mindboard Games" />
+  <meta property="og:description" content="Play free online Othello (Reversi) — classic disc-flipping strategy on an 8x8 board." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/othello.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>⚫⚪ Othello / Reversi</h1>
+      <p>Play Free Online · Two Players</p>
+    </header>
+
+    <div class="bg-layout">
+      <div class="bg-main">
+        <div class="bg-status" id="othello-status">Black to move</div>
+        <div class="bg-board" id="othello-board" role="grid" aria-label="Othello board"></div>
+        <div class="bg-controls">
+          <button type="button" class="btn-new" id="btn-new">New Game</button>
+          <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+        </div>
+      </div>
+
+      <aside class="bg-side">
+        <div class="bg-score">
+          <h2>Score</h2>
+          <div class="bg-score__row"><span>⚫ Black</span><span id="othello-score-b">2</span></div>
+          <div class="bg-score__row"><span>⚪ White</span><span id="othello-score-w">2</span></div>
+        </div>
+
+        <div class="ad-slot ad-slot--rect">
+          <span class="ad-slot__label">Advertisement</span>
+        </div>
+      </aside>
+    </div>
+
+    <p class="game-note">
+      Black moves first. Click a highlighted square to place a disc and flip every bracketed
+      opponent line. If you have no legal move, your turn is skipped automatically.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Othello / Reversi</h2>
+      <ul>
+        <li>The game starts with 2 discs of each color in the center of the 8×8 board. Black always moves first.</li>
+        <li>You may only play on a square that "brackets" at least one straight line of the opponent's discs — meaning your new disc and an existing disc of yours trap one or more opposing discs between them, in a row, column or diagonal.</li>
+        <li>Every opposing disc trapped in a bracketed line flips to your color the moment you play.</li>
+        <li>If you have no legal move on your turn, it's skipped automatically and play passes to your opponent.</li>
+        <li>The game ends when neither player has a legal move anywhere on the board — usually when it's full. Whoever has the most discs of their color wins; equal counts is a draw.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/othello.js"></script>
+  <script src="../js/othello-ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Snakes & Ladders - Play Free | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Snakes & Ladders — roll the dice, climb ladders, dodge snakes, and race to square 100. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Snakes & Ladders - Play Free | Mindboard Games" />
+  <meta property="og:description" content="Play free online Snakes & Ladders — roll the dice and race to square 100." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/snakes-ladders.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/snakes-ladders.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>🐍🪜 Snakes & Ladders</h1>
+      <p>Play Free Online · Two Players</p>
+    </header>
+
+    <div class="sl-layout">
+      <div class="sl-main">
+        <div class="bg-status" id="sl-status">Player 1 to roll</div>
+        <div class="sl-board" id="sl-board" aria-label="Snakes and ladders board"></div>
+        <div class="bg-controls">
+          <button type="button" class="btn-new" id="btn-new">New Game</button>
+          <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+        </div>
+      </div>
+
+      <aside class="sl-side">
+        <div class="sl-dice-panel">
+          <div>Last roll</div>
+          <div class="sl-die" id="sl-die">–</div>
+          <button type="button" class="sl-roll-btn" id="sl-roll">🎲 Roll Dice</button>
+          <div class="sl-event" id="sl-event"></div>
+        </div>
+
+        <div class="ad-slot ad-slot--rect">
+          <span class="ad-slot__label">Advertisement</span>
+        </div>
+      </aside>
+    </div>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Snakes & Ladders</h2>
+      <ul>
+        <li>Players take turns rolling a single die and moving their token forward that many squares, starting from square 1.</li>
+        <li>Land on the base of a <strong>ladder</strong> (blue outline) and you climb straight up to the square at its top.</li>
+        <li>Land on the head of a <strong>snake</strong> (red outline) and you slide down to the square at its tail.</li>
+        <li>Rolling a 6 earns an extra roll. If a roll would take you past square 100, it's wasted — you stay put and play passes to the other player.</li>
+        <li>The first player to land on square 100 <em>exactly</em> wins.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/snakes-ladders.js"></script>
+  <script src="../js/snakes-ladders-ui.js"></script>
+</body>
+</html>

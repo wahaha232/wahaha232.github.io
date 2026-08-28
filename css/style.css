@@ -1,0 +1,617 @@
+/* ═══════════════════════════════════════════════════════════════
+   Mindboard Games — Classic Board Games Portal
+   定位：Free Online Classic Board Games Portal
+   風格：Friendly / Casual / Fun / Retro / Family Games / Instant Play
+   色系：#F7F5EF 米白底 + #E7B928 黃 + #5B8DEF 藍 + #E96B5A 橘 + #62A66F 綠
+   字體：Fredoka（圓潤友善）
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --yellow: #e7b928;
+  --yellow-soft: #fdf0c8;
+  --bg: #f7f5ef;
+  --dark: #252525;
+  --blue: #5b8def;
+  --blue-soft: #dbe7fd;
+  --accent: #e96b5a;
+  --green: #62a66f;
+  --text-muted: #8a8577;
+  --card-bg: #ffffff;
+  --border-soft: #efe9da;
+  --radius: 16px;
+  --shadow: 0 2px 8px rgba(37, 37, 37, 0.06);
+  --shadow-hover: 0 14px 28px rgba(37, 37, 37, 0.16);
+  --header-height: 60px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Fredoka", "Segoe UI", system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--blue);
+}
+
+.page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 44px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Header：低高度、Sticky、簡單活潑
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-height);
+  background: #ffffff;
+  border-bottom: 2px solid var(--border-soft);
+  box-shadow: 0 1px 4px rgba(37, 37, 37, 0.04);
+}
+
+.site-header__inner {
+  max-width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.site-logo__icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.site-logo__accent {
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.site-nav__link {
+  padding: 8px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 15px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.site-nav__link:hover {
+  background: var(--yellow-soft);
+  color: #8a6500;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background: var(--yellow-soft);
+  cursor: pointer;
+}
+
+.nav-toggle__bar {
+  display: block;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--dark);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   簡短標題（非大型 Hero）
+   ═══════════════════════════════════════════════════════════════ */
+
+.intro {
+  text-align: center;
+  padding: 6px 0 18px;
+}
+
+.intro__title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.3px;
+}
+
+.intro__sub {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   廣告版位（Google AdSense 預留）
+   EN: Reserved AdSense units. All slots use FIXED heights to prevent
+       layout shift (CLS). Units are always placed OUTSIDE the game area.
+   中文：此為 Google AdSense 預留版位。所有版位皆為固定高度以避免
+         Layout Shift；版位一律位於遊戲區域「外部」，不遮蓋棋盤/卡片。
+   ═══════════════════════════════════════════════════════════════ */
+
+.ad-slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  margin: 22px auto;
+  border: 2px dashed #e0d9c6;
+  border-radius: 12px;
+  background: #fdfcf7;
+}
+
+/* 版位尺寸變體（對應 AdSense 的 ad-format / ad-slot 尺寸） */
+.ad-slot--leaderboard { height: 90px;  max-width: 728px; } /* 728×90 Leaderboard */
+.ad-slot--rect        { height: 250px; max-width: 300px; } /* 300×250 矩形 */
+.ad-slot--banner      { height: 100px; max-width: 320px; } /* 320×100 手機橫幅 */
+
+.ad-slot__label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c6bfa9;
+}
+
+/* AdSense 啟用後，放在版位內的 <ins class="adsbygoogle"> 顯示區 */
+.ad-slot .adsbygoogle {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   遊戲清單：3×3 網格
+   ═══════════════════════════════════════════════════════════════ */
+
+.game-section {
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   遊戲卡片：圖片 + 名稱 + Play / Coming Soon
+   ═══════════════════════════════════════════════════════════════ */
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--dark);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.game-card:hover,
+.game-card:focus-visible {
+  transform: translateY(-5px);
+  border-color: var(--yellow);
+  box-shadow: var(--shadow-hover);
+  outline: none;
+}
+
+.game-card__thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f1eddf;
+}
+
+.game-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.game-card:hover .game-card__thumb img,
+.game-card:focus-visible .game-card__thumb img {
+  transform: scale(1.03);
+}
+
+/* 尚未開發的遊戲：圖片稍微降低透明度，但保持好看 */
+.game-card--soon .game-card__thumb img {
+  opacity: 0.82;
+}
+
+/* Coming Soon 徽章 */
+.game-card__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--dark);
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.game-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+}
+
+.game-card__name {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.game-card__lock {
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+/* 可玩遊戲（目前只有 Mini Chess）：金色邊框 + PLAY NOW 按鈕 */
+.game-card--active {
+  border-color: var(--yellow);
+  box-shadow: 0 4px 14px rgba(231, 185, 40, 0.28);
+}
+
+.game-card--active:hover,
+.game-card--active:focus-visible {
+  border-color: #d9a821;
+}
+
+.game-card__playbtn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.game-card:hover .game-card__playbtn,
+.game-card:focus-visible .game-card__playbtn {
+  transform: translateX(4px);
+  background: #d9a821;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Coming Soon 彈窗
+   ═══════════════════════════════════════════════════════════════ */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(37, 37, 37, 0.45);
+}
+
+.modal.is-hidden {
+  display: none;
+}
+
+.modal__box {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  padding: 34px 26px 28px;
+  background: #ffffff;
+  border: 3px solid var(--yellow);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(37, 37, 37, 0.3);
+  text-align: center;
+}
+
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  background: var(--yellow-soft);
+  color: var(--dark);
+}
+
+.modal__icon {
+  margin: 0 0 8px;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.modal__game {
+  margin: 8px 0 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.modal__text {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Footer
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-footer {
+  margin-top: 36px;
+  padding: 30px 20px 22px;
+  border-top: 3px solid var(--yellow);
+  background: #f1ede1;
+}
+
+.site-footer__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.site-footer__name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.site-footer__tag {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+
+.site-footer__nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.site-footer__nav a:hover {
+  color: var(--accent);
+}
+
+.site-footer__copy {
+  max-width: 1080px;
+  margin: 20px auto 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   遊戲頁共用樣式（games/*.html）
+   ═══════════════════════════════════════════════════════════════ */
+
+.page--narrow {
+  max-width: 900px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--blue);
+  text-decoration: none;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.back-link:hover {
+  color: var(--accent);
+  transform: translateX(-4px);
+}
+
+.game-header {
+  margin-bottom: 22px;
+  padding: 18px;
+  background: #ffffff;
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.game-header p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* About / Privacy 內容卡片 */
+.content-card {
+  background: #ffffff;
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.content-card h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.content-card h2 {
+  margin: 26px 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.content-card p {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4d4940;
+}
+
+.content-card ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4d4940;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px 20px 16px;
+    background: #ffffff;
+    border-bottom: 2px solid var(--border-soft);
+    box-shadow: 0 12px 20px rgba(37, 37, 37, 0.12);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav__link {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .page {
+    padding: 20px 14px 36px;
+  }
+
+  .intro__title {
+    font-size: 32px;
+  }
+
+  .game-card__meta {
+    padding: 10px 12px;
+  }
+
+  .game-card__name {
+    font-size: 15px;
+  }
+
+  .game-card__playbtn {
+    padding: 7px 11px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

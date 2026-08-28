@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════════════════
+   Battleship — 雙棋盤 + 換手過場畫面樣式
+   ═══════════════════════════════════════════════════════════════ */
+
+.bs-grids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  position: relative;
+}
+
+.bs-grid-panel h2 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.bs-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: min(80vw, 320px);
+  aspect-ratio: 1 / 1;
+  border: 3px solid var(--dark, #252525);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #cfe8f7;
+}
+
+.bs-cell {
+  position: relative;
+  border: 1px solid rgba(37, 37, 37, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  font-size: 14px;
+}
+
+.bs-cell--targetable {
+  cursor: pointer;
+}
+
+.bs-cell--targetable:hover {
+  background: rgba(91, 141, 239, 0.25);
+}
+
+.bs-cell--ship {
+  background: #8a8577;
+}
+
+.bs-cell--hit {
+  background: var(--accent, #e96b5a);
+  color: #ffffff;
+}
+
+.bs-cell--miss {
+  background: #ffffff;
+}
+
+.bs-cell--sunk {
+  background: var(--dark, #252525);
+  color: #ffffff;
+}
+
+.bs-transition.is-hidden {
+  display: none;
+}
+
+.bs-transition {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(37, 37, 37, 0.92);
+  border-radius: 12px;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+.bs-transition p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.bs-transition button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: var(--yellow, #e7b928);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .bs-grids {
+    flex-direction: column;
+    align-items: center;
+  }
+}

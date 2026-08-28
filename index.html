@@ -4,92 +4,104 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mindboard Games - Free Online Games</title>
+  <title>Mindboard Games - Free Online Board Games</title>
   <meta
     name="description"
-    content="Mindboard Games - a free online games portal. Play Classic Board Games (Ludo, Chess, Checkers, Backgammon and more) instantly in your browser. No download, no sign-up."
+    content="Play classic board games online for free. Enjoy Chess and discover more classic games coming soon at Mindboard Games."
   />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mindboard Games" />
-  <meta property="og:title" content="Mindboard Games - Free Online Games" />
-  <meta property="og:description" content="Free online classic board games - play instantly in your browser." />
+  <meta property="og:title" content="Mindboard Games - Free Online Board Games" />
+  <meta
+    property="og:description"
+    content="Play classic board games online for free. Enjoy Chess and discover more classic games coming soon."
+  />
   <meta property="og:url" content="https://wahaha232.github.io/" />
-  <meta property="og:image" content="https://wahaha232.github.io/boardgames/assets/games/chess.webp" />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/chess.webp" />
   <meta name="theme-color" content="#F7F5EF" />
 
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
+  <!-- Fredoka：圓潤、友善、休閒的字體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="portal.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Google AdSense（與子站共用 publisher ID） -->
+  <!-- ═══════════════════════════════════════════════════════════
+       Google AdSense（已啟用：ca-pub-1512317781873771）
+       EN: AdSense loader is now active with the real publisher ID.
+       中文：AdSense 載入腳本已啟用（使用帳戶真實 publisher ID）。
+       ═══════════════════════════════════════════════════════════ -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- 頂部導覽列 -->
+  <!-- 頂部導覽列：低高度、Sticky -->
   <header class="site-header">
     <div class="site-header__inner">
-      <a class="logo" href="index.html" aria-label="Mindboard Games — home">
-        <span aria-hidden="true">🎮</span>
-        <span>Mindboard <span class="logo__accent">Games</span></span>
+      <a class="site-logo" href="index.html" aria-label="Mindboard Games — home">
+        <span class="site-logo__icon" aria-hidden="true">🎮</span>
+        <span class="site-logo__text">Mindboard <span class="site-logo__accent">Games</span></span>
       </a>
 
-      <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="https://wahaha232.github.io/boardgames/">Games</a>
-        <a href="https://wahaha232.github.io/boardgames/about.html">About</a>
-        <a href="shibuya.html">Tokyo Cam</a>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="#games">Games</a>
+        <a class="site-nav__link" href="about.html">About</a>
       </nav>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle menu">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
     </div>
   </header>
 
   <main class="page">
 
-    <!-- 簡短標題 -->
+    <!-- 簡短標題（不是大型 Hero） -->
     <section class="intro">
-      <h1 class="intro__title">Mindboard Games</h1>
-      <p class="intro__tag">Free Online Games</p>
-      <p class="intro__sub">Classic games. Simple fun. Play instantly.</p>
+      <h1 class="intro__title">Classic Board Games</h1>
+      <p class="intro__sub">Play classic games online. Simple, fun, and free.</p>
     </section>
 
-    <!-- ★ 主要入口：Classic Board Games → 進入 boardgames 遊戲站 -->
-    <section class="featured" aria-label="Featured game category">
-      <a class="feature-card" href="https://wahaha232.github.io/boardgames/">
-        <span class="feature-card__icon" aria-hidden="true">🎲</span>
-        <span class="feature-card__name">Classic Board Games</span>
-        <span class="feature-card__desc">Ludo · Chess · Checkers · Backgammon &amp; more — 9 games to play now.</span>
-        <span class="feature-card__btn">▶ PLAY NOW</span>
-      </a>
-    </section>
-
-    <!-- 其他分類（預留） -->
-    <section class="cats" aria-label="More game categories coming soon">
-      <div class="cat">
-        <span class="cat__icon" aria-hidden="true">🧩</span>
-        <span class="cat__name">Puzzle Games</span>
-        <span class="cat__soon">Coming soon</span>
-      </div>
-      <div class="cat">
-        <span class="cat__icon" aria-hidden="true">🕹️</span>
-        <span class="cat__name">Arcade Games</span>
-        <span class="cat__soon">Coming soon</span>
-      </div>
-      <div class="cat">
-        <span class="cat__icon" aria-hidden="true">🃏</span>
-        <span class="cat__name">Card Games</span>
-        <span class="cat__soon">Coming soon</span>
-      </div>
-    </section>
-
-    <!-- 廣告版位（固定高度，避免 Layout Shift） -->
-    <div class="ad-slot">
+    <!-- ═══════════════════════════════════════════════════════════
+         AdSense 版位 1：Leaderboard（728×90）
+         EN: To activate, paste your <ins class="adsbygoogle"> snippet
+             (from your AdSense account) inside the div below and set the
+             data-ad-client / data-ad-slot values.
+         中文：啟用時，把 AdSense 後台給你的 <ins class="adsbygoogle">
+               程式碼貼進下方 div 內，並填上 data-ad-client / data-ad-slot。
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="ad-slot ad-slot--leaderboard">
       <span class="ad-slot__label">Advertisement</span>
+      <!--
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-1512317781873771"
+           data-ad-slot="0000000000"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      -->
+    </div>
+
+    <!-- 9 款遊戲卡片：由 js/main.js 依照 js/games.js 產生 -->
+    <section id="games" class="game-section">
+      <div id="game-grid" class="game-grid"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         AdSense 版位 2：Leaderboard（728×90，遊戲清單下方）
+         中文：啟用時貼上你的 <ins class="adsbygoogle"> 程式碼。
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+      <!-- 啟用後貼上你的 <ins class="adsbygoogle"> 程式碼 -->
     </div>
 
   </main>
@@ -97,21 +109,37 @@
   <!-- 簡單 Footer -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <div>
+      <div class="site-footer__brand">
         <p class="site-footer__name">🎮 Mindboard Games</p>
         <p class="site-footer__tag">Free online classic games. Play instantly in your browser.</p>
       </div>
-      <div class="site-footer__links">
-        <a href="https://wahaha232.github.io/boardgames/">Games</a>
-        <a href="shibuya.html">Tokyo Live Cam</a>
-        <a href="https://wahaha232.github.io/boardgames/privacy.html">Privacy</a>
-      </div>
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="#games">Games</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="shibuya/index.html">Tokyo Live Cam</a>
+        <a href="mailto:hello@mindboardgames.com">Contact</a>
+      </nav>
     </div>
-    <p class="site-footer__copy">© <span id="year"></span> Mindboard Games</p>
+    <p class="site-footer__copy">© 2026 Mindboard Games</p>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- Coming Soon 提示彈窗（尚未開發的遊戲） -->
+  <div class="modal is-hidden" id="soon-modal" role="dialog" aria-modal="true" aria-labelledby="soon-title">
+    <div class="modal__box">
+      <button class="modal__close" id="soon-close" type="button" aria-label="Close">×</button>
+      <p class="modal__icon" aria-hidden="true">🔒</p>
+      <h2 class="modal__title" id="soon-title">Coming Soon</h2>
+      <p class="modal__game" id="soon-name">Ludo</p>
+      <p class="modal__text">This game is currently under development.</p>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="noscript-note">Please enable JavaScript to see the game list.</p>
+  </noscript>
+
+  <script src="js/games.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

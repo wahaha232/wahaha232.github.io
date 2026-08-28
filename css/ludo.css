@@ -1,0 +1,189 @@
+/* ═══════════════════════════════════════════════════════════════
+   Ludo — 簡化為環狀公共跑道的棋盤樣式
+   ═══════════════════════════════════════════════════════════════ */
+
+.lu-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.lu-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lu-board-wrap {
+  position: relative;
+  width: min(90vw, 460px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: #eef0e6;
+  border: 3px solid var(--dark, #252525);
+}
+
+.lu-cell {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(37, 37, 37, 0.35);
+  background: #ffffff;
+}
+
+.lu-cell--safe {
+  background: #fdf0c8;
+  border-color: var(--yellow, #e7b928);
+}
+
+.lu-home-cell {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  border: 1px solid rgba(37, 37, 37, 0.35);
+}
+
+.lu-home-cell--red {
+  background: #f9d5cd;
+}
+
+.lu-home-cell--yellow {
+  background: #fdf0c8;
+}
+
+.lu-home-cell--blue {
+  background: #dbe7fd;
+}
+
+.lu-home-cell--green {
+  background: #dcefd0;
+}
+
+.lu-token {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  cursor: default;
+  padding: 0;
+}
+
+.lu-token--red {
+  background: var(--accent, #e96b5a);
+}
+
+.lu-token--yellow {
+  background: var(--yellow, #e7b928);
+}
+
+.lu-token--blue {
+  background: var(--blue, #5b8def);
+}
+
+.lu-token--green {
+  background: #4caf50;
+}
+
+.lu-token--movable {
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(91, 141, 239, 0.55);
+}
+
+.lu-token:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 1px;
+}
+
+.lu-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+}
+
+.lu-side {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lu-yard {
+  padding: 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid var(--border-soft, #efe9da);
+}
+
+.lu-yard h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.lu-yard-tokens {
+  display: flex;
+  gap: 8px;
+}
+
+.lu-yard-tokens .lu-token {
+  position: static;
+  transform: none;
+}
+
+.lu-dice-panel {
+  padding: 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid var(--border-soft, #efe9da);
+  text-align: center;
+}
+
+.lu-die {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.lu-roll-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: var(--accent, #e96b5a);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lu-roll-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lu-event {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .lu-layout {
+    flex-direction: column;
+  }
+  .lu-side {
+    flex-basis: auto;
+    width: min(94vw, 520px);
+    margin: 0 auto;
+  }
+}

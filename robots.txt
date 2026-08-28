@@ -1,7 +1,7 @@
-# Shibuya Scramble Crossing Live Cam
+# robots.txt for Mindboard Games (https://wahaha232.github.io/)
+# Site is fully public — allow all crawlers.
 
 User-agent: *
-
 Allow: /
 
 Sitemap: https://wahaha232.github.io/sitemap.xml

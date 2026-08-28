@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Backgammon - Play Free | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play free online Backgammon — race your checkers home, hit blots, and bear off first. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Online Backgammon - Play Free | Mindboard Games" />
+  <meta property="og:description" content="Play free online Backgammon — race your checkers home and bear off first." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/backgammon.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/backgammon.css" />
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>🎯 Backgammon</h1>
+      <p>Play Free Online · Two Players (no doubling cube)</p>
+    </header>
+
+    <div class="bg-status" id="bg-status">White to roll</div>
+
+    <div class="bg-gm-dice" id="bg-dice"></div>
+    <div style="text-align:center; margin-bottom: 12px;">
+      <button type="button" class="btn-new" id="bg-roll">🎲 Roll</button>
+    </div>
+
+    <div class="bg-gm-board">
+      <div class="bg-gm-row bg-gm-row--top" id="bg-row-top"></div>
+      <div class="bg-gm-mid">
+        <span class="bg-gm-mid-item" id="bg-bar-w">Bar (white): 0</span>
+        <button type="button" class="bg-gm-mid-item" id="bg-off">Bear off</button>
+        <span class="bg-gm-mid-item" id="bg-bar-b">Bar (black): 0</span>
+      </div>
+      <div class="bg-gm-row bg-gm-row--bottom" id="bg-row-bottom"></div>
+    </div>
+
+    <div class="bg-gm-mid">
+      <span id="bg-off-w">White home: 0</span>
+      <span id="bg-off-b">Black home: 0</span>
+    </div>
+    <div class="sl-event" id="bg-event"></div>
+
+    <div class="bg-controls">
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+      <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+    </div>
+
+    <div class="ad-slot ad-slot--rect">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Backgammon</h2>
+      <ul>
+        <li>White moves counter-clockwise toward point 1 and bears off there; Black moves the opposite way toward point 24. Roll two dice each turn — doubles give you four moves of that number instead of two.</li>
+        <li>Tap one of your checkers, then tap a highlighted point to move it there using a matching die.</li>
+        <li>Landing on a point with a single opposing checker (a blot) sends it to the bar — that player must re-enter it before making any other move.</li>
+        <li>A point held by two or more opposing checkers is blocked and can't be landed on.</li>
+        <li>Once all 15 of your checkers are in your home board, you can start bearing them off. This version skips the doubling cube for simplicity.</li>
+        <li>First to bear off all 15 checkers wins.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <script src="../js/backgammon.js"></script>
+  <script src="../js/backgammon-ui.js"></script>
+</body>
+</html>

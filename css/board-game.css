@@ -1,0 +1,207 @@
+/* ═══════════════════════════════════════════════════════════════
+   共用棋盤遊戲樣式（Othello / Checkers 共用，比照 chess.css 的風格與
+   class 命名邏輯，但用通用前綴 bg- 避免跟 chess.css 衝突或誤用）
+   ═══════════════════════════════════════════════════════════════ */
+
+.bg-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.bg-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.bg-status {
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid var(--border-soft, #efe9da);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bg-status.is-over {
+  border-color: var(--yellow, #e7b928);
+  background: var(--yellow-soft, #fdf0c8);
+}
+
+.bg-board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: min(94vw, 520px);
+  aspect-ratio: 1 / 1;
+  border: 4px solid var(--dark, #252525);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-hover, 0 14px 28px rgba(37, 37, 37, 0.18));
+  background: #000;
+  user-select: none;
+  touch-action: manipulation;
+  margin: 0 auto;
+}
+
+.bg-square {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.bg-square.light {
+  background: #f0d9b5;
+}
+
+.bg-square.dark {
+  background: #b58863;
+}
+
+.bg-square:focus-visible {
+  outline: 3px solid var(--blue, #5b8def);
+  outline-offset: -3px;
+  z-index: 1;
+}
+
+.bg-square.selected {
+  background: #e7b928;
+}
+
+.bg-square.last {
+  background: rgba(231, 185, 40, 0.45);
+}
+
+.bg-square.legal::after {
+  content: "";
+  position: absolute;
+  width: 26%;
+  height: 26%;
+  border-radius: 50%;
+  background: rgba(37, 37, 37, 0.35);
+  pointer-events: none;
+}
+
+.bg-square.capture::after {
+  content: "";
+  position: absolute;
+  inset: 5%;
+  border: 3px solid rgba(233, 107, 90, 0.9);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Othello 棋子（實心圓盤） */
+.bg-disc {
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bg-disc.disc-b {
+  background: #252525;
+}
+
+.bg-disc.disc-w {
+  background: #ffffff;
+}
+
+/* Checkers 棋子（圓形棋子，king 有皇冠標記） */
+.bg-checker {
+  width: 76%;
+  height: 76%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(14px, 4vmin, 22px);
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.bg-checker.piece-b {
+  background: #3a3a3a;
+  color: var(--yellow, #e7b928);
+}
+
+.bg-checker.piece-w {
+  background: #f6f0e2;
+  color: var(--accent, #e96b5a);
+  border: 2px solid #d8cdb2;
+}
+
+.bg-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.bg-controls button {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bg-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover, 0 14px 28px rgba(37, 37, 37, 0.16));
+}
+
+.bg-controls .btn-new {
+  background: var(--yellow, #e7b928);
+  color: #ffffff;
+}
+
+.bg-controls .btn-undo {
+  background: var(--blue-soft, #dbe7fd);
+  color: var(--blue, #5b8def);
+}
+
+.bg-side {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bg-score {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid var(--border-soft, #efe9da);
+}
+
+.bg-score h2 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.bg-score__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .bg-layout {
+    flex-direction: column;
+  }
+  .bg-side {
+    flex-basis: auto;
+    width: min(94vw, 520px);
+    margin: 0 auto;
+  }
+}

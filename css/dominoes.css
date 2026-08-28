@@ -1,0 +1,108 @@
+/* ═══════════════════════════════════════════════════════════════
+   Dominoes — 骨牌接龍樣式
+   ═══════════════════════════════════════════════════════════════ */
+
+.dm-board {
+  min-height: 120px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 2px solid var(--border-soft, #efe9da);
+  margin-bottom: 16px;
+}
+
+.dm-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+}
+
+.dm-line__empty {
+  color: var(--text-muted, #8a8577);
+  font-size: 14px;
+}
+
+.dm-tile {
+  display: flex;
+  border: 2px solid var(--dark, #252525);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fdfaf3;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dm-tile__half {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dm-tile__half + .dm-tile__half {
+  border-left: 2px solid var(--dark, #252525);
+}
+
+.dm-line .dm-tile {
+  cursor: default;
+}
+
+.dm-hand-panel {
+  padding: 12px;
+  border-radius: 12px;
+  background: #fdf0c8;
+  border: 2px solid var(--yellow, #e7b928);
+  margin-bottom: 16px;
+}
+
+.dm-hand-panel h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.dm-hand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dm-tile--selected {
+  outline: 3px solid var(--blue, #5b8def);
+  outline-offset: 2px;
+}
+
+.dm-tile--unplayable {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dm-dropzones {
+  display: flex;
+  justify-content: space-between;
+  margin: -8px 0 8px;
+}
+
+.dm-dropzone {
+  padding: 8px 14px;
+  border: 2px dashed var(--blue, #5b8def);
+  border-radius: 8px;
+  background: var(--blue-soft, #dbe7fd);
+  color: var(--blue, #5b8def);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.dm-opponent-count {
+  text-align: center;
+  color: var(--text-muted, #8a8577);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
