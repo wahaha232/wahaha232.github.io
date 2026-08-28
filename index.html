@@ -63,15 +63,18 @@
 
   <main class="page page--shot">
 
-    <!-- 首頁設計圖（直接作為首頁主視覺） -->
-    <img
-      class="design-shot"
-      src="homepage.png"
-      usemap="#playhub-map"
-      alt="PlayHub homepage — WELCOME TO PLAYHUB, game categories and featured games: Chess, Checkers, Sudoku, Space Invaders, Solitaire, Quiz"
-      width="1536"
-      height="1024"
-    />
+    <!-- 首頁設計圖（直接作為首頁主視覺；Checkers 可玩，用 PLAY NOW 按鈕覆蓋圖上的 Coming Soon 字樣） -->
+    <div class="design-shot-wrap">
+      <img
+        class="design-shot"
+        src="homepage.png"
+        usemap="#playhub-map"
+        alt="PlayHub homepage — WELCOME TO PLAYHUB, game categories and featured games: Chess, Checkers, Sudoku, Space Invaders, Solitaire, Quiz"
+        width="1536"
+        height="1024"
+      />
+      <a class="overlay-play" href="games/checkers.html" title="Play Checkers — Classic Checkers Game">PLAY NOW</a>
+    </div>
 
     <!-- 設計圖上的互動熱區：點卡片進入對應遊戲（座標為 1536×1024 原圖座標） -->
     <map name="playhub-map" id="playhub-map">

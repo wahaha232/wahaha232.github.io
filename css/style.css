@@ -702,5 +702,37 @@ a {
   box-shadow: var(--shadow-hover);
 }
 
+/* 圖片容器：讓 PLAY NOW 覆蓋按鈕能隨圖片縮放對齊 */
+.design-shot-wrap {
+  position: relative;
+}
+
+/* 覆蓋在設計圖上的 PLAY NOW 按鈕（Checkers 卡片，座標對齊原圖 1536×1024） */
+.overlay-play {
+  position: absolute;
+  left: 21.2%;
+  top: 85.5%;
+  width: 13.4%;
+  height: 5.5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #1c9620;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(10px, 1.5vw, 17px);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.overlay-play:hover {
+  background: #15821a;
+  transform: scale(1.04);
+}
+
 
 
