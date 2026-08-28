@@ -1,1 +1,13 @@
+# PlayHub — Google AdSense authorization file
+#
+# EN: This file authorizes Google AdSense to serve ads on this domain.
+#     After your site is approved by AdSense, replace the placeholder line
+#     below with YOUR publisher ID, for example:
+#       google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
+#     (f08c47fec0942fa0 is Google's AdSense verification token — keep it.)
+#
+# 中文：此檔案用於宣告 AdSense 廣告授權。通過 AdSense 審核後，
+#       請把下方範例列改成你的 publisher ID（pub-XXXXXXXXXXXX），
+#       後面的 DIRECT, f08c47fec0942fa0 為 Google 官方驗證值，請保留。
+#
 google.com, pub-1512317781873771, DIRECT, f08c47fec0942fa0

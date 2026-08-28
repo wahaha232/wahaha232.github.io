@@ -4,22 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mindboard Games - Free Online Board Games</title>
+  <title>PlayHub - Free Online Games</title>
   <meta
     name="description"
-    content="Play classic board games online for free. Enjoy Chess and discover more classic games coming soon at Mindboard Games."
+    content="Play classic games online for free. Enjoy Chess and discover more classic games coming soon at PlayHub."
   />
 
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Mindboard Games" />
-  <meta property="og:title" content="Mindboard Games - Free Online Board Games" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="PlayHub - Free Online Games" />
   <meta
     property="og:description"
-    content="Play classic board games online for free. Enjoy Chess and discover more classic games coming soon."
+    content="Play classic games online for free. Enjoy Chess and discover more classic games coming soon."
   />
-  <meta property="og:url" content="https://wahaha232.github.io/" />
-  <meta property="og:image" content="https://wahaha232.github.io/assets/games/chess.webp" />
-  <meta name="theme-color" content="#F7F5EF" />
+  <meta property="og:url" content="https://wahaha232.github.io/boardgames/" />
+  <meta property="og:image" content="https://wahaha232.github.io/boardgames/assets/games/chess.webp" />
+  <meta name="theme-color" content="#0f57c4" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="sitemap" type="application/xml" href="sitemap.xml" />
@@ -33,19 +33,18 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        Google AdSense（已啟用：ca-pub-1512317781873771）
-       EN: AdSense loader is now active with the real publisher ID.
        中文：AdSense 載入腳本已啟用（使用帳戶真實 publisher ID）。
        ═══════════════════════════════════════════════════════════ -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- 頂部導覽列：低高度、Sticky -->
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="site-logo" href="index.html" aria-label="Mindboard Games — home">
+  <!-- 藍色 Header（圖片版首頁：僅導覽列，Hero 視覺已內建於圖片） -->
+  <header class="site-header site-header--slim">
+    <div class="site-header__bar">
+      <a class="site-logo" href="index.html" aria-label="PlayHub — home">
         <span class="site-logo__icon" aria-hidden="true">🎮</span>
-        <span class="site-logo__text">Mindboard <span class="site-logo__accent">Games</span></span>
+        <span class="site-logo__text">Play<span class="site-logo__accent">Hub</span></span>
       </a>
 
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
@@ -62,41 +61,19 @@
     </div>
   </header>
 
-  <main class="page">
+  <main class="page page--shot">
 
-    <!-- 簡短標題（不是大型 Hero） -->
-    <section class="intro">
-      <h1 class="intro__title">Classic Board Games</h1>
-      <p class="intro__sub">Play classic games online. Simple, fun, and free.</p>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         AdSense 版位 1：Leaderboard（728×90）
-         EN: To activate, paste your <ins class="adsbygoogle"> snippet
-             (from your AdSense account) inside the div below and set the
-             data-ad-client / data-ad-slot values.
-         中文：啟用時，把 AdSense 後台給你的 <ins class="adsbygoogle">
-               程式碼貼進下方 div 內，並填上 data-ad-client / data-ad-slot。
-         ═══════════════════════════════════════════════════════════ -->
-    <div class="ad-slot ad-slot--leaderboard">
-      <span class="ad-slot__label">Advertisement</span>
-      <!--
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-1512317781873771"
-           data-ad-slot="0000000000"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      -->
-    </div>
-
-    <!-- 9 款遊戲卡片：由 js/main.js 依照 js/games.js 產生 -->
-    <section id="games" class="game-section">
-      <div id="game-grid" class="game-grid"></div>
-    </section>
+    <!-- 首頁設計圖（直接作為首頁主視覺） -->
+    <img
+      class="design-shot"
+      src="homepage.png"
+      alt="PlayHub homepage — WELCOME TO PLAYHUB, game categories and featured games: Chess, Checkers, Sudoku, Space Invaders, Solitaire, Quiz"
+      width="1536"
+      height="1024"
+    />
 
     <!-- ═══════════════════════════════════════════════════════════
-         AdSense 版位 2：Leaderboard（728×90，遊戲清單下方）
+         AdSense 版位：Leaderboard（728×90）
          中文：啟用時貼上你的 <ins class="adsbygoogle"> 程式碼。
          ═══════════════════════════════════════════════════════════ -->
     <div class="ad-slot ad-slot--leaderboard">
@@ -106,22 +83,17 @@
 
   </main>
 
-  <!-- 簡單 Footer -->
+  <!-- 深藍 Footer -->
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <div class="site-footer__brand">
-        <p class="site-footer__name">🎮 Mindboard Games</p>
-        <p class="site-footer__tag">Free online classic games. Play instantly in your browser.</p>
-      </div>
+      <p class="site-footer__brand">© 2025 PlayHub. All rights reserved.</p>
       <nav class="site-footer__nav" aria-label="Footer navigation">
-        <a href="#games">Games</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="shibuya/index.html">Tokyo Live Cam</a>
-        <a href="mailto:hello@mindboardgames.com">Contact</a>
+        <a href="about.html">About Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html">Terms of Service</a>
+        <a href="mailto:hello@playhubgames.com">Contact</a>
       </nav>
     </div>
-    <p class="site-footer__copy">© 2026 Mindboard Games</p>
   </footer>
 
   <!-- Coming Soon 提示彈窗（尚未開發的遊戲） -->
@@ -136,10 +108,7 @@
   </div>
 
   <noscript>
-    <p class="noscript-note">Please enable JavaScript to see the game list.</p>
+    <p class="noscript-note">PlayHub — Free Online Games.</p>
   </noscript>
-
-  <script src="js/games.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>

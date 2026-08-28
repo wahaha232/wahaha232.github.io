@@ -1,7 +1,7 @@
-# robots.txt for Mindboard Games (https://wahaha232.github.io/)
+# robots.txt for PlayHub (https://wahaha232.github.io/boardgames/)
 # Site is fully public — allow all crawlers.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://wahaha232.github.io/sitemap.xml
+Sitemap: https://wahaha232.github.io/boardgames/sitemap.xml
