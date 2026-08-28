@@ -210,7 +210,7 @@ a {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -291,6 +291,12 @@ a {
   font-size: 17px;
   font-weight: 600;
   line-height: 1.2;
+  /* 固定兩行高度：不同長度的名稱也讓卡片大小完全一致 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.4em;
 }
 
 .game-card__lock {
@@ -609,7 +615,7 @@ a {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   .game-grid {
     grid-template-columns: 1fr;
     gap: 16px;
