@@ -715,6 +715,7 @@ a {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
+.overlay-play--chess { left: 4.4%; width: 17.3%; }
 .overlay-play--checkers { left: 25.6%; width: 16.2%; }
 .overlay-play--solitaire { left: 83.1%; width: 14.4%; }
 
