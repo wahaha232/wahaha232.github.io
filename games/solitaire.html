@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solitaire Online - Play Free Klondike | Mindboard Games</title>
+  <meta
+    name="description"
+    content="Play Solitaire Online for free — the classic Klondike card game in your browser. Build the foundations from Ace to King. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Solitaire Online - Play Free Klondike | Mindboard Games" />
+  <meta property="og:description" content="Play the classic Klondike Solitaire online — build foundations from Ace to King." />
+  <meta property="og:image" content="https://wahaha232.github.io/assets/games/solitaire.webp" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/solitaire.css" />
+
+  <!-- Google AdSense 載入腳本（已啟用） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>🃏 Solitaire Online</h1>
+      <p>Klondike · Play Free Online</p>
+    </header>
+
+    <div class="sol-layout">
+      <div class="sol-status">
+        <span>Moves: <b id="sol-moves">0</b></span>
+        <span>Score: <b id="sol-score">0</b></span>
+        <span class="sol-status-text" id="sol-status-text" aria-live="polite">Click a card, then click a destination. Double-click to auto-move.</span>
+        <div class="sol-buttons">
+          <button type="button" class="btn-new" id="btn-new">New Game</button>
+          <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+        </div>
+      </div>
+
+      <div class="sol-board" id="sol-table">
+        <div class="sol-top">
+          <div class="sol-slot sol-stock" id="sol-stock" role="button" aria-label="Draw from stock"></div>
+          <div class="sol-slot sol-waste" id="sol-waste"></div>
+          <div class="sol-foundations" id="sol-foundations" aria-label="Foundations"></div>
+        </div>
+        <div class="sol-tableau" id="sol-tableau" aria-label="Tableau"></div>
+      </div>
+
+      <div class="sol-win is-hidden" id="sol-win">
+        🎉 You won! All cards are in the foundations.
+        <br />
+        <button type="button" id="btn-again">Play Again</button>
+      </div>
+    </div>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Solitaire</h2>
+      <ul>
+        <li>Move cards in the tableau so they build down in alternating colors (red on black, black on red).</li>
+        <li>Only a King (or a sequence starting with a King) can be placed on an empty tableau column.</li>
+        <li>Build each foundation up by suit, from Ace to King.</li>
+        <li>Click the stock to draw cards into the waste; when the stock is empty, click it again to recycle the waste.</li>
+        <li>Double-click a card (or the waste top) to auto-move it to a foundation.</li>
+        <li>Move every card to the four foundations to win.</li>
+      </ul>
+    </article>
+
+    <!-- AdSense 版位：Leaderboard（固定高度，不遮蓋牌桌） -->
+    <div class="ad-slot ad-slot--leaderboard">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+  </div>
+
+  <!-- 西洋棋引擎與 UI 分離；Solitaire 亦同 -->
+  <script src="../js/solitaire.js"></script>
+  <script src="../js/solitaire-ui.js"></script>
+  <script>
+    // 「Play Again」與「New Game」共用同一重開邏輯
+    document.getElementById("btn-again").addEventListener("click", function () {
+      document.getElementById("btn-new").click();
+    });
+  </script>
+</body>
+</html>

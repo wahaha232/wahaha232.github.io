@@ -1,0 +1,3 @@
+# 依賴與日誌
+node_modules/
+*.log

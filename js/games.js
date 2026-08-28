@@ -76,5 +76,12 @@ const games = [
     image: "assets/games/snakes-ladders.webp",
     url: "games/snakes-ladders.html",
     status: "available"
+  },
+  {
+    id: "solitaire",
+    name: "Solitaire Online",
+    image: "assets/games/solitaire.webp",
+    url: "games/solitaire.html",
+    status: "available"
   }
 ];

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Solitaire cover art">
+  <rect width="400" height="400" fill="#dcf2dd"/>
+  <g transform="translate(200 236) rotate(-18)">
+    <rect x="-72" y="-52" width="144" height="104" rx="10" fill="#ffffff" stroke="#333333" stroke-width="2.5"/>
+    <text x="-50" y="-26" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#e25b4a">A</text>
+    <path d="M0 -14 C -26 -6 -26 18 0 26 C 26 18 26 -6 0 -14" fill="#e25b4a"/>
+  </g>
+  <g transform="translate(230 216) rotate(-6)">
+    <rect x="-72" y="-52" width="144" height="104" rx="10" fill="#ffffff" stroke="#333333" stroke-width="2.5"/>
+    <text x="-50" y="-26" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#242424">K</text>
+    <path d="M0 -10 C -24 -2 -24 20 0 28 C 24 20 24 -2 0 -10" fill="#242424"/>
+  </g>
+  <g transform="translate(260 196) rotate(8)">
+    <rect x="-72" y="-52" width="144" height="104" rx="10" fill="#ffffff" stroke="#333333" stroke-width="2.5"/>
+    <text x="-50" y="-26" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#e25b4a">Q</text>
+    <path d="M0 -14 C -26 -6 -26 18 0 26 C 26 18 26 -6 0 -14" fill="#e25b4a"/>
+  </g>
+  <g transform="translate(290 176) rotate(24)">
+    <rect x="-72" y="-52" width="144" height="104" rx="10" fill="#ffffff" stroke="#333333" stroke-width="2.5"/>
+    <text x="-50" y="-26" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#242424">J</text>
+    <path d="M0 -10 C -24 -2 -24 20 0 28 C 24 20 24 -2 0 -10" fill="#242424"/>
+  </g>
+  <g transform="translate(80 180) rotate(-8)">
+    <rect x="-52" y="-38" width="104" height="76" rx="8" fill="#4a8fe0" stroke="#3a6fbf" stroke-width="2"/>
+    <rect x="-40" y="-26" width="80" height="52" rx="5" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.7"/>
+  </g>
+</svg>
