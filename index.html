@@ -1,620 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
+  <title>Mindboard Games - Free Online Games</title>
+  <meta
+    name="description"
+    content="Mindboard Games - a free online games portal. Play Classic Board Games (Ludo, Chess, Checkers, Backgammon and more) instantly in your browser. No download, no sign-up."
+  />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mindboard Games" />
+  <meta property="og:title" content="Mindboard Games - Free Online Games" />
+  <meta property="og:description" content="Free online classic board games - play instantly in your browser." />
+  <meta property="og:url" content="https://wahaha232.github.io/" />
+  <meta property="og:image" content="https://wahaha232.github.io/CHESSGAME/assets/games/chess.webp" />
+  <meta name="theme-color" content="#F7F5EF" />
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<title>
-Shibuya Scramble Crossing Live Cam 24/7 | Tokyo Japan
-</title>
+  <link rel="stylesheet" href="portal.css" />
 
-
-<meta name="description" content="Watch the Shibuya Scramble Crossing live camera in Tokyo, Japan. Experience the famous Tokyo intersection, city lights, traffic and real-time street views 24/7.">
-
-
-<meta name="robots" content="index, follow">
-
-
-<link rel="canonical" href="https://wahaha232.github.io/">
-
-
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-<link rel="icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-
-<meta property="og:type" content="website">
-
-<meta property="og:title" content="Shibuya Scramble Crossing Live Cam 24/7">
-
-<meta property="og:description" content="Live view of Shibuya Scramble Crossing Tokyo Japan.">
-
-<meta property="og:url" content="https://wahaha232.github.io/">
-
-<meta property="og:site_name" content="Shibuya Scramble Crossing Live Cam">
-
-<meta property="og:image" content="https://wahaha232.github.io/preview.jpg">
-
-
-
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title" content="Shibuya Scramble Crossing Live Cam">
-
-<meta name="twitter:description" content="Watch Tokyo Shibuya live stream 24/7.">
-
-<meta name="twitter:image" content="https://wahaha232.github.io/preview.jpg">
-
-
-
-<script type="application/ld+json">
-{
- "@context":"https://schema.org",
- "@type":"VideoObject",
- "name":"Shibuya Scramble Crossing Live Cam",
- "description":"24/7 live camera showing Shibuya Scramble Crossing Tokyo Japan.",
- "embedUrl":"https://www.youtube.com/embed/dfVK7ld38Ys",
- "thumbnailUrl":"https://wahaha232.github.io/preview.jpg",
- "locationCreated":{
-  "@type":"Place",
-  "name":"Shibuya Scramble Crossing",
-  "address":{
-   "@type":"PostalAddress",
-   "addressLocality":"Tokyo",
-   "addressCountry":"Japan"
-  }
- }
-}
-</script>
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link rel="preconnect" href="https://www.youtube.com">
-
-<link rel="preconnect" href="https://api.open-meteo.com">
-
-
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
-
+  <!-- Google AdSense（與子站共用 publisher ID） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<nav aria-label="Main navigation">
-
-<a href="index.html">
-Home
-</a>
-
-<a href="about.html">
-About
-</a>
-
-<a href="privacy.html">
-Privacy Policy
-</a>
-
-</nav>
-
-
-<header>
-
-<h1>
-Shibuya Scramble Crossing Live Cam Tokyo Japan
-</h1>
-
-<p>
-Welcome to Tokyo! Experience the iconic Shibuya Scramble Crossing live anytime, anywhere.
-</p>
-
-</header>
-
-
-
-<main class="content-wrapper">
-
-
-<section class="weather-card">
-
-
-<h3>
-Tokyo Weather
-</h3>
-
-
-<div id="weather-animation" class="weather-animation" role="img" aria-label="Current weather condition icon">
-☁️
-</div>
-
-
-<p>
-Temperature:
-<span id="weather-temp">--°C</span>
-</p>
-
-
-<p>
-Feels Like:
-<span id="weather-feels">--°C</span>
-</p>
-
-
-<p>
-Condition:
-<span id="weather-condition">--</span>
-</p>
-
-
-<p>
-UV Index:
-<span id="weather-uv">--</span>
-</p>
-
-
-<p>
-Sunrise:
-<span id="weather-sunrise">--:--</span>
-</p>
-
-
-<p>
-Sunset:
-<span id="weather-sunset">--:--</span>
-</p>
-
-
-<hr>
-
-
-<p>
-Date:
-<span id="local-date">
---
-</span>
-</p>
-
-
-<p>
-Time:
-<span id="local-time">
---:--:--
-</span>
-JST
-</p>
-
-
-</section>
-
-
-<div class="videos-column">
-
-<section class="video-wrapper">
-
-
-<iframe
-
-src="https://www.youtube.com/embed/dfVK7ld38Ys?autoplay=1&mute=1"
-
-title="Shibuya Scramble Crossing Live Stream"
-
-loading="lazy"
-
-allow="autoplay; encrypted-media; picture-in-picture"
-
-allowfullscreen>
-
-</iframe>
-
-
-</section>
-
-
-<section class="video-wrapper">
-
-
-<iframe
-
-src="https://www.youtube.com/embed/d1JuNg7knNo?autoplay=1&mute=1"
-
-title="Live Stream 2"
-
-loading="lazy"
-
-allow="autoplay; encrypted-media; picture-in-picture"
-
-allowfullscreen>
-
-</iframe>
-
-
-</section>
-
-</div>
-
-
-</main>
-
-
-
-
-<section class="info">
-
-
-<h2>
-Visitor Information
-</h2>
-
-
-<p>
-<strong>City:</strong>
-Shibuya, Tokyo, Japan
-</p>
-
-
-<p>
-<strong>Location:</strong>
-Shibuya Scramble Crossing
-</p>
-
-
-<p>
-<strong>Stream Type:</strong>
-24/7 Live Camera
-</p>
-
-
-<p>
-<strong>Experience:</strong>
-Watch Tokyo traffic, pedestrians, weather and city lights in real time.
-</p>
-
-
-<p>
-<strong>Official Tourism:</strong>
-
-<a href="https://www.gotokyo.org/" target="_blank" rel="noopener">
-Go Tokyo
-</a>
-
-</p>
-
-
-<p>
-<strong>Airport:</strong>
-
-<a href="https://tokyo-haneda.com/" target="_blank" rel="noopener">
-Haneda Airport
-</a>
-
-</p>
-
-
-<p>
-<strong>Train:</strong>
-
-<a href="https://www.jreast.co.jp/" target="_blank" rel="noopener">
-JR East
-</a>
-
-</p>
-
-
-<p>
-<strong>Tokyo Metro:</strong>
-
-<a href="https://www.tokyometro.jp/" target="_blank" rel="noopener">
-Tokyo Metro
-</a>
-
-</p>
-
-
-</section>
-
-
-<section class="about-container" id="crossing-guide">
-
-<h2>About Shibuya Scramble Crossing</h2>
-
-<p>
-Shibuya Scramble Crossing sits right outside the Hachiko exit of Shibuya Station, and it's often described as one of the busiest pedestrian crossings in the world. When the signal turns green, foot traffic pours in from five directions at once — travel guides commonly cite estimates of anywhere from around 1,000 to as many as 3,000 people crossing during a single light cycle at the busiest times.
-</p>
-
-<p>
-The intersection is ringed by some of Tokyo's largest video screens and neon signage, which is part of why it has become such a recognizable backdrop in film and photography — it has appeared in productions such as <em>Lost in Translation</em> and <em>The Fast and the Furious: Tokyo Drift</em>. Just a short walk away is the bronze statue of Hachiko, the Akita dog famous for waiting for his owner at the station for years after his owner's death — today it's one of Tokyo's best-known meeting spots.
-</p>
-
-<h3>Best times to watch</h3>
-
-<p>
-Weekday evening rush hour (roughly 5–8 PM Japan Standard Time) is when the crossing looks most dramatic, with the biggest crowds and the surrounding neon signage lit up against the evening sky. Weekend afternoons are busy too, mostly with shoppers and tourists rather than commuters. Late at night and early in the morning, the crossing is much quieter — a good time to see the intersection and the buildings around it more clearly.
-</p>
-
-<p>
-The clock in the weather panel above always shows the current time in Tokyo (Japan Standard Time, UTC+9), so you can tell at a glance whether it's rush hour, daytime, or the middle of the night in Shibuya right now.
-</p>
-
-</section>
-
-
-<div class="ad-slot">
-<div class="ad-label">Advertisement</div>
-<!-- LIVE1 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-1512317781873771"
-     data-ad-slot="5701870466"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-
-
-
-
-<footer>
-
-© <span id="year"></span>
-
-Shibuya Live Cam Tokyo Japan
-
-<p class="visitor-counter">
-<img src="https://visitor-badge.laobi.icu/badge?page_id=wahaha232.github.io" alt="Visitor count" loading="lazy">
-</p>
-
-</footer>
-
-
-
-
-
-<script>
-
-
-// Year
-
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-
-
-
-// Tokyo time
-
-function updateLocalTime(){
-
-const now=new Date();
-
-
-document.getElementById("local-date").textContent =
-
-now.toLocaleDateString(
-"en-CA",
-{
-timeZone:"Asia/Tokyo"
-}
-);
-
-
-
-document.getElementById("local-time").textContent =
-
-now.toLocaleTimeString(
-"en-GB",
-{
-timeZone:"Asia/Tokyo",
-hour12:false
-}
-);
-
-
-}
-
-
-updateLocalTime();
-
-
-setInterval(
-updateLocalTime,
-1000
-);
-
-
-
-
-// Weather
-//
-// Condition/icon mapping based on Open-Meteo's WMO weather_code values:
-// https://open-meteo.com/en/docs (see "WMO Weather interpretation codes")
-//   0            = Clear
-//   1,2,3        = Partly cloudy / Overcast
-//   45,48        = Fog
-//   51,53,55,
-//   56,57        = Drizzle
-//   61,63,65,
-//   66,67,80,
-//   81,82        = Rain
-//   71,73,75,
-//   77,85,86     = Snow
-//   95,96,99     = Thunderstorm
-//
-// Previously only Clear (0) and a handful of rain codes were handled;
-// everything else silently fell back to "Cloudy", which mislabels snow,
-// thunderstorms and fog. All groups are now covered explicitly.
-
-function getWeatherDisplay(code){
-
-if(code===0){
-return {condition:"Clear", icon:"☀️"};
-}
-
-if([1,2,3].includes(code)){
-return {condition:"Cloudy", icon:"☁️"};
-}
-
-if([45,48].includes(code)){
-return {condition:"Fog", icon:"🌫️"};
-}
-
-if([51,53,55,56,57].includes(code)){
-return {condition:"Drizzle", icon:"🌦️"};
-}
-
-if([61,63,65,66,67,80,81,82].includes(code)){
-return {condition:"Rain", icon:"🌧️"};
-}
-
-if([71,73,75,77,85,86].includes(code)){
-return {condition:"Snow", icon:"❄️"};
-}
-
-if([95,96,99].includes(code)){
-return {condition:"Thunderstorm", icon:"⛈️"};
-}
-
-// Unknown/unlisted code: fall back to a neutral label rather than
-// guessing "Cloudy", so it is clear the value is unmapped.
-return {condition:"Unknown", icon:"❓"};
-
-}
-
-async function updateWeather(){
-
-
-try{
-
-
-const url =
-
-"https://api.open-meteo.com/v1/forecast?latitude=35.6595&longitude=139.7004&current=temperature_2m,apparent_temperature,weather_code,uv_index&daily=sunrise,sunset&timezone=Asia%2FTokyo";
-
-
-
-const response =
-await fetch(url);
-
-
-if(!response.ok){
-throw new Error("Weather API responded with status "+response.status);
-}
-
-
-const data =
-await response.json();
-
-
-
-
-document.getElementById("weather-temp")
-.textContent =
-
-data.current.temperature_2m+"°C";
-
-
-
-
-document.getElementById("weather-feels")
-.textContent =
-
-data.current.apparent_temperature+"°C";
-
-
-
-
-document.getElementById("weather-uv")
-.textContent =
-
-data.current.uv_index;
-
-
-
-
-document.getElementById("weather-sunrise")
-.textContent =
-
-data.daily.sunrise[0]
-.split("T")[1];
-
-
-
-
-document.getElementById("weather-sunset")
-.textContent =
-
-data.daily.sunset[0]
-.split("T")[1];
-
-
-
-
-const display = getWeatherDisplay(data.current.weather_code);
-
-
-
-document.getElementById("weather-condition")
-.textContent =
-display.condition;
-
-
-
-document.getElementById("weather-animation")
-.textContent =
-display.icon;
-
-document.getElementById("weather-animation")
-.setAttribute("aria-label", "Current weather: "+display.condition);
-
-
-
-}
-
-catch(error){
-
-console.log(
-"Weather loading error",
-error
-);
-
-// Surface the failure in the UI instead of leaving "--" forever
-// with no indication that the request failed.
-document.getElementById("weather-condition").textContent =
-"Unavailable";
-
-}
-
-
-}
-
-
-
-updateWeather();
-
-
-setInterval(
-updateWeather,
-1800000
-);
-
-
-</script>
-
-
+  <!-- 頂部導覽列 -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="logo" href="index.html" aria-label="Mindboard Games — home">
+        <span aria-hidden="true">🎮</span>
+        <span>Mindboard <span class="logo__accent">Games</span></span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="https://wahaha232.github.io/CHESSGAME/">Games</a>
+        <a href="https://wahaha232.github.io/CHESSGAME/about.html">About</a>
+        <a href="shibuya.html">Tokyo Cam</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <!-- 簡短標題 -->
+    <section class="intro">
+      <h1 class="intro__title">Mindboard Games</h1>
+      <p class="intro__tag">Free Online Games</p>
+      <p class="intro__sub">Classic games. Simple fun. Play instantly.</p>
+    </section>
+
+    <!-- ★ 主要入口：Classic Board Games → 進入 CHESSGAME 遊戲站 -->
+    <section class="featured" aria-label="Featured game category">
+      <a class="feature-card" href="https://wahaha232.github.io/CHESSGAME/">
+        <span class="feature-card__icon" aria-hidden="true">🎲</span>
+        <span class="feature-card__name">Classic Board Games</span>
+        <span class="feature-card__desc">Ludo · Chess · Checkers · Backgammon &amp; more — 9 games to play now.</span>
+        <span class="feature-card__btn">▶ PLAY NOW</span>
+      </a>
+    </section>
+
+    <!-- 其他分類（預留） -->
+    <section class="cats" aria-label="More game categories coming soon">
+      <div class="cat">
+        <span class="cat__icon" aria-hidden="true">🧩</span>
+        <span class="cat__name">Puzzle Games</span>
+        <span class="cat__soon">Coming soon</span>
+      </div>
+      <div class="cat">
+        <span class="cat__icon" aria-hidden="true">🕹️</span>
+        <span class="cat__name">Arcade Games</span>
+        <span class="cat__soon">Coming soon</span>
+      </div>
+      <div class="cat">
+        <span class="cat__icon" aria-hidden="true">🃏</span>
+        <span class="cat__name">Card Games</span>
+        <span class="cat__soon">Coming soon</span>
+      </div>
+    </section>
+
+    <!-- 廣告版位（固定高度，避免 Layout Shift） -->
+    <div class="ad-slot">
+      <span class="ad-slot__label">Advertisement</span>
+    </div>
+
+  </main>
+
+  <!-- 簡單 Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__name">🎮 Mindboard Games</p>
+        <p class="site-footer__tag">Free online classic games. Play instantly in your browser.</p>
+      </div>
+      <div class="site-footer__links">
+        <a href="https://wahaha232.github.io/CHESSGAME/">Games</a>
+        <a href="shibuya.html">Tokyo Live Cam</a>
+        <a href="https://wahaha232.github.io/CHESSGAME/privacy.html">Privacy</a>
+      </div>
+    </div>
+    <p class="site-footer__copy">© <span id="year"></span> Mindboard Games</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>

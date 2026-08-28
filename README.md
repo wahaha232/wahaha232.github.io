@@ -1,120 +1,25 @@
-# Shibuya Scramble Crossing 24/7 Live Cam 🌆🎥
+# Mindboard Games — Free Online Games Portal
 
-A responsive website featuring a **24/7 live stream of Shibuya Scramble
-Crossing** in Tokyo, Japan, together with **real-time Tokyo weather**,
-**Japan Standard Time (JST)**, and helpful travel information.
+🎮 A casual online games portal. The homepage (`https://wahaha232.github.io/`) is a Playpager-style game lobby whose main entry is **Classic Board Games**, linking to the full game hub at **https://wahaha232.github.io/CHESSGAME/** (Ludo, Chess, Checkers, Backgammon, Morris, Dominoes, Battleship, Snakes & Ladders — all playable).
 
-## 🌐 Live Demo
+## Live
 
-https://wahaha232.github.io/
+- Portal homepage: https://wahaha232.github.io/
+- Games hub: https://wahaha232.github.io/CHESSGAME/
+- Tokyo Live Cam (preserved): https://wahaha232.github.io/shibuya.html
 
-## ✨ Features
+## Structure
 
--   🎥 24/7 YouTube live stream of Shibuya Scramble Crossing
--   🌤 Real-time Tokyo weather powered by Open-Meteo
--   🕒 Live Japan Standard Time clock
--   🚉 Visitor information and useful travel links
--   📱 Responsive layout for desktop and mobile
--   🔍 SEO optimized (Canonical, Open Graph, Twitter Card, Schema.org)
--   🗺 XML Sitemap and robots.txt ready for Google Search Console
-
-## 📁 Project Structure
-
-``` text
-.
-├── index.html
-├── about.html
-├── privacy.html
-├── 404.html
-├── ping.html
-├── style.css
-├── sitemap.xml
-├── robots.txt
-├── favicon.ico
-├── apple-touch-icon.png
-├── preview.jpg
-├── LICENSE
-└── README.md
+```
+index.html    # 遊戲入口首頁（Playpager 風格，點 Classic Board Games 進入 CHESSGAME）
+portal.css    # 入口首頁樣式
+shibuya.html  # 原 Shibuya 直播鏡頭網站（已保留，不再是首頁）
+style.css     # Shibuya 站的樣式（供 shibuya.html 使用）
+ads.txt       # AdSense 授權（真實 publisher ID）
+404.html / sitemap.xml / robots.txt
+about.html / privacy.html   # Shibuya 站的附屬頁面
 ```
 
-`favicon.ico`, `apple-touch-icon.png` and `preview.jpg` included in this repo are
-simple placeholder graphics — swap them for real branded artwork /
-a screenshot of the live stream before relying on them for social sharing
-previews.
+## Deployment
 
-## 🚀 Getting Started
-
-Clone the repository:
-
-``` bash
-git clone https://github.com/wahaha232/wahaha232.github.io.git
-```
-
-Open the project with a local web server.
-
-Example using Python:
-
-``` bash
-python -m http.server 8000
-```
-
-Then visit:
-
-    http://localhost:8000
-
-## 🌍 Deployment
-
-This project is designed for GitHub Pages.
-
-1.  Push the repository to GitHub.
-2.  Open **Settings → Pages**.
-3.  Select **Deploy from a branch**.
-4.  Choose the **main** branch and the **/(root)** folder.
-5.  Save the settings.
-
-Your website will be available at:
-
-https://wahaha232.github.io/
-
-## 🛠 Built With
-
--   HTML5
--   CSS3
--   JavaScript (ES6+)
--   Fetch API
--   Open-Meteo Weather API
--   YouTube Embed Player
--   Google Fonts (Caveat)
-
-## 🔍 SEO
-
-The website includes:
-
--   Canonical URL
--   XML Sitemap
--   robots.txt
--   Open Graph
--   Twitter Card
--   Schema.org VideoObject
--   Schema.org WebSite
--   Mobile-friendly responsive design
-
-## 🌤 Weather Data
-
-Weather information is provided by:
-
-https://open-meteo.com/
-
-No API key is required.
-
-## 📄 License
-
-Released under the MIT License.
-
-## ❤️ Acknowledgements
-
--   Tokyo
--   Open-Meteo
--   Google Fonts
--   YouTube
--   GitHub Pages
+This repo deploys directly from the `main` branch (`Settings → Pages → Deploy from a branch: main / /`). Push to `main` and the root site updates automatically.
