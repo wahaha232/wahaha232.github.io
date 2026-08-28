@@ -67,10 +67,21 @@
     <img
       class="design-shot"
       src="homepage.png"
+      usemap="#playhub-map"
       alt="PlayHub homepage — WELCOME TO PLAYHUB, game categories and featured games: Chess, Checkers, Sudoku, Space Invaders, Solitaire, Quiz"
       width="1536"
       height="1024"
     />
+
+    <!-- 設計圖上的互動熱區：點卡片進入對應遊戲（座標為 1536×1024 原圖座標） -->
+    <map name="playhub-map" id="playhub-map">
+      <area shape="rect" coords="36,614,300,952" href="games/chess.html" title="Chess" alt="Play Chess — Classic Chess Game" />
+      <area shape="rect" coords="304,614,556,952" href="games/checkers.html" title="Checkers" alt="Play Checkers — Classic Checkers Game" />
+      <area shape="rect" coords="560,614,796,952" href="#games" data-soon="Sudoku" title="Sudoku — Coming Soon" alt="Sudoku — coming soon" />
+      <area shape="rect" coords="800,614,1036,952" href="#games" data-soon="Space Invaders" title="Space Invaders — Coming Soon" alt="Space Invaders — coming soon" />
+      <area shape="rect" coords="1038,614,1270,952" href="games/solitaire.html" title="Solitaire" alt="Play Solitaire — Classic Solitaire Game" />
+      <area shape="rect" coords="1274,614,1500,952" href="#games" data-soon="Quiz" title="Quiz — Coming Soon" alt="Quiz — coming soon" />
+    </map>
 
     <!-- ═══════════════════════════════════════════════════════════
          AdSense 版位：Leaderboard（728×90）
@@ -106,6 +117,38 @@
       <p class="modal__text">This game is currently under development.</p>
     </div>
   </div>
+
+  <!-- 圖片熱區互動：未開發的遊戲顯示 Coming Soon 提示 -->
+  <script>
+    (function () {
+      "use strict";
+      var modal = document.getElementById("soon-modal");
+      var modalName = document.getElementById("soon-name");
+      var close = document.getElementById("soon-close");
+      if (!modal) return;
+
+      function show(name) {
+        if (modalName) modalName.textContent = name;
+        modal.classList.remove("is-hidden");
+      }
+      function hide() {
+        modal.classList.add("is-hidden");
+      }
+      if (close) close.addEventListener("click", hide);
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) hide();
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") hide();
+      });
+      document.querySelectorAll("#playhub-map area[data-soon]").forEach(function (area) {
+        area.addEventListener("click", function (event) {
+          event.preventDefault();
+          show(area.getAttribute("data-soon"));
+        });
+      });
+    })();
+  </script>
 
   <noscript>
     <p class="noscript-note">PlayHub — Free Online Games.</p>
