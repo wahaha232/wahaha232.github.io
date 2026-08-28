@@ -707,12 +707,10 @@ a {
   position: relative;
 }
 
-/* 覆蓋在設計圖上的 PLAY NOW 按鈕（Checkers 卡片，座標對齊原圖 1536×1024） */
+/* 覆蓋在設計圖上的 PLAY NOW 按鈕（遊戲實際上可玩，蓋住圖上的 Coming Soon 字樣） */
 .overlay-play {
   position: absolute;
-  left: 21.2%;
   top: 85.5%;
-  width: 13.4%;
   height: 5.5%;
   display: flex;
   align-items: center;
@@ -728,6 +726,9 @@ a {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: background 0.2s ease, transform 0.2s ease;
 }
+
+.overlay-play--checkers { left: 21.2%; width: 13.4%; }
+.overlay-play--solitaire { left: 68.6%; width: 12.7%; }
 
 .overlay-play:hover {
   background: #15821a;
