@@ -727,8 +727,8 @@ a {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.overlay-play--checkers { left: 21.2%; width: 13.4%; }
-.overlay-play--solitaire { left: 68.6%; width: 12.7%; }
+.overlay-play--checkers { left: 25.6%; width: 16.2%; }
+.overlay-play--solitaire { left: 83.1%; width: 14.4%; }
 
 .overlay-play:hover {
   background: #15821a;
