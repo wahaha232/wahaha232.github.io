@@ -697,12 +697,13 @@ a {
 
 /* 覆蓋在設計圖上的 PLAY NOW 按鈕（遊戲實際上可玩）
    尺寸統一：三顆按鈕同寬同高，各自在卡片內水平置中
-   （對應 1275×1024 原圖：Chess 中心 x168 / Checkers x430 / Solitaire x1154） */
+   （對應 1536×1024 原圖：Chess 中心 x168 / Checkers x430 / Solitaire x1154）
+   寬度 11.62% = 178.5px（與先前 1275 版 14% 同視覺大小） */
 .overlay-play {
   position: absolute;
   top: 85.5%;
   height: 5.5%;
-  width: 14%;
+  width: 11.62%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -726,9 +727,9 @@ a {
   transform: translateY(-1px);
 }
 
-.overlay-play--chess { left: 6.18%; }
-.overlay-play--checkers { left: 26.73%; }
-.overlay-play--solitaire { left: 83.51%; }
+.overlay-play--chess { left: 5.13%; }
+.overlay-play--checkers { left: 22.19%; }
+.overlay-play--solitaire { left: 69.32%; }
 
 .overlay-play:hover {
   background: linear-gradient(180deg, #1b8f20 0%, #15821a 100%);
