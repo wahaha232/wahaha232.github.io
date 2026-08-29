@@ -745,5 +745,74 @@ a {
   transform: scale(1.04);
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   More Games 遊戲選單（圖片版首頁下方的分類清單）
+   ═══════════════════════════════════════════════════════════════ */
+
+.more-games {
+  max-width: 960px;
+  margin: 34px auto 6px;
+  padding: 0 4px;
+}
+
+.more-games__title {
+  margin: 0 0 4px;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.more-games__cat {
+  margin: 14px 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.more-games__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.more-games__list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid var(--border-soft);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.more-games__list a:hover,
+.more-games__list a:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-hover);
+}
+
+.more-games__tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #ffd76a;
+  color: #7a4b00;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
 
 
