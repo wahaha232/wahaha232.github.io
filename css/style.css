@@ -739,7 +739,6 @@ a {
 .overlay-play--chess { left: 5.13%; }
 .overlay-play--checkers { left: 22.19%; }
 .overlay-play--solitaire { left: 69.32%; }
-.overlay-play--ludo { left: 85.66%; }
 
 .overlay-play:hover {
   background: linear-gradient(180deg, #1b8f20 0%, #15821a 100%);
