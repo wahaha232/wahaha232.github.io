@@ -312,13 +312,23 @@ a {
 }
 
 .game-card__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
   margin-top: 10px;
-  padding: 9px 16px;
+  padding: 0 16px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: clamp(12px, 0.5rem + 0.5vw, 15px);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -662,8 +672,7 @@ a {
   }
 
   .game-card__btn {
-    padding: 8px 12px;
-    font-size: 12px;
+    font-size: clamp(11px, 0.45rem + 0.4vw, 13px);
   }
 }
 
