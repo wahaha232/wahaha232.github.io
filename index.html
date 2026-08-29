@@ -41,28 +41,26 @@
 
   <main class="page page--shot">
 
-    <!-- 首頁設計圖（直接作為首頁主視覺；Checkers 可玩，用 PLAY NOW 按鈕覆蓋圖上的 Coming Soon 字樣） -->
+    <!-- 首頁設計圖（直接作為首頁主視覺；大分類入口卡片：Board Games / Puzzle Games / Space Invaders / Solitaire Online / Quiz；僅 Solitaire 以 PLAY NOW 按鈕進入遊戲） -->
     <div class="design-shot-wrap">
       <img
         class="design-shot"
         src="homepage.png"
         usemap="#playhub-map"
-        alt="PlayHub homepage — WELCOME TO PLAYHUB, game categories and featured games: Chess, Checkers, Sudoku, Space Invaders, Solitaire, Quiz"
+        alt="PlayHub homepage — WELCOME TO PLAYHUB, game categories and featured games: Board Games, Puzzle Games, Space Invaders, Solitaire Online, Quiz"
         width="1536"
         height="1024"
       />
-      <a class="overlay-play overlay-play--chess" href="games/chess.html" title="Play Chess — Classic Chess Game">PLAY NOW</a>
-      <a class="overlay-play overlay-play--checkers" href="games/checkers.html" title="Play Checkers — Classic Checkers Game">PLAY NOW</a>
-      <a class="overlay-play overlay-play--solitaire" href="games/solitaire.html" title="Play Solitaire — Classic Solitaire Game">PLAY NOW</a>
+      <a class="overlay-play overlay-play--solitaire" href="games/solitaire.html" title="Play Solitaire Online — Classic Solitaire Game">PLAY NOW</a>
     </div>
 
     <!-- 設計圖上的互動熱區：點卡片進入對應遊戲（座標為 1536×1024 原圖座標） -->
     <map name="playhub-map" id="playhub-map">
-      <area shape="rect" coords="36,614,300,952" href="games/chess.html" title="Chess" alt="Play Chess — Classic Chess Game" />
-      <area shape="rect" coords="304,614,556,952" href="games/checkers.html" title="Checkers" alt="Play Checkers — Classic Checkers Game" />
-      <area shape="rect" coords="560,614,796,952" href="#games" data-soon="Sudoku" title="Sudoku — Coming Soon" alt="Sudoku — coming soon" />
+      <area shape="rect" coords="36,614,300,952" href="board-games.html" title="Board Games" alt="Board Games — Classic Board Games Category" />
+      <!-- Checkers 已正式歸類至 Board Games 分類內，首頁不再有獨立 Checkers 卡片 -->
+      <area shape="rect" coords="560,614,796,952" href="#games" data-soon="Puzzle Games" title="Puzzle Games — Coming Soon" alt="Puzzle Games — coming soon" />
       <area shape="rect" coords="800,614,1036,952" href="#games" data-soon="Space Invaders" title="Space Invaders — Coming Soon" alt="Space Invaders — coming soon" />
-      <area shape="rect" coords="1038,614,1270,952" href="games/solitaire.html" title="Solitaire" alt="Play Solitaire — Classic Solitaire Game" />
+      <!-- Solitaire：圖片熱區已移除，僅 PLAY NOW 按鈕可進入遊戲 -->
       <area shape="rect" coords="1274,614,1536,952" href="#games" data-soon="Quiz" title="Quiz — Coming Soon" alt="Quiz — coming soon" />
 
       <!-- About / Privacy 入口：點設計圖 footer 上的 About US / Privacy Policy 文字進入對應頁面 -->
