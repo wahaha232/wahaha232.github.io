@@ -498,6 +498,15 @@ a {
   color: #ffffff;
 }
 
+.site-footer__copy {
+  max-width: 1080px;
+  margin: 14px auto 0;
+  padding: 0 20px;
+  color: #7f97bd;
+  font-size: 13px;
+  text-align: center;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    遊戲頁共用樣式（games/*.html）
    ═══════════════════════════════════════════════════════════════ */
