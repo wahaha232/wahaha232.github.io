@@ -34,13 +34,6 @@
     img.height = 400;
     thumb.appendChild(img);
 
-    if (game.status !== "available") {
-      var badge = document.createElement("span");
-      badge.className = "game-card__badge";
-      badge.textContent = "Coming Soon";
-      thumb.appendChild(badge);
-    }
-
     // ── 名稱列 ──
     var meta = document.createElement("span");
     meta.className = "game-card__meta";

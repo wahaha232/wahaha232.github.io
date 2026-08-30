@@ -279,19 +279,6 @@ a {
   transform: scale(1.08);
 }
 
-.game-card__badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: rgba(16, 20, 30, 0.75);
-  color: #ffd76a;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
 .game-card__meta {
   display: flex;
   flex-direction: column;
