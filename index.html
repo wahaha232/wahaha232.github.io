@@ -51,7 +51,15 @@
         width="1536"
         height="1024"
       />
-      <a class="overlay-play overlay-play--solitaire" href="games/solitaire.html" title="Play Solitaire Online — Classic Solitaire Game">PLAY NOW</a>
+      <!-- 卡片底部動作按鈕（統一尺寸，文字 clamp 自適應）：
+           PLAY NOW（綠色）→ Board Games、Solitaire（可玩）
+           Coming Soon 樣式 → Puzzle Games、Space Invaders、Quiz（未開放） -->
+      <a class="overlay-action overlay-action--play overlay-action--board-games" href="board-games.html" title="Play Board Games — Classic Board Games Category">PLAY NOW</a>
+      <span class="overlay-action overlay-action--soon overlay-action--puzzle" role="button" tabindex="0" data-soon="Puzzle Games" title="Puzzle Games — Coming Soon">Coming Soon</span>
+      <span class="overlay-action overlay-action--soon overlay-action--space" role="button" tabindex="0" data-soon="Space Invaders" title="Space Invaders — Coming Soon">Coming Soon</span>
+      <!-- Solitaire：僅此 PLAY NOW 按鈕可進入遊戲，點圖片不觸發任何事件（設計圖上無 Solitaire 熱區） -->
+      <a class="overlay-action overlay-action--play overlay-action--solitaire" href="games/solitaire.html" title="Play Solitaire Online — Classic Solitaire Game">PLAY NOW</a>
+      <span class="overlay-action overlay-action--soon overlay-action--quiz" role="button" tabindex="0" data-soon="Quiz" title="Quiz — Coming Soon">Coming Soon</span>
     </div>
 
     <!-- 設計圖上的互動熱區：點卡片進入對應遊戲（座標為 1536×1024 原圖座標） -->
@@ -127,12 +135,20 @@
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") hide();
       });
-      document.querySelectorAll("#playhub-map area[data-soon]").forEach(function (area) {
-        area.addEventListener("click", function (event) {
+      function bindSoon(el) {
+        el.addEventListener("click", function (event) {
           event.preventDefault();
-          show(area.getAttribute("data-soon"));
+          show(el.getAttribute("data-soon"));
         });
-      });
+        el.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            show(el.getAttribute("data-soon"));
+          }
+        });
+      }
+      document.querySelectorAll("#playhub-map area[data-soon]").forEach(bindSoon);
+      document.querySelectorAll(".overlay-action[data-soon]").forEach(bindSoon);
     })();
   </script>
 

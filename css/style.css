@@ -333,7 +333,7 @@ a {
 }
 
 .game-card__btn--play {
-  background: var(--blue);
+  background: linear-gradient(180deg, #28a62d 0%, #1c9620 100%);
   color: #ffffff;
 }
 
@@ -344,7 +344,7 @@ a {
 
 .game-card--active:hover .game-card__btn--play,
 .game-card--active:focus-visible .game-card__btn--play {
-  background: var(--blue-deep);
+  background: linear-gradient(180deg, #1b8f20 0%, #15821a 100%);
   transform: translateX(3px);
 }
 
@@ -713,13 +713,21 @@ a {
   position: relative;
 }
 
-/* 覆蓋在設計圖上的 PLAY NOW 按鈕（遊戲實際上可玩）
-   尺寸統一：三顆按鈕同寬同高，各自在卡片內水平置中
-   （對應 1536×1024 原圖：Chess 中心 x168 / Checkers x430 / Solitaire x1154）
-   寬度 11.62% = 178.5px（與先前 1275 版 14% 同視覺大小） */
-.overlay-play {
+/* ═══════════════════════════════════════════════════════════════
+   覆蓋在設計圖上的卡片底部動作按鈕（Action Button）
+   ───────────────────────────────────────────────────────────────
+   5 顆按鈕完全相同的固定尺寸：相同寬度、高度、內距；
+   文字用 clamp() 相對單位自適應，不超出、不換行。
+   （對應 1536×1024 原圖 5 張卡片中心：
+     Board Games x168 / Puzzle Games x678 / Space Invaders x918 /
+     Solitaire x1154 / Quiz x1405）
+   狀態：
+     PLAY NOW（綠色）→ Board Games、Solitaire（可玩）
+     Coming Soon 樣式 → Puzzle Games、Space Invaders、Quiz（未開放）
+   ═══════════════════════════════════════════════════════════════ */
+.overlay-action {
   position: absolute;
-  top: 85.5%;
+  top: 87.5%;
   height: 5.5%;
   width: 11.62%;
   display: flex;
@@ -727,32 +735,66 @@ a {
   justify-content: center;
   gap: 6px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #28a62d 0%, #1c9620 100%);
-  color: #ffffff;
   font-weight: 700;
   font-size: clamp(10px, 1.4vw, 16px);
   letter-spacing: 0.5px;
+  text-align: center;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  cursor: pointer;
   z-index: 3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.overlay-play::before {
+.overlay-action::before {
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.overlay-action--play {
+  background: linear-gradient(180deg, #28a62d 0%, #1c9620 100%);
+  color: #ffffff;
+}
+
+.overlay-action--play::before {
   content: "▶";
   font-size: 0.85em;
-  line-height: 1;
   transform: translateY(-1px);
 }
 
-.overlay-play--chess { left: 5.13%; }
-.overlay-play--checkers { left: 22.19%; }
-.overlay-play--solitaire { left: 69.32%; }
-
-.overlay-play:hover {
-  background: linear-gradient(180deg, #1b8f20 0%, #15821a 100%);
-  transform: scale(1.04);
+.overlay-action--soon {
+  background: var(--blue-soft);
+  color: var(--blue-deep);
+  box-shadow: 0 2px 6px rgba(16, 32, 58, 0.15);
 }
+
+.overlay-action--soon::before {
+  content: "🔒";
+  font-size: 0.9em;
+}
+
+.overlay-action--play:hover,
+.overlay-action--play:focus-visible {
+  background: linear-gradient(180deg, #1b8f20 0%, #15821a 100%);
+  transform: translateX(-50%) scale(1.04);
+}
+
+.overlay-action--soon:hover,
+.overlay-action--soon:focus-visible {
+  background: #dcebff;
+  transform: translateX(-50%) scale(1.04);
+}
+
+.overlay-action--board-games { left: 10.94%; }
+.overlay-action--puzzle { left: 44.14%; }
+.overlay-action--space { left: 59.77%; }
+.overlay-action--solitaire { left: 75.13%; }
+.overlay-action--quiz { left: 91.47%; }
 
 /* ═══════════════════════════════════════════════════════════════
    More Games 遊戲選單（圖片版首頁下方的分類清單）
