@@ -727,7 +727,7 @@ a {
    ═══════════════════════════════════════════════════════════════ */
 .overlay-action {
   position: absolute;
-  top: 87.5%;
+  top: 86.5%;
   height: 5.5%;
   width: 11.62%;
   display: flex;
@@ -790,11 +790,11 @@ a {
   transform: translateX(-50%) scale(1.04);
 }
 
-.overlay-action--board-games { left: 10.94%; }
-.overlay-action--puzzle { left: 44.14%; }
-.overlay-action--space { left: 59.77%; }
-.overlay-action--solitaire { left: 75.13%; }
-.overlay-action--quiz { left: 91.47%; }
+.overlay-action--board-games { left: 11.98%; }
+.overlay-action--puzzle { left: 31.58%; }
+.overlay-action--space { left: 51.17%; }
+.overlay-action--solitaire { left: 70.77%; }
+.overlay-action--quiz { left: 90.36%; }
 
 /* ═══════════════════════════════════════════════════════════════
    More Games 遊戲選單（圖片版首頁下方的分類清單）
