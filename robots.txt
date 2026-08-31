@@ -1,7 +1,7 @@
-# robots.txt for PlayHub (https://wahaha232.github.io/boardgames/)
+# robots.txt for PlayHub (https://wahaha232.github.io/)
 # Site is fully public — allow all crawlers.
 
 User-agent: *
 Allow: /
 
-Sitemap: https://wahaha232.github.io/boardgames/sitemap.xml
+Sitemap: https://wahaha232.github.io/sitemap.xml

@@ -19,31 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
-  <!-- iframe 嵌入版 Easy Chess：以 playpager.com/easy-chess 提供遊戲，保留 PlayHub 頁面框架 -->
-  <style>
-    .chess-embed {
-      position: relative;
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 18px 36px rgba(16, 32, 58, 0.18);
-      background: #f7f9fc;
-    }
-    .chess-embed iframe {
-      display: block;
-      width: 100%;
-      height: 620px;
-      border: 0;
-      background: #ffffff;
-    }
-    @media (max-width: 640px) {
-      .chess-embed iframe {
-        height: 520px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/chess.css" />
+
   <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
@@ -56,17 +33,35 @@
       <p>Play Free Online · Two Players</p>
     </header>
 
-    <div class="chess-embed">
-      <iframe
-        src="https://playpager.com/easy-chess/"
-        title="Easy Chess — Free Online Chess Game"
-        allow="autoplay; fullscreen"
-        loading="lazy"
-        frameborder="0"
-        scrolling="no"
-        allowfullscreen
-      ></iframe>
+    <div class="chess-layout">
+      <!-- 棋盤主區 -->
+      <div class="chess-main">
+        <div class="chess-status" id="chess-status" role="status" aria-live="polite" aria-atomic="true">White to move</div>
+        <div class="chess-board" id="chess-board" role="grid" aria-label="Chess board"></div>
+        <div class="chess-controls">
+          <button type="button" id="btn-new">New Game</button>
+          <button type="button" id="btn-undo">Undo</button>
+        </div>
+      </div>
+
+      <!-- 側欄：棋譜 + AdSense 版位 -->
+      <aside class="chess-side">
+        <h2>Move History</h2>
+        <div class="chess-history" id="chess-history">
+          <p class="chess-history__empty">No moves yet.</p>
+        </div>
+
+        <!-- AdSense 版位：側欄 300×250 矩形（已啟用，貼上你的 <ins> 程式碼） -->
+        <div class="ad-slot ad-slot--rect">
+          <span class="ad-slot__label">Advertisement</span>
+        </div>
+      </aside>
     </div>
+
+    <p class="game-note">
+      White moves first. Select a piece, then tap a highlighted square to move.
+      Special moves: castling, en passant and pawn promotion are fully supported.
+    </p>
 
     <article class="content-card how-to-play">
       <h2>How to play Chess</h2>
@@ -79,10 +74,23 @@
       </ul>
     </article>
 
+    <!-- AdSense 版位：頁底 Leaderboard（728×90，已啟用） -->
     <div class="ad-slot ad-slot--leaderboard">
       <span class="ad-slot__label">Advertisement</span>
-      <!-- 啟用後貼上你的 <ins class="adsbygoogle"> 程式碼 -->
     </div>
   </div>
+
+  <!-- 兵升變選單 -->
+  <div class="promo-modal is-hidden" id="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promo-title">
+    <div class="promo-box">
+      <button class="promo-close" id="promo-close" type="button" aria-label="Close">×</button>
+      <p id="promo-title">Promote pawn to</p>
+      <div class="promo-pieces" id="promo-pieces"></div>
+    </div>
+  </div>
+
+  <!-- 西洋棋引擎（規則邏輯）與 UI（介面）分離 -->
+  <script src="../js/chess.js"></script>
+  <script src="../js/chess-ui.js"></script>
 </body>
 </html>

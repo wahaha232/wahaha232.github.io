@@ -14,75 +14,77 @@
   <meta property="og:description" content="Play free online Ludo — roll the dice and race your tokens home." />
   <meta property="og:image" content="https://wahaha232.github.io/assets/games/ludo.webp" />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
-  <!-- iframe 嵌入版 Ludo：以 playpager.com/ludo 提供遊戲，保留 PlayHub 頁面框架 -->
-  <style>
-    .ludo-embed {
-      position: relative;
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 18px 36px rgba(16, 32, 58, 0.18);
-      background: #f7f9fc;
-    }
-    .ludo-embed iframe {
-      display: block;
-      width: 100%;
-      height: 620px;
-      border: 0;
-      background: #ffffff;
-    }
-    @media (max-width: 640px) {
-      .ludo-embed iframe {
-        height: 520px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../css/board-game.css" />
+  <link rel="stylesheet" href="../css/ludo.css" />
+
   <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="page page--narrow">
-    <a class="back-link" href="../index.html">← Back to Games</a>
+    <a class="back-link" href="../board-games.html">← Back to Board Games</a>
 
     <header class="game-header">
       <h1>🎲 Ludo</h1>
-      <p>Play Free Online · Two to Four Players</p>
+      <p>Play Free Online · Two Players (Red vs Yellow)</p>
     </header>
 
-    <div class="ludo-embed">
-      <iframe
-        src="https://playpager.com/ludo/"
-        title="Ludo — Free Online Ludo Game"
-        allow="autoplay; fullscreen"
-        loading="lazy"
-        frameborder="0"
-        scrolling="no"
-        allowfullscreen
-      ></iframe>
+    <div class="lu-layout">
+      <div class="lu-main">
+        <div class="bg-status" id="lu-status">Red to roll</div>
+        <div class="lu-board-wrap" id="lu-board-wrap" aria-label="Ludo board"></div>
+        <div class="bg-controls">
+          <button type="button" class="btn-new" id="btn-new">New Game</button>
+          <button type="button" class="btn-undo" id="btn-undo">Undo</button>
+        </div>
+      </div>
+
+      <aside class="lu-side">
+        <div class="lu-dice-panel">
+          <div>Last roll</div>
+          <div class="lu-die" id="lu-die">–</div>
+          <button type="button" class="lu-roll-btn" id="lu-roll">🎲 Roll Dice</button>
+          <div class="lu-event" id="lu-event"></div>
+        </div>
+
+        <div class="lu-yard">
+          <h3>🔴 Red in yard</h3>
+          <div class="lu-yard-tokens" id="lu-yard-red"></div>
+        </div>
+        <div class="lu-yard">
+          <h3>🟡 Yellow in yard</h3>
+          <div class="lu-yard-tokens" id="lu-yard-yellow"></div>
+        </div>
+
+        <div class="ad-slot ad-slot--rect">
+          <span class="ad-slot__label">Advertisement</span>
+        </div>
+      </aside>
     </div>
 
     <article class="content-card how-to-play">
       <h2>How to play Ludo</h2>
       <ul>
-        <li>Each player has 4 tokens waiting in their yard. Roll a 6 to bring one out onto the board, landing on your own start square (a safe square).</li>
+        <li>Each player has 4 tokens waiting in their yard. Roll a 6 to bring one out onto the board, landing on your own start square (a safe square, shown highlighted).</li>
         <li>On any other roll, move one of your tokens already on the board forward that many squares around the shared track.</li>
         <li>Land exactly on an opponent's token on a non-safe square and you send it back to their yard.</li>
         <li>Rolling a 6 earns an extra roll — but three 6s in a row forfeits your turn.</li>
-        <li>Once a token completes the lap, it turns into your own home stretch — you must roll the exact number to bring it all the way home.</li>
+        <li>Once a token completes the lap, it turns into your own 6-square home stretch — you must roll the <em>exact</em> number to bring it all the way home.</li>
         <li>First player to get all 4 tokens home wins.</li>
       </ul>
     </article>
 
     <div class="ad-slot ad-slot--leaderboard">
       <span class="ad-slot__label">Advertisement</span>
-      <!-- 啟用後貼上你的 <ins class="adsbygoogle"> 程式碼 -->
     </div>
   </div>
+
+  <script src="../js/ludo.js"></script>
+  <script src="../js/ludo-ui.js"></script>
 </body>
 </html>

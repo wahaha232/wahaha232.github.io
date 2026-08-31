@@ -42,19 +42,11 @@
     name.className = "game-card__name";
     name.textContent = game.name;
 
-    if (game.status === "available") {
-      var playBtn = document.createElement("span");
-      playBtn.className = "game-card__playbtn";
-      playBtn.textContent = "▶ PLAY NOW";
-      meta.appendChild(name);
-      meta.appendChild(playBtn);
-    } else {
-      var lock = document.createElement("span");
-      lock.className = "game-card__lock";
-      lock.textContent = "🔒";
-      meta.appendChild(name);
-      meta.appendChild(lock);
-    }
+    var btn = document.createElement("span");
+    btn.className = "game-card__btn " + (game.status === "available" ? "game-card__btn--play" : "game-card__btn--soon");
+    btn.textContent = game.status === "available" ? "▶ PLAY NOW" : "🔒 Coming Soon";
+    meta.appendChild(name);
+    meta.appendChild(btn);
 
     card.appendChild(thumb);
     card.appendChild(meta);
@@ -83,7 +75,12 @@
 
   function initGrid() {
     if (!grid) return;
-    games.forEach(function (game) {
+    // data-category 可將卡片限定在某一分類（例如 board-games.html 只列出
+    // cat === "board-games" 的項目）；沒有這個屬性時列出全部（供未來若
+    // 有頁面想顯示所有遊戲使用）。
+    var category = grid.dataset.category;
+    var list = category ? games.filter(function (g) { return g.cat === category; }) : games;
+    list.forEach(function (game) {
       grid.appendChild(buildCard(game));
     });
   }
