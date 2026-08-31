@@ -6,21 +6,43 @@
   <title>Online Checkers - Play Free Draughts | PlayHub</title>
   <meta
     name="description"
-    content="Play free online Checkers (Draughts) — mandatory captures, multi-jumps and king promotion, fully supported. No download, no sign-up."
+    content="Play free online Checkers (Draughts) — the classic two-player board game in your browser. No download, no sign-up."
   />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PlayHub" />
   <meta property="og:title" content="Online Checkers - Play Free Draughts | PlayHub" />
-  <meta property="og:description" content="Play free online Checkers (Draughts) — mandatory captures, multi-jumps and king promotion, fully supported." />
+  <meta property="og:description" content="Play the classic Checkers (Draughts) online — move, jump and crown kings in your browser." />
   <meta property="og:image" content="https://wahaha232.github.io/assets/games/checkers.webp" />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
-  <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/board-game.css" />
-
+  <!-- iframe 嵌入版 Checkers：以 playpager.com/checkers 提供遊戲，保留 PlayHub 頁面框架 -->
+  <style>
+    .checkers-embed {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 36px rgba(16, 32, 58, 0.18);
+      background: #f7f9fc;
+    }
+    .checkers-embed iframe {
+      display: block;
+      width: 100%;
+      height: 620px;
+      border: 0;
+      background: #ffffff;
+    }
+    @media (max-width: 640px) {
+      .checkers-embed iframe {
+        height: 520px;
+      }
+    }
+  </style>
   <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
@@ -33,33 +55,21 @@
       <p>Play Free Online · Two Players</p>
     </header>
 
-    <div class="bg-layout">
-      <div class="bg-main">
-        <div class="bg-status" id="checkers-status">Black to move</div>
-        <div class="bg-board" id="checkers-board" role="grid" aria-label="Checkers board"></div>
-        <div class="bg-controls">
-          <button type="button" class="btn-new" id="btn-new">New Game</button>
-          <button type="button" class="btn-undo" id="btn-undo">Undo</button>
-        </div>
-      </div>
-
-      <aside class="bg-side">
-        <div class="bg-score">
-          <h2>Pieces left</h2>
-          <div class="bg-score__row"><span>⛃ Black</span><span id="checkers-score-b">12</span></div>
-          <div class="bg-score__row"><span>⛁ White</span><span id="checkers-score-w">12</span></div>
-        </div>
-
-        <div class="ad-slot ad-slot--rect">
-          <span class="ad-slot__label">Advertisement</span>
-        </div>
-      </aside>
+    <div class="checkers-embed">
+      <iframe
+        src="https://playpager.com/checkers/"
+        title="Checkers — Free Online Checkers Game"
+        allow="autoplay; fullscreen"
+        loading="lazy"
+        frameborder="0"
+        scrolling="no"
+        allowfullscreen
+      ></iframe>
     </div>
 
     <p class="game-note">
-      Black moves first. Select a piece, then tap a highlighted square to move. Capturing is
-      mandatory whenever it's available, and a piece that can keep jumping must keep jumping.
-      Reach the far row to crown a king.
+      Black moves first, pieces move diagonally forward, and captures are mandatory whenever
+      they're available. Reach the far row to crown a king.
     </p>
 
     <article class="content-card how-to-play">
@@ -77,8 +87,5 @@
       <span class="ad-slot__label">Advertisement</span>
     </div>
   </div>
-
-  <script src="../js/checkers.js"></script>
-  <script src="../js/checkers-ui.js"></script>
 </body>
 </html>
