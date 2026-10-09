@@ -546,6 +546,25 @@ a {
   color: var(--accent);
 }
 
+/* 首頁 hero（深藍底）上的語言切換 */
+.lang-switch--dark {
+  float: none;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.lang-switch--dark a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lang-switch--dark a[aria-current="true"] {
+  color: #ffffff;
+}
+
+.lang-switch--dark a:hover {
+  color: #ffd76a;
+}
+
 .game-header {
   margin-bottom: 22px;
   padding: 18px;

@@ -40,7 +40,8 @@
     }
     @media (max-width: 640px) {
       .ludo-embed iframe {
-        height: 520px;
+        height: 70vh;
+        min-height: 460px;
       }
     }
   </style>
@@ -61,10 +62,9 @@
       <iframe
         src="https://playpager.com/ludo/"
         title="Ludo — Free Online Ludo Game"
-        allow="autoplay; fullscreen"
+        allow="autoplay; fullscreen; picture-in-picture"
         loading="lazy"
-        frameborder="0"
-        scrolling="no"
+        referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen
       ></iframe>
     </div>
