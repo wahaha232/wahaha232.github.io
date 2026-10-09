@@ -21,21 +21,25 @@ Pure HTML / CSS / vanilla JavaScript. No build step.
 | 8 | Classic Battleship | self-built |
 | 9 | Snakes & Ladders | self-built |
 | 10 | Solitaire Online | self-built |
+| 11 | Puzzle Games (2048) | self-built |
+| 12 | Space Invaders | self-built |
+| 13 | Quiz | self-built |
 
-All ten are original, self-built engines (rules + board + controls) that run entirely in
-your browser — nothing is embedded from a third party.
-Coming soon: Puzzle Games, Space Invaders and Quiz.
+All thirteen games are original, self-built code that runs entirely in your browser —
+nothing is embedded from a third party: 10 classic board/card games plus the 2048 number
+puzzle, an arcade shooter and a trivia quiz.
 
-The seven self-built games follow a consistent split: `js/<game>.js` (engine, no DOM) +
-`js/<game>-ui.js` (UI) + their own `css/<game>.css` (or the shared `css/board-game.css`
-for the 8×8-grid games). Each has an engine test script under `scripts/`.
+Each game follows a consistent split: `js/<game>.js` (engine, no DOM) + `js/<game>-ui.js`
+(UI) + its own `css/<game>.css` (or the shared `css/board-game.css` for the 8×8-grid
+games). Each has an engine test script under `scripts/`.
 
 ## Homepage
 
 The homepage (`index.html`) is real HTML (not an image): a hero with an `<h1>`, a
-Featured Games grid, and a crawlable "All Games" link list, plus the mobile nav toggle
-and the "Coming Soon" modal. Advertisement slots are reserved with fixed heights to
-avoid layout shift (CLS) and hidden while empty.
+Featured Games grid, the mobile nav toggle and a "Coming Soon" modal. The ad area sits
+below the featured games (before the footer); `js/consent.js` injects each third-party ad
+network into its own iframe only after consent and auto-sizes it so every ad is visible
+without a scrollbar.
 
 ## Localization
 

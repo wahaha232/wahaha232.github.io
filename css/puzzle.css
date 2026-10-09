@@ -1,0 +1,118 @@
+/* ═══════════════════════════════════════════════════════════════
+   Puzzle Games (2048) — page styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.pz-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto 22px;
+}
+
+.pz-main {
+  flex: 1 1 420px;
+  max-width: 520px;
+}
+
+.pz-side {
+  flex: 0 1 300px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.pz-status {
+  margin: 0 0 14px;
+  text-align: center;
+  font-weight: 600;
+  color: #122744;
+}
+
+.pz-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 10px;
+  border-radius: 14px;
+  background: #bbada0;
+  box-shadow: 0 18px 36px rgba(16, 32, 58, 0.18);
+  touch-action: none;
+}
+
+.pz-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(238, 228, 218, 0.35);
+}
+
+.pz-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: clamp(18px, 5vw, 34px);
+  color: #776e65;
+  background: transparent;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.pz-tile[data-big] {
+  font-size: clamp(14px, 3.6vw, 26px);
+}
+
+.pz-tile[data-val="2"]    { background: #eee4da; }
+.pz-tile[data-val="4"]    { background: #ede0c8; }
+.pz-tile[data-val="8"]    { background: #f2b179; color: #fff; }
+.pz-tile[data-val="16"]   { background: #f59563; color: #fff; }
+.pz-tile[data-val="32"]   { background: #f67c5f; color: #fff; }
+.pz-tile[data-val="64"]   { background: #f65e3b; color: #fff; }
+.pz-tile[data-val="128"]  { background: #edcf72; color: #fff; }
+.pz-tile[data-val="256"]  { background: #edcc61; color: #fff; }
+.pz-tile[data-val="512"]  { background: #edc850; color: #fff; }
+.pz-tile[data-val="1024"] { background: #edc53f; color: #fff; }
+.pz-tile[data-val="2048"] { background: #edc22e; color: #fff; box-shadow: 0 0 0 3px rgba(255, 215, 106, 0.6); }
+
+.pz-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.pz-score {
+  font-weight: 700;
+  color: #122744;
+  font-size: 18px;
+}
+
+.btn-new {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(180deg, #28a62d 0%, #1c9620 100%);
+  box-shadow: 0 6px 14px rgba(28, 150, 32, 0.3);
+}
+
+.btn-new:hover {
+  filter: brightness(1.06);
+}
+
+@media (max-width: 860px) {
+  .pz-side {
+    max-width: 520px;
+  }
+}

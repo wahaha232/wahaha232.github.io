@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════════════════════════════
+   Quiz — page styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.qz-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 auto 22px;
+}
+
+.qz-main {
+  flex: 1 1 440px;
+  max-width: 640px;
+}
+
+.qz-side {
+  flex: 0 1 300px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.qz-card {
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid #e6edf6;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(16, 32, 58, 0.12);
+}
+
+.qz-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #6b7a93;
+}
+
+.qz-question {
+  margin: 0 0 18px;
+  font-size: clamp(18px, 2.4vw, 24px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #122744;
+}
+
+.qz-options {
+  display: grid;
+  gap: 10px;
+}
+
+.qz-opt {
+  text-align: left;
+  padding: 14px 16px;
+  border: 2px solid #dbe6f4;
+  border-radius: 12px;
+  background: #f7faff;
+  color: #122744;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.qz-opt:hover:not(:disabled) {
+  border-color: #3ea6ff;
+  background: #eef6ff;
+}
+
+.qz-opt:disabled {
+  cursor: default;
+}
+
+.qz-opt.is-correct {
+  border-color: #28a62d;
+  background: #eaf9ea;
+}
+
+.qz-opt.is-wrong {
+  border-color: #e53e3e;
+  background: #fdecec;
+}
+
+.qz-feedback {
+  min-height: 22px;
+  margin: 14px 0 0;
+  font-weight: 700;
+}
+
+.qz-feedback.is-correct {
+  color: #1c9620;
+}
+
+.qz-feedback.is-wrong {
+  color: #e53e3e;
+}
+
+.qz-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-new {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(180deg, #28a62d 0%, #1c9620 100%);
+  box-shadow: 0 6px 14px rgba(28, 150, 32, 0.3);
+}
+
+.btn-new:hover {
+  filter: brightness(1.06);
+}
+
+@media (max-width: 860px) {
+  .qz-side {
+    max-width: 640px;
+  }
+}

@@ -95,5 +95,29 @@ const games = [
     image: "assets/games/solitaire.webp",
     url: "games/solitaire.html",
     status: "available"
+  },
+  {
+    id: "puzzle",
+    name: "Puzzle Games",
+    cat: "puzzle",
+    image: "assets/games/puzzle.webp",
+    url: "games/puzzle.html",
+    status: "available"
+  },
+  {
+    id: "space-invaders",
+    name: "Space Invaders",
+    cat: "arcade",
+    image: "assets/games/space-invaders.webp",
+    url: "games/space-invaders.html",
+    status: "available"
+  },
+  {
+    id: "quiz",
+    name: "Quiz",
+    cat: "trivia",
+    image: "assets/games/quiz.webp",
+    url: "games/quiz.html",
+    status: "available"
   }
 ];

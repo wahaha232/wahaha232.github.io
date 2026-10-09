@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Space Invaders - Play Free Online Arcade Shooter | PlayHub</title>
+  <meta
+    name="description"
+    content="Play a free online Space Invaders arcade shooter — move your ship, blast the descending aliens and survive as long as you can. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Space Invaders - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Blast the descending alien fleet in this free online arcade shooter." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/space-invaders.html" />
+  <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/space-invaders.css" />
+  <!-- Cookie 同意 + Google Consent Mode v2 -->
+  <script src="../js/consent.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="../index.html">← Back to Games</a>
+
+    <header class="game-header">
+      <h1>👾 Space Invaders</h1>
+      <p>Play Free Online · Arcade Shooter</p>
+    </header>
+
+    <div class="si-layout">
+      <div class="si-main">
+        <div class="si-status" id="si-status" role="status" aria-live="polite">← → move · Space to fire</div>
+        <div class="si-hud">
+          <div>Score: <span id="si-score">0</span></div>
+          <div>Lives: <span id="si-lives">3</span></div>
+        </div>
+        <canvas id="si-canvas" aria-label="Space Invaders game"></canvas>
+        <div class="si-controls">
+          <button type="button" class="si-btn" id="si-left" aria-label="Move left">◀</button>
+          <button type="button" class="si-btn si-btn--fire" id="si-fire">FIRE</button>
+          <button type="button" class="si-btn" id="si-right" aria-label="Move right">▶</button>
+        </div>
+        <div class="si-actions">
+          <button type="button" class="btn-new" id="btn-new">New Game</button>
+        </div>
+      </div>
+
+      <aside class="si-side">
+        <div class="ad-slot ad-slot--rect"></div>
+      </aside>
+    </div>
+
+    <p class="game-note">
+      Move your ship with the arrow keys or the on-screen buttons, and press Space (or FIRE)
+      to shoot. Clear every alien to win — but don't let them reach your row or shoot you down.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Space Invaders</h2>
+      <ul>
+        <li>A fleet of aliens moves side to side above you and drops down one row each time it reaches the edge.</li>
+        <li>Move your ship left and right along the bottom, and fire straight up to destroy aliens.</li>
+        <li>The aliens get faster as fewer of them are left — clear them quickly.</li>
+        <li>Aliens fire back. You have 3 lives; each hit costs one life and resets your ship to the middle.</li>
+        <li>You win by destroying the whole fleet. You lose if your lives reach zero, or if the aliens reach your row.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/space-invaders.js"></script>
+  <script src="../js/space-invaders-ui.js"></script>
+</body>
+</html>
