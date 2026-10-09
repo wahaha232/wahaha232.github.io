@@ -1,102 +1,107 @@
-# Mindboard Games — Free Online Classic Board Games
+# PlayHub — Free Online Games
 
-🎮 A casual online games portal. **9 classic board games** on the homepage (3×3 grid) — **all 9 are fully playable**, each with its own original, self-built rules engine (no third-party embeds).
-
-Pure HTML / CSS / Vanilla JavaScript. No frameworks, no accounts, no downloads. **Click → Play.**
+🎮 A casual online games portal. **10 games are playable right now** — 9 classic board
+games plus Solitaire — with no accounts, no downloads and no sign-up. **Click → Play.**
 
 🔗 Live site: https://wahaha232.github.io/
 
+Pure HTML / CSS / vanilla JavaScript. No build step.
+
 ## Games
 
-| # | Game | Status |
+| # | Game | Engine |
 | --- | --- | --- |
-| 1 | Ludo | ✅ **Available** |
-| 2 | Othello Reversi | ✅ **Available** |
-| 3 | Mini Chess | ✅ **Available** |
-| 4 | Checkers | ✅ **Available** |
-| 5 | Backgammon | ✅ **Available** |
-| 6 | Nine Men's Morris | ✅ **Available** |
-| 7 | Dominoes | ✅ **Available** |
-| 8 | Classic Battleship | ✅ **Available** |
-| 9 | Snakes & Ladders | ✅ **Available** |
+| 1 | Easy Chess | embedded (Playpager) |
+| 2 | Checkers | embedded (Playpager) |
+| 3 | Ludo | embedded (Playpager) |
+| 4 | Othello Reversi | self-built |
+| 5 | Backgammon | self-built |
+| 6 | Nine Men's Morris | self-built |
+| 7 | Dominoes | self-built |
+| 8 | Classic Battleship | self-built |
+| 9 | Snakes & Ladders | self-built |
+| 10 | Solitaire Online | self-built |
 
-Every game page also has a "How to play" rules section, and each has its own engine test script under `scripts/`.
+Easy Chess, Checkers and Ludo run in an iframe provided by
+[Playpager](https://playpager.com/) under their free embed program. The other seven are
+original, self-built engines (rules + board + controls), running entirely in your browser.
+Coming soon: Puzzle Games, Space Invaders and Quiz.
 
-## Mini Chess
+The seven self-built games follow a consistent split: `js/<game>.js` (engine, no DOM) +
+`js/<game>-ui.js` (UI) + their own `css/<game>.css` (or the shared `css/board-game.css`
+for the 8×8-grid games). Each has an engine test script under `scripts/`.
 
-`games/chess.html` — a full chess game built in vanilla JS:
+## Homepage
 
-- 8×8 board, white/black pieces, legal move highlighting
-- Move / capture / turn management
-- Check, checkmate, stalemate, draw by insufficient material, 50-move rule, threefold repetition
-- Castling, en passant, pawn promotion (with piece picker)
-- Keyboard-accessible board (arrow keys + Enter), `aria-live` status
-- New Game / Undo, move history panel
-- Responsive, touch-friendly
+The homepage (`index.html`) is real HTML (not an image): a hero with an `<h1>`, a
+Featured Games grid, and a crawlable "All Games" link list, plus the mobile nav toggle
+and the "Coming Soon" modal. Advertisement slots are reserved with fixed heights to
+avoid layout shift (CLS) and hidden while empty.
 
-Architecture is modular:
+## Localization
 
-- `js/chess.js` — chess engine (rules, move generation, game state). No DOM.
-- `js/chess-ui.js` — board UI, click/keyboard handling, promotion picker, history.
-- `css/chess.css` — board styling.
+Marketing pages (Board Games, About, Contact, Privacy) are available in English,
+Spanish (`es/`) and French (`fr/`), cross-linked with `hreflang`. Game pages themselves
+are English-only; the localized category pages link through to them.
 
-Every other game follows the same split: `js/<game>.js` (engine, no DOM) + `js/<game>-ui.js` (UI, calls only the engine's public methods) + its own `css/<game>.css` (or the shared `css/board-game.css` for the 8×8-grid games).
+## Cookies & advertising
+
+Google AdSense is enabled. `js/consent.js` sets **Google Consent Mode v2** defaults to
+`denied` and loads *before* the AdSense loader on every page, then shows a small
+accept/decline banner (`localStorage`, key `playhub-consent-v1`). For full EEA/UK
+compliance, configure a Google-certified CMP in the AdSense account as well.
+
+Publisher ID: `ca-pub-1512317781873771` (`ads.txt` present).
 
 ## Engine tests
 
-Each game has its own Node-based test script under `scripts/`. Run everything with:
+Each self-built game has a Node-based test script under `scripts/`. Run everything with:
 
 ```bash
 npm install   # only needed once, for the jsdom-based chess UI tests
 npm test
 ```
 
-This runs, in order: `test-chess.cjs`, `test-chess-ui.cjs` (jsdom), `test-othello.cjs`, `test-checkers.cjs`, `test-snakes-ladders.cjs`, `test-dominoes.cjs`, `test-battleship.cjs`, `test-morris.cjs`, `test-ludo.cjs`, `test-backgammon.cjs` — 306 checks total across all 9 games, covering the rule edge cases specific to each (castling/en passant/promotion, mandatory capture chains, mill formation, bear-off overage, etc.), not just happy-path moves.
-
 ## Structure
 
 ```
 /
-├── index.html            # 首頁：3×3 Classic Board Games 清單
-├── about.html / privacy.html
-├── robots.txt / sitemap.xml
+├── index.html            # Homepage (hero + featured cards + all-games list)
+├── board-games.html      # Board Games category (cards from js/games.js)
+├── about.html / contact.html / privacy.html
+├── es/ fr/               # Spanish / French marketing pages
+├── 404.html
+├── robots.txt / sitemap.xml / ads.txt
 ├── css/
-│   ├── style.css         # 首頁樣式（portal 風格）
-│   ├── board-game.css    # Othello + Checkers 共用的 8×8 棋盤樣式
-│   ├── chess.css         # 西洋棋專用樣式
-│   └── ludo.css / backgammon.css / morris.css / dominoes.css
-│       / battleship.css / snakes-ladders.css   # 其餘 6 款各自的棋盤樣式
+│   ├── style.css         # shared portal + page styles (+ cookie banner)
+│   ├── board-game.css    # shared 8×8 board styles
+│   └── chess.css / ludo.css / backgammon.css / morris.css
+│       / dominoes.css / battleship.css / snakes-ladders.css
 ├── js/
-│   ├── games.js          # ★ 遊戲資料陣列（status: available / coming-soon）
-│   ├── main.js           # 首頁卡片產生器 + Coming Soon 彈窗 + 選單
-│   └── <game>.js + <game>-ui.js   # 每款遊戲各自的引擎 + 介面（9 組）
-├── scripts/
-│   └── test-<game>.cjs   # 每款遊戲各自的 Node 測試腳本（+ test-chess-ui.cjs 用 jsdom）
-├── games/
-│   └── <game>.html        # 9 個可玩的遊戲頁面
-└── assets/
-    ├── favicon.svg
-    └── games/            # 9 張遊戲封面圖（.webp）
+│   ├── consent.js        # cookie banner + Consent Mode v2
+│   ├── games.js          # game data (used by board-games.html)
+│   ├── main.js           # card generator + Coming Soon modal
+│   └── <game>.js + <game>-ui.js
+├── scripts/              # Node test scripts (one per self-built game)
+├── games/                # playable game pages
+├── assets/               # favicon + game cover images (.webp)
+└── shibuya/              # separate Shibuya live-cam microsite
 ```
 
-## Making a Game Available
+## Adding a game
 
-(Kept for reference — this is how each of the 9 games above went from "Coming Soon" to playable.)
+1. Build the real game page `games/<id>.html` (+ engine/UI if self-built).
+2. In `js/games.js`, add/adjust the entry and set `status: "available"`.
 
-1. Build the real game page, e.g. `games/<id>.html`, plus its `js/<id>.js` engine and `js/<id>-ui.js` UI.
-2. In `js/games.js`, change its status:
-
-```javascript
-{ id: "ludo", name: "Ludo", image: "assets/games/ludo.webp", url: "games/ludo.html", status: "available" }
-```
-
-The homepage automatically turns the card from `🔒 Coming Soon` into `▶ PLAY NOW`. No homepage redesign needed.
+`board-games.html` filters `games.js` by `cat === "board-games"`, so card status follows
+the data automatically.
 
 ## Deployment
 
-`.github/workflows/deploy.yml` publishes the static files to GitHub Pages on every push to `main`.
+This repo is named `wahaha232.github.io`, so GitHub Pages serves it directly from the
+`main` branch root. Push to `main` to publish — no workflow file is required.
 
-## Local Preview
+## Local preview
 
 ```bash
 python -m http.server 8080
@@ -104,32 +109,11 @@ python -m http.server 8080
 
 Open http://localhost:8080/
 
-## Notes
-
-- Advertisement slots are reserved with fixed heights to avoid layout shift, on every page (homepage + all 9 game pages).
-- All paths are relative, so the site works under the GitHub Pages sub-path.
-- All 9 games are original, self-built engines — no third-party game embeds.
-
-## Google AdSense
-
-Ad units are **reserved** (not active yet). To activate them:
-
-1. Get approved by Google AdSense, then add your publisher line to `ads.txt`:
-
-   ```
-   google.com, pub-XXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-   ```
-
-2. In `index.html` and every `games/*.html` page, replace `ca-pub-XXXXXXXXXXXXXXXX` with your publisher ID and uncomment the AdSense loader `<script>`.
-
-3. In each `.ad-slot` div, replace the placeholder with your `<ins class="adsbygoogle">` snippet (copy it from your AdSense account) and set `data-ad-client` / `data-ad-slot`.
-
-Ad slot positions (all fixed-height to avoid CLS, all **outside** the game area):
-
-- Homepage: leaderboard under the title, leaderboard below the game grid
-- Every game page: 300×250 rectangle between the game controls and the "How to play" section, plus a leaderboard at the bottom
-
 ## SEO
 
 - `robots.txt` allows all crawlers and points to `sitemap.xml`.
-- `sitemap.xml` lists all 12 pages (homepage, 9 games, about, privacy).
+- `sitemap.xml` lists the homepage, board-games, the 10 games, about/contact/privacy and
+  the `es/` + `fr/` marketing pages.
+- Indexable pages declare `rel="canonical"`; the Board Games / About / Contact / Privacy
+  pages declare `hreflang` alternates (en / es / fr / x-default).
+- All paths are relative, so the site works under the GitHub Pages path.

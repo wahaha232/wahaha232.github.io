@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Not Found | Mindboard Games</title>
+  <title>Page Not Found | PlayHub</title>
   <meta name="description" content="The page you requested could not be found." />
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="portal.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="page" style="text-align:center;padding-top:80px;">
-    <p style="font-size:64px;font-weight:700;margin:0;color:#e7b928;">404</p>
-    <h1 style="margin:10px 0 0;">Page Not Found</h1>
-    <p style="color:#8a8577;">The page you're looking for doesn't exist, or may have moved.</p>
-    <p>
-      <a href="index.html" style="display:inline-block;margin-top:16px;padding:12px 26px;border-radius:999px;background:#e7b928;color:#fff;font-weight:700;text-decoration:none;">← Back to Games</a>
-    </p>
+  <div class="page page--narrow">
+    <a class="back-link" href="index.html">← Back to Home</a>
+
+    <header class="game-header">
+      <h1>404 — Page Not Found</h1>
+      <p>The page you're looking for doesn't exist, or may have moved.</p>
+    </header>
+
+    <article class="content-card" style="text-align:center;">
+      <p>Try one of our free online games instead:</p>
+      <p>
+        <a
+          href="board-games.html"
+          style="display:inline-block;margin-top:6px;padding:12px 26px;border-radius:999px;background:linear-gradient(180deg,#28a62d 0%,#1c9620 100%);color:#fff;font-weight:700;text-decoration:none;"
+        >▶ Play Board Games</a>
+      </p>
+      <p><a href="index.html">← Back to PlayHub home</a></p>
+    </article>
   </div>
 </body>
 </html>

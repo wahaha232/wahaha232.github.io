@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>PlayHub - Free Online Games</title>
+  <title>PlayHub - 10 Free Online Games: Chess, Checkers, Ludo &amp; More</title>
   <meta
     name="description"
-    content="Play classic games online for free. Enjoy Chess and discover more classic games coming soon at PlayHub."
+    content="Play 10 classic games online for free at PlayHub — Chess, Checkers, Ludo, Othello, Backgammon, Nine Men's Morris, Dominoes, Battleship, Snakes &amp; Ladders and Solitaire. No download, no sign-up."
   />
 
   <meta property="og:type" content="website" />
@@ -15,13 +15,15 @@
   <meta property="og:title" content="PlayHub - Free Online Games" />
   <meta
     property="og:description"
-    content="Play classic games online for free. Enjoy Chess and discover more classic games coming soon."
+    content="Play 10 classic games online for free — Chess, Checkers, Ludo, Solitaire and more. No download, no sign-up."
   />
   <meta property="og:url" content="https://wahaha232.github.io/" />
   <meta property="og:image" content="https://wahaha232.github.io/assets/games/chess.webp" />
   <meta name="theme-color" content="#0f57c4" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/" />
   <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
   <!-- Fredoka：圓潤、友善、休閒的字體 -->
@@ -31,60 +33,143 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- ═══════════════════════════════════════════════════════════
-       Google AdSense（已啟用：ca-pub-1512317781873771）
-       中文：AdSense 載入腳本已啟用（使用帳戶真實 publisher ID）。
-       ═══════════════════════════════════════════════════════════ -->
+  <!-- Cookie 同意 + Google Consent Mode v2（預設 denied，接受後才開放）
+       置於 AdSense 載入腳本之前，確保預設同意狀態先套用。 -->
+  <script src="js/consent.js"></script>
+  <!-- Google AdSense（已啟用：ca-pub-1512317781873771） -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <main class="page page--shot">
-
-    <!-- 首頁設計圖（直接作為首頁主視覺；大分類入口卡片：Board Games / Puzzle Games / Space Invaders / Solitaire Online / Quiz；僅 Solitaire 以 PLAY NOW 按鈕進入遊戲） -->
-    <div class="design-shot-wrap">
-      <img
-        class="design-shot"
-        src="homepage.png"
-        usemap="#playhub-map"
-        alt="PlayHub homepage — WELCOME TO PLAYHUB, game categories and featured games: Board Games, Puzzle Games, Space Invaders, Solitaire Online, Quiz"
-        width="1536"
-        height="1024"
-      />
-      <!-- 卡片底部動作按鈕（統一尺寸，文字 clamp 自適應）：
-           PLAY NOW（綠色）→ Board Games、Solitaire（可玩）
-           Coming Soon 樣式 → Puzzle Games、Space Invaders、Quiz（未開放） -->
-      <a class="overlay-action overlay-action--play overlay-action--board-games" href="board-games.html" title="Play Board Games — Classic Board Games Category">PLAY NOW</a>
-      <span class="overlay-action overlay-action--soon overlay-action--puzzle" role="button" tabindex="0" data-soon="Puzzle Games" title="Puzzle Games — Coming Soon">Coming Soon</span>
-      <span class="overlay-action overlay-action--soon overlay-action--space" role="button" tabindex="0" data-soon="Space Invaders" title="Space Invaders — Coming Soon">Coming Soon</span>
-      <!-- Solitaire：僅此 PLAY NOW 按鈕可進入遊戲，點圖片不觸發任何事件（設計圖上無 Solitaire 熱區） -->
-      <a class="overlay-action overlay-action--play overlay-action--solitaire" href="games/solitaire.html" title="Play Solitaire Online — Classic Solitaire Game">PLAY NOW</a>
-      <span class="overlay-action overlay-action--soon overlay-action--quiz" role="button" tabindex="0" data-soon="Quiz" title="Quiz — Coming Soon">Coming Soon</span>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__icon" aria-hidden="true">🎮</span>Play<span class="site-logo__accent">Hub</span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="board-games.html">Board Games</a>
+        <a class="site-nav__link" href="about.html">About</a>
+        <a class="site-nav__link" href="contact.html">Contact</a>
+        <a class="site-nav__link" href="privacy.html">Privacy</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
     </div>
 
-    <!-- 設計圖上的互動熱區：點卡片進入對應遊戲（座標為 1536×1024 原圖座標） -->
-    <map name="playhub-map" id="playhub-map">
-      <area shape="rect" coords="36,642,332,946" href="board-games.html" title="Board Games" alt="Board Games — Classic Board Games Category" />
-      <!-- Checkers 已正式歸類至 Board Games 分類內，首頁不再有獨立 Checkers 卡片 -->
-      <area shape="rect" coords="337,642,633,946" href="#games" data-soon="Puzzle Games" title="Puzzle Games — Coming Soon" alt="Puzzle Games — coming soon" />
-      <area shape="rect" coords="638,642,934,946" href="#games" data-soon="Space Invaders" title="Space Invaders — Coming Soon" alt="Space Invaders — coming soon" />
-      <!-- Solitaire：圖片熱區已移除，僅 PLAY NOW 按鈕可進入遊戲 -->
-      <area shape="rect" coords="1240,642,1536,946" href="#games" data-soon="Quiz" title="Quiz — Coming Soon" alt="Quiz — coming soon" />
-
-      <!-- About / Privacy 入口：點設計圖 footer 上的 About US / Privacy Policy 文字進入對應頁面 -->
-      <area shape="rect" coords="620,978,700,1005" href="about.html" title="About PlayHub" alt="About PlayHub" />
-      <area shape="rect" coords="725,978,830,1005" href="privacy.html" title="Privacy Policy" alt="Privacy Policy" />
-      <area shape="rect" coords="1005,978,1070,1005" href="contact.html" title="Contact PlayHub" alt="Contact PlayHub" />
-    </map>
-
-    <!-- ═══════════════════════════════════════════════════════════
-         AdSense 版位：Leaderboard（728×90）
-         中文：啟用時貼上你的 <ins class="adsbygoogle"> 程式碼。
-         ═══════════════════════════════════════════════════════════ -->
-    <div class="ad-slot ad-slot--leaderboard">
-      <span class="ad-slot__label">Advertisement</span>
-      <!-- 啟用後貼上你的 <ins class="adsbygoogle"> 程式碼 -->
+    <div class="hero">
+      <h1 class="hero__title">PlayHub</h1>
+      <p class="hero__sub">Free Online Games — Play Instantly</p>
+      <p class="hero__tagline">10 classic games, no download and no sign-up. Pick one and play right in your browser.</p>
     </div>
+  </header>
+
+  <main class="page">
+
+    <section class="featured" id="games" aria-labelledby="featured-title">
+      <div class="featured__head">
+        <h2 class="featured__title" id="featured-title">Featured Games</h2>
+        <a class="back-link" href="board-games.html">See all board games →</a>
+      </div>
+
+      <div class="game-grid">
+        <!-- Board Games（分類入口） -->
+        <a class="game-card game-card--active" href="board-games.html" aria-label="Board Games">
+          <span class="game-card__thumb">
+            <img src="assets/games/chess.webp" alt="Board Games" loading="lazy" width="400" height="400" />
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Board Games</span>
+            <span class="game-card__desc">Chess, Checkers, Ludo &amp; more</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
+
+        <!-- Solitaire（可玩） -->
+        <a class="game-card game-card--active" href="games/solitaire.html" aria-label="Solitaire Online">
+          <span class="game-card__thumb">
+            <img src="assets/games/solitaire.webp" alt="Solitaire Online" loading="lazy" width="400" height="400" />
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Solitaire Online</span>
+            <span class="game-card__desc">Classic Klondike card game</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
+
+        <!-- Puzzle Games（Coming Soon） -->
+        <a class="game-card game-card--soon" href="#games" data-soon="Puzzle Games" aria-label="Puzzle Games — Coming Soon">
+          <span class="game-card__thumb game-card__thumb--purple">
+            <span class="game-card__emoji" aria-hidden="true">🧩</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Puzzle Games</span>
+            <span class="game-card__desc">Coming soon</span>
+            <span class="game-card__btn game-card__btn--soon">🔒 Coming Soon</span>
+          </span>
+        </a>
+
+        <!-- Space Invaders（Coming Soon） -->
+        <a class="game-card game-card--soon" href="#games" data-soon="Space Invaders" aria-label="Space Invaders — Coming Soon">
+          <span class="game-card__thumb game-card__thumb--dark">
+            <span class="game-card__emoji" aria-hidden="true">👾</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Space Invaders</span>
+            <span class="game-card__desc">Coming soon</span>
+            <span class="game-card__btn game-card__btn--soon">🔒 Coming Soon</span>
+          </span>
+        </a>
+
+        <!-- Quiz（Coming Soon） -->
+        <a class="game-card game-card--soon" href="#games" data-soon="Quiz" aria-label="Quiz — Coming Soon">
+          <span class="game-card__thumb game-card__thumb--orange">
+            <span class="game-card__emoji" aria-hidden="true">❓</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Quiz</span>
+            <span class="game-card__desc">Coming soon</span>
+            <span class="game-card__btn game-card__btn--soon">🔒 Coming Soon</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- AdSense 版位：Leaderboard（728×90，固定高度避免 CLS；啟用後貼上 <ins class="adsbygoogle">） -->
+    <div class="ad-slot ad-slot--leaderboard"></div>
+
+    <!-- 可爬取的完整遊戲連結清單（SEO + 無障礙替代入口） -->
+    <section class="more-games" aria-labelledby="all-games-title">
+      <h2 class="more-games__title" id="all-games-title">All Games</h2>
+
+      <p class="more-games__cat">Board Games</p>
+      <ul class="more-games__list">
+        <li><a href="games/chess.html">♟ Easy Chess</a></li>
+        <li><a href="games/checkers.html">⬤ Checkers</a></li>
+        <li><a href="games/ludo.html">🎲 Ludo</a></li>
+        <li><a href="games/othello.html">⚫⚪ Othello Reversi</a></li>
+        <li><a href="games/backgammon.html">🎯 Backgammon</a></li>
+        <li><a href="games/morris.html">⚫⚪ Nine Men's Morris</a></li>
+        <li><a href="games/dominoes.html">🁫 Dominoes</a></li>
+        <li><a href="games/battleship.html">🚢 Classic Battleship</a></li>
+        <li><a href="games/snakes-ladders.html">🐍🪜 Snakes &amp; Ladders</a></li>
+      </ul>
+
+      <p class="more-games__cat">Cards</p>
+      <ul class="more-games__list">
+        <li><a href="games/solitaire.html">🃏 Solitaire Online</a></li>
+      </ul>
+
+      <p class="more-games__cat">Coming Soon</p>
+      <ul class="more-games__list">
+        <li><a href="#games" data-soon="Puzzle Games">🧩 Puzzle Games</a></li>
+        <li><a href="#games" data-soon="Space Invaders">👾 Space Invaders</a></li>
+        <li><a href="#games" data-soon="Quiz">❓ Quiz</a></li>
+      </ul>
+    </section>
 
   </main>
 
@@ -109,15 +194,32 @@
       <button class="modal__close" id="soon-close" type="button" aria-label="Close">×</button>
       <p class="modal__icon" aria-hidden="true">🔒</p>
       <h2 class="modal__title" id="soon-title">Coming Soon</h2>
-      <p class="modal__game" id="soon-name">Ludo</p>
+      <p class="modal__game" id="soon-name">Puzzle Games</p>
       <p class="modal__text">This game is currently under development.</p>
     </div>
   </div>
 
-  <!-- 圖片熱區互動：未開發的遊戲顯示 Coming Soon 提示 -->
   <script>
     (function () {
       "use strict";
+
+      // ── 行動版導覽選單 ──
+      var toggle = document.getElementById("nav-toggle");
+      var nav = document.getElementById("site-nav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          var open = nav.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        nav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            nav.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+          });
+        });
+      }
+
+      // ── Coming Soon 彈窗 ──
       var modal = document.getElementById("soon-modal");
       var modalName = document.getElementById("soon-name");
       var close = document.getElementById("soon-close");
@@ -126,10 +228,12 @@
       function show(name) {
         if (modalName) modalName.textContent = name;
         modal.classList.remove("is-hidden");
+        if (close) close.focus();
       }
       function hide() {
         modal.classList.add("is-hidden");
       }
+
       if (close) close.addEventListener("click", hide);
       modal.addEventListener("click", function (event) {
         if (event.target === modal) hide();
@@ -137,6 +241,7 @@
       document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") hide();
       });
+
       function bindSoon(el) {
         el.addEventListener("click", function (event) {
           event.preventDefault();
@@ -149,13 +254,12 @@
           }
         });
       }
-      document.querySelectorAll("#playhub-map area[data-soon]").forEach(bindSoon);
-      document.querySelectorAll(".overlay-action[data-soon]").forEach(bindSoon);
+      document.querySelectorAll(".game-card[data-soon], .more-games__list a[data-soon]").forEach(bindSoon);
     })();
   </script>
 
   <noscript>
-    <p class="noscript-note">PlayHub — Free Online Games.</p>
+    <p class="noscript-note">PlayHub — Free Online Games. <a href="board-games.html">Browse board games</a>.</p>
   </noscript>
 </body>
 </html>

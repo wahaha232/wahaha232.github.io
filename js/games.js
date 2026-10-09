@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
-// Mindboard Games — 遊戲資料中心（Classic Board Games Portal）
+// PlayHub — 遊戲資料中心（Classic Board Games Portal）
 //
-// 首頁的 9 款遊戲全部由此陣列動態產生（3×3 網格）。
+// 供 board-games.html 等頁面以 data-category 篩選後動態產生卡片。
 //
 // 開發一款新遊戲時：
 //   1. 建立 games/<id>.html（真正可玩的遊戲頁面）
@@ -95,13 +95,5 @@ const games = [
     image: "assets/games/solitaire.webp",
     url: "games/solitaire.html",
     status: "available"
-  },
-  {
-    id: "quiz",
-    name: "Quiz",
-    cat: "trivia",
-    image: "assets/games/quiz.webp",
-    url: "games/quiz.html",
-    status: "coming-soon"
   }
 ];

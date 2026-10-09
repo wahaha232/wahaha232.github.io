@@ -350,21 +350,16 @@ a {
   justify-content: center;
   height: 90px;
   margin: 30px auto;
-  border: 2px dashed #d7e0ec;
-  border-radius: 12px;
-  background: #f7f9fc;
 }
 
 .ad-slot--leaderboard { height: 90px;  max-width: 728px; } /* 728×90 Leaderboard */
 .ad-slot--rect        { height: 250px; max-width: 300px; } /* 300×250 矩形 */
 .ad-slot--banner      { height: 100px; max-width: 320px; } /* 320×100 手機橫幅 */
 
+/* 空版位不顯示虛線框與「Advertisement」字樣，避免看起來像壞掉；
+   固定高度仍保留，以避免廣告注入時的 CLS。 */
 .ad-slot__label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #aab6c8;
+  display: none;
 }
 
 .ad-slot .adsbygoogle {
@@ -694,118 +689,6 @@ a {
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   圖片版首頁（homepage.png 設計圖直接作為主視覺）
-   ═══════════════════════════════════════════════════════════════ */
-
-.site-header--slim {
-  padding-bottom: 0;
-}
-
-.site-header--slim .site-header__bar {
-  padding: 14px 20px;
-}
-
-.page--shot {
-  max-width: 1440px;
-  padding-top: 18px;
-}
-
-.design-shot {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: var(--shadow-hover);
-}
-
-/* 圖片容器：讓 PLAY NOW 覆蓋按鈕能隨圖片縮放對齊 */
-.design-shot-wrap {
-  position: relative;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   覆蓋在設計圖上的卡片底部動作按鈕（Action Button）
-   ───────────────────────────────────────────────────────────────
-   5 顆按鈕完全相同的固定尺寸：相同寬度、高度、內距；
-   文字用 clamp() 相對單位自適應，不超出、不換行。
-   （對應 1536×1024 原圖 5 張卡片中心：
-     Board Games x168 / Puzzle Games x678 / Space Invaders x918 /
-     Solitaire x1154 / Quiz x1405）
-   狀態：
-     PLAY NOW（綠色）→ Board Games、Solitaire（可玩）
-     Coming Soon 樣式 → Puzzle Games、Space Invaders、Quiz（未開放）
-   ═══════════════════════════════════════════════════════════════ */
-.overlay-action {
-  position: absolute;
-  top: 86.5%;
-  height: 5.5%;
-  width: 11.62%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: clamp(10px, 1.4vw, 16px);
-  letter-spacing: 0.5px;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
-  cursor: pointer;
-  z-index: 3;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transform: translateX(-50%);
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.overlay-action::before {
-  flex-shrink: 0;
-  line-height: 1;
-}
-
-.overlay-action--play {
-  background: linear-gradient(180deg, #28a62d 0%, #1c9620 100%);
-  color: #ffffff;
-}
-
-.overlay-action--play::before {
-  content: "▶";
-  font-size: 0.85em;
-  transform: translateY(-1px);
-}
-
-.overlay-action--soon {
-  background: var(--blue-soft);
-  color: var(--blue-deep);
-  box-shadow: 0 2px 6px rgba(16, 32, 58, 0.15);
-}
-
-.overlay-action--soon::before {
-  content: "🔒";
-  font-size: 0.9em;
-}
-
-.overlay-action--play:hover,
-.overlay-action--play:focus-visible {
-  background: linear-gradient(180deg, #1b8f20 0%, #15821a 100%);
-  transform: translateX(-50%) scale(1.04);
-}
-
-.overlay-action--soon:hover,
-.overlay-action--soon:focus-visible {
-  background: #dcebff;
-  transform: translateX(-50%) scale(1.04);
-}
-
-.overlay-action--board-games { left: 11.98%; }
-.overlay-action--puzzle { left: 31.58%; }
-.overlay-action--space { left: 51.17%; }
-.overlay-action--solitaire { left: 70.77%; }
-.overlay-action--quiz { left: 90.36%; }
 
 /* ═══════════════════════════════════════════════════════════════
    More Games 遊戲選單（圖片版首頁下方的分類清單）
@@ -874,6 +757,63 @@ a {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Cookie 同意橫幅（Google Consent Mode v2 前端提示）
+   ═══════════════════════════════════════════════════════════════ */
+
+.cookie-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(9, 26, 58, 0.97);
+  color: #ffffff;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cookie-consent__text {
+  margin: 0;
+  max-width: 720px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cookie-consent__text a {
+  color: #8fc0ff;
+}
+
+.cookie-consent__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-consent__btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cookie-consent__btn--ghost {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.cookie-consent__btn--primary {
+  background: #1573e6;
+  color: #ffffff;
 }
 
 
