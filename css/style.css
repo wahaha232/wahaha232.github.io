@@ -855,10 +855,12 @@ a {
 }
 
 /* Each network renders in its own iframe; height is set by JS to the content
-   height so every ad is fully visible with no scrollbar. */
+   height so every ad is fully visible with no scrollbar. Two frames sit side by
+   side at equal width, and stack only when the row is too narrow. */
 .thirdparty-ads__frame {
   display: block;
-  flex: 1 1 728px;
+  flex: 1 1 320px;
+  min-width: 0;
   width: 100%;
   max-width: 728px;
   min-height: 90px;
