@@ -11,9 +11,9 @@ Pure HTML / CSS / vanilla JavaScript. No build step.
 
 | # | Game | Engine |
 | --- | --- | --- |
-| 1 | Easy Chess | embedded (Playpager) |
-| 2 | Checkers | embedded (Playpager) |
-| 3 | Ludo | embedded (Playpager) |
+| 1 | Easy Chess | self-built |
+| 2 | Checkers | self-built |
+| 3 | Ludo | self-built |
 | 4 | Othello Reversi | self-built |
 | 5 | Backgammon | self-built |
 | 6 | Nine Men's Morris | self-built |
@@ -22,9 +22,8 @@ Pure HTML / CSS / vanilla JavaScript. No build step.
 | 9 | Snakes & Ladders | self-built |
 | 10 | Solitaire Online | self-built |
 
-Easy Chess, Checkers and Ludo run in an iframe provided by
-[Playpager](https://playpager.com/) under their free embed program. The other seven are
-original, self-built engines (rules + board + controls), running entirely in your browser.
+All ten are original, self-built engines (rules + board + controls) that run entirely in
+your browser — nothing is embedded from a third party.
 Coming soon: Puzzle Games, Space Invaders and Quiz.
 
 The seven self-built games follow a consistent split: `js/<game>.js` (engine, no DOM) +
