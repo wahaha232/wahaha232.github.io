@@ -53,14 +53,15 @@ compliance, configure a Google-certified CMP in the AdSense account as well.
 
 Publisher ID: `ca-pub-1512317781873771` (`ads.txt` present).
 
-Additional third-party ad networks are loaded on the AdSense pages:
+Additional third-party ad networks are loaded on the AdSense pages **only after the
+visitor accepts** — `js/consent.js` injects them into a sandboxed iframe rendered in the
+reserved ad slot (so their `document.write` cannot overwrite the page):
 
 - `profitableratecpmnetwork.com` via `invoke.js` + `<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab">`.
 - `highrevenueformat.com` via `atOptions` + `invoke.js` (300×250 iframe).
 
 Note: mixing Google AdSense with third-party pop-under/CPM networks can violate AdSense
-policy, and these loaders currently run outside the consent flow — review before relying
-on them in production.
+policy — review before relying on them in production.
 
 ## Engine tests
 

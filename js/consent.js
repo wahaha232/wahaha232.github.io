@@ -66,6 +66,7 @@
       /* storage unavailable — still apply for this page view */
     }
     update(state);
+    if (state === "granted") injectAdNetworks();
     var el = document.getElementById("cookie-consent");
     if (el && el.parentNode) el.parentNode.removeChild(el);
   }
@@ -97,6 +98,46 @@
     document.body.appendChild(banner);
   }
 
+  // Third-party ad networks, loaded ONLY after the visitor accepts.
+  // Rendered inside a sandboxed-by-default child document (iframe srcdoc)
+  // so the networks' document.write cannot overwrite the PlayHub page.
+  var THIRD_PARTY_ADS_HTML =
+    '<!doctype html><html><head><meta charset="utf-8">' +
+    "<style>html,body{margin:0;padding:0;background:transparent}</style>" +
+    "</head><body>" +
+    '<script async="async" data-cfasync="false" src="https://pl26441868.profitableratecpmnetwork.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"><\/script>' +
+    '<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>' +
+    '<script>atOptions = {"key":"9880b603e09cd45358e7c041df1e827e","format":"iframe","height":250,"width":300,"params":{}};<\/script>' +
+    '<script src="https://www.highrevenueformat.com/9880b603e09cd45358e7c041df1e827e/invoke.js"><\/script>' +
+    "</body></html>";
+
+  function injectAdNetworks() {
+    if (document.querySelector("[data-thirdparty-ads]")) return;
+
+    var host =
+      document.querySelector(".ad-slot--leaderboard") ||
+      document.querySelector(".ad-slot");
+
+    var wrap = document.createElement("div");
+    wrap.className = "thirdparty-ads";
+    wrap.setAttribute("data-thirdparty-ads", "");
+
+    var frame = document.createElement("iframe");
+    frame.className = "thirdparty-ads__frame";
+    frame.setAttribute("title", "Advertisement");
+    frame.setAttribute("loading", "lazy");
+    frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+    frame.srcdoc = THIRD_PARTY_ADS_HTML;
+
+    wrap.appendChild(frame);
+
+    if (host && host.parentNode) {
+      host.parentNode.insertBefore(wrap, host);
+    } else if (document.body) {
+      document.body.appendChild(wrap);
+    }
+  }
+
   function ready(fn) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", fn);
@@ -105,5 +146,11 @@
     }
   }
 
-  ready(buildBanner);
+  ready(function () {
+    if (stored === "granted") {
+      injectAdNetworks();
+    } else if (stored !== "denied") {
+      buildBanner();
+    }
+  });
 })();
