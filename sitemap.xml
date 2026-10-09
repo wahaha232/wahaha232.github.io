@@ -109,6 +109,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://wahaha232.github.io/games/puzzle-2048.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wahaha232.github.io/games/puzzle-sliding.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wahaha232.github.io/games/puzzle-minesweeper.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wahaha232.github.io/games/puzzle-sudoku.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wahaha232.github.io/games/space-invaders.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>

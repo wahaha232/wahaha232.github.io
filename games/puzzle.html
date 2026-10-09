@@ -3,28 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Puzzle Games - Play 2048 Number Puzzle Free Online | PlayHub</title>
-  <meta
-    name="description"
-    content="Play a free online 2048 sliding-number puzzle — combine matching tiles and reach 2048. Arrow keys, WASD or swipe. No download, no sign-up."
-  />
+  <title>Puzzle Games - Play Free Online Puzzles | PlayHub</title>
+  <meta name="description" content="Play free online puzzle games — 2048, the sliding 15-puzzle, Minesweeper and Sudoku. Pick a puzzle and play instantly. No download, no sign-up." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PlayHub" />
-  <meta property="og:title" content="Puzzle Games - Play 2048 Free Online | PlayHub" />
-  <meta property="og:description" content="Combine matching tiles and reach 2048 in this free online number puzzle." />
+  <meta property="og:title" content="Puzzle Games - Play Free Online | PlayHub" />
+  <meta property="og:description" content="2048, Sliding Puzzle, Minesweeper and Sudoku — all free online." />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="canonical" href="https://wahaha232.github.io/games/puzzle.html" />
-  <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/puzzle.css" />
-  <!-- Cookie 同意 + Google Consent Mode v2 -->
-  <script src="../js/consent.js"></script>
-  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
   <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="page page--narrow">
@@ -32,45 +26,68 @@
 
     <header class="game-header">
       <h1>🧩 Puzzle Games</h1>
-      <p>Play Free Online · 2048 Number Puzzle</p>
+      <p>4 Free Online Puzzles · Play Instantly</p>
     </header>
 
-    <div class="pz-layout">
-      <div class="pz-main">
-        <div class="pz-status" id="puzzle-status" role="status" aria-live="polite">Join the tiles to reach 2048!</div>
-        <div class="pz-board" id="puzzle-board" role="grid" aria-label="2048 board"></div>
-        <div class="pz-controls">
-          <div class="pz-score">Score: <span id="puzzle-score">0</span></div>
-          <button type="button" class="btn-new" id="btn-new">New Game</button>
-        </div>
+    <section class="featured">
+      <div class="game-grid">
+        <a class="game-card game-card--active" href="puzzle-2048.html" aria-label="2048">
+          <span class="game-card__thumb game-card__thumb--orange">
+            <span class="game-card__emoji" aria-hidden="true">🧩</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">2048</span>
+            <span class="game-card__desc">Merge tiles to 2048</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card--active" href="puzzle-sliding.html" aria-label="Sliding Puzzle">
+          <span class="game-card__thumb game-card__thumb--dark">
+            <span class="game-card__emoji" aria-hidden="true">🔢</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Sliding Puzzle</span>
+            <span class="game-card__desc">Classic 15-puzzle</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card--active" href="puzzle-minesweeper.html" aria-label="Minesweeper">
+          <span class="game-card__thumb game-card__thumb--purple">
+            <span class="game-card__emoji" aria-hidden="true">💣</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Minesweeper</span>
+            <span class="game-card__desc">Clear without detonating</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card--active" href="puzzle-sudoku.html" aria-label="Sudoku">
+          <span class="game-card__thumb game-card__thumb--purple">
+            <span class="game-card__emoji" aria-hidden="true">🧮</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Sudoku</span>
+            <span class="game-card__desc">9×9 logic puzzle</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
       </div>
-
-      <aside class="pz-side">
-        <div class="ad-slot ad-slot--rect"></div>
-      </aside>
-    </div>
-
-    <p class="game-note">
-      Use the arrow keys or WASD to slide all tiles, or swipe on a touch screen.
-      Tiles with the same number merge into one when they collide.
-    </p>
+    </section>
 
     <article class="content-card how-to-play">
-      <h2>How to play 2048</h2>
+      <h2>About the puzzles</h2>
       <ul>
-        <li>Every move slides all tiles as far as possible in one direction. A new 2 or 4 appears after each move.</li>
-        <li>When two tiles with the same number touch, they merge into one tile with double the value.</li>
-        <li>A tile can only merge once per move, so a row of four 2s becomes two 4s (not one 8) in a single move.</li>
-        <li>Your score increases by the value of every tile you create by merging.</li>
-        <li>The goal is to build a tile with the number <strong>2048</strong>. Keep going afterwards for a higher score if you can.</li>
-        <li>The game ends when the board is full and no adjacent tiles can merge. Press <strong>New Game</strong> to start over.</li>
+        <li><strong>2048</strong> — slide the board and merge matching numbers to build a 2048 tile.</li>
+        <li><strong>Sliding Puzzle</strong> — the classic 15-puzzle: shuffle the numbered tiles back into order.</li>
+        <li><strong>Minesweeper</strong> — use the number clues to clear every safe square without hitting a mine.</li>
+        <li><strong>Sudoku</strong> — fill the grid so every row, column and 3×3 box contains 1–9 once.</li>
       </ul>
     </article>
 
     <div class="ad-slot ad-slot--leaderboard"></div>
   </div>
-
-  <script src="../js/puzzle.js"></script>
-  <script src="../js/puzzle-ui.js"></script>
 </body>
 </html>

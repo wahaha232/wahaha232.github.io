@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sliding Puzzle - Play 15-Puzzle Free Online | PlayHub</title>
+  <meta name="description" content="Play the classic 15 sliding puzzle online for free — slide the numbered tiles into order. Arrow keys, WASD or tap. No download, no sign-up." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Sliding Puzzle (15-Puzzle) - Free Online | PlayHub" />
+  <meta property="og:description" content="Slide the numbered tiles into order in this classic free online sliding puzzle." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/puzzle-sliding.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/puzzle-sliding.css" />
+  <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="puzzle.html">← Back to Puzzles</a>
+
+    <header class="game-header">
+      <h1>🔢 Sliding Puzzle</h1>
+      <p>Play Free Online · 15-Puzzle</p>
+    </header>
+
+    <div class="sl-toolbar">
+      <span>Moves: <b id="sl-moves">0</b></span>
+      <button type="button" class="btn-shuffle" id="btn-shuffle">Shuffle</button>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="sl-status" id="sl-status" role="status" aria-live="polite"></p>
+
+    <div class="sl-wrap">
+      <div class="sl-board" id="sl-board" role="grid" aria-label="Sliding puzzle board"></div>
+    </div>
+
+    <p class="game-note">
+      Tap a tile next to the empty space to slide it, or use the arrow keys / WASD.
+      Put the tiles back in order 1–15 with the empty space at the bottom-right.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play the Sliding Puzzle</h2>
+      <ul>
+        <li>The board holds the numbers 1–15 and one empty space.</li>
+        <li>Only tiles directly next to the empty space can slide into it.</li>
+        <li>Keep sliding until the numbers are in order (1–15 reading left to right, top to bottom) and the gap is at the bottom-right.</li>
+        <li>The puzzle is always solvable because it is shuffled with real moves from the finished state.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/puzzle-sliding.js"></script>
+  <script src="../js/puzzle-sliding-ui.js"></script>
+</body>
+</html>

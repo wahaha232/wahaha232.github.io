@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minesweeper - Play Free Online | PlayHub</title>
+  <meta name="description" content="Play Minesweeper online for free — reveal every safe square without hitting a mine. Right-click or long-press to flag. No download, no sign-up." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Minesweeper - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Classic free online Minesweeper — clear the board without detonating a mine." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/puzzle-minesweeper.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/minesweeper.css" />
+  <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="puzzle.html">← Back to Puzzles</a>
+
+    <header class="game-header">
+      <h1>💣 Minesweeper</h1>
+      <p>Play Free Online · 9 × 9, 10 Mines</p>
+    </header>
+
+    <div class="ms-toolbar">
+      <span>Mines left: <b id="ms-left">10</b></span>
+      <button type="button" class="ms-face" id="ms-face" aria-label="New game">🙂</button>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="ms-status" id="ms-status" role="status" aria-live="polite"></p>
+
+    <div class="ms-board" id="ms-board" role="grid" aria-label="Minesweeper board"></div>
+
+    <p class="game-note">
+      Reveal squares to find the safe ones. Numbers tell you how many mines touch that square.
+      Your first click is always safe.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Minesweeper</h2>
+      <ul>
+        <li>Left-click (or tap) a square to reveal it. The first square you open is always mine-free.</li>
+        <li>A number shows how many of the eight surrounding squares contain a mine.</li>
+        <li>Right-click (or long-press on a touch screen) to place a flag on a square you think is a mine.</li>
+        <li>Reveal every square that is not a mine to win. Hitting a mine ends the game.</li>
+        <li>The counter shows how many mines are still unflagged.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/minesweeper.js"></script>
+  <script src="../js/minesweeper-ui.js"></script>
+</body>
+</html>

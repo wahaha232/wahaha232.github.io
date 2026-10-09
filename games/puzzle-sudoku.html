@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudoku - Play Free Online | PlayHub</title>
+  <meta name="description" content="Play Sudoku online for free — fill the 9×9 grid so every row, column and box contains 1–9. Easy, medium and hard. No download, no sign-up." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Sudoku - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Free online Sudoku with easy, medium and hard puzzles." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/puzzle-sudoku.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/sudoku.css" />
+  <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="puzzle.html">← Back to Puzzles</a>
+
+    <header class="game-header">
+      <h1>🧮 Sudoku</h1>
+      <p>Play Free Online · 9 × 9 Logic Puzzle</p>
+    </header>
+
+    <div class="su-toolbar">
+      <label>Difficulty:
+        <select id="su-diff">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="su-status" id="su-status" role="status" aria-live="polite"></p>
+
+    <div class="su-wrap">
+      <div class="su-board" id="su-board" role="grid" aria-label="Sudoku board"></div>
+      <div class="su-pad" id="su-pad" aria-label="Number pad"></div>
+    </div>
+
+    <p class="game-note">
+      Tap a square, then tap a number. Every row, column and 3×3 box must contain the digits
+      1–9 exactly once.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Sudoku</h2>
+      <ul>
+        <li>Fill every empty square so each row, each column and each 3×3 box contains the numbers 1 to 9 exactly once.</li>
+        <li>Select a square and use the number pad (or your keyboard) to place a digit.</li>
+        <li>The dark grey squares are the given clues and cannot be changed.</li>
+        <li>A digit that breaks the rules is shown in red — correct it before you continue.</li>
+        <li>Pick a difficulty and press <strong>New Game</strong> for a fresh puzzle.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/sudoku.js"></script>
+  <script src="../js/sudoku-ui.js"></script>
+</body>
+</html>
