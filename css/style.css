@@ -920,5 +920,38 @@ html.device-tablet .game-grid {
   }
 }
 
+/* Language links (EN / ES / FR) inside the top navigation */
+.site-nav__link--lang {
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+.site-nav__link--lang[aria-current="true"] {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Redesigned footer (categories, not a repeat of the top nav) */
+.site-footer__tagline {
+  max-width: 560px;
+  margin: 6px auto 14px;
+  color: #9db4d6;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.site-footer__nav {
+  flex-wrap: wrap;
+}
+
+.site-footer__copy a {
+  color: #9db4d6;
+}
+
+.site-footer__copy a:hover {
+  color: #ffffff;
+}
+
 
 

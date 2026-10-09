@@ -51,6 +51,9 @@
         <a class="site-nav__link" href="index.html">Accueil</a>
         <a class="site-nav__link" href="about.html">À propos</a>
         <a class="site-nav__link" href="privacy.html">Confidentialité</a>
+        <a class="site-nav__link site-nav__link--lang" href="../index.html">EN</a>
+        <a class="site-nav__link site-nav__link--lang" href="../es/index.html">ES</a>
+        <a class="site-nav__link site-nav__link--lang" href="index.html" aria-current="true">FR</a>
       </nav>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Ouvrir la navigation" aria-controls="site-nav" aria-expanded="false">
         <span class="nav-toggle__bar"></span>
@@ -63,11 +66,6 @@
       <h1 class="hero__title">PlayHub</h1>
       <p class="hero__sub">Jeux en ligne gratuits — jouez instantanément</p>
       <p class="hero__tagline">10 jeux classiques, sans téléchargement ni inscription. Choisissez-en un et jouez directement dans votre navigateur.</p>
-      <nav class="lang-switch lang-switch--dark" aria-label="Langue">
-        <a href="../index.html">EN</a>
-        <a href="../es/index.html">ES</a>
-        <a href="index.html" aria-current="true">FR</a>
-      </nav>
     </div>
   </header>
 
@@ -123,7 +121,7 @@
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Space Invaders</span>
-            <span class="game-card__desc">Jeu d'arcade classique</span>
+            <span class="game-card__desc">Space Invaders, Snake, Breakout et Pong</span>
             <span class="game-card__btn game-card__btn--play">▶ JOUER</span>
           </span>
         </a>
@@ -135,7 +133,7 @@
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Quiz</span>
-            <span class="game-card__desc">Questions de culture générale</span>
+            <span class="game-card__desc">Culture générale, maths et capitales</span>
             <span class="game-card__btn game-card__btn--play">▶ JOUER</span>
           </span>
         </a>
@@ -149,16 +147,17 @@
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p class="site-footer__brand">🎮 PlayHub — Jeux en Ligne Gratuits</p>
-      <nav class="site-footer__nav" aria-label="Navigation de pied de page">
-        <a href="about.html">À propos</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Confidentialité</a>
-        <a href="../index.html">English</a>
-        <a href="../es/index.html">Español</a>
+      <p class="site-footer__brand">🎮 PlayHub</p>
+      <p class="site-footer__tagline">Jeux classiques de société, cartes, réflexion et arcade — jouez instantanément, sans téléchargement ni inscription.</p>
+      <nav class="site-footer__nav" aria-label="Catégories de jeux">
+        <a href="board-games.html">Jeux de Société</a>
+        <a href="../games/solitaire.html">Solitaire</a>
+        <a href="../games/puzzle.html">Réflexion</a>
+        <a href="../games/space-invaders.html">Arcade</a>
+        <a href="../games/quiz.html">Quiz</a>
       </nav>
     </div>
-    <p class="site-footer__copy">© 2026 PlayHub. Tous droits réservés.</p>
+    <p class="site-footer__copy">© 2026 PlayHub · <a href="privacy.html">Confidentialité</a> · <a href="contact.html">Contact</a></p>
   </footer>
 
   <div class="modal is-hidden" id="soon-modal" role="dialog" aria-modal="true" aria-labelledby="soon-title">

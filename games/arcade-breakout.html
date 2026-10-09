@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breakout - Play Free Online Brick Breaker | PlayHub</title>
+  <meta name="description" content="Play Breakout online for free — bounce the ball with your paddle and smash every brick. 3 lives, arrow keys or on-screen buttons." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Breakout - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Classic free online Breakout — clear all the bricks with your paddle." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/arcade-breakout.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/arcade.css" />
+  <script src="../js/device.js"></script>
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="space-invaders.html">← Back to Arcade</a>
+
+    <header class="game-header">
+      <h1>🧱 Breakout</h1>
+      <p>Play Free Online · Arcade</p>
+    </header>
+
+    <div class="arc-toolbar">
+      <span>Score: <b id="bo-score">0</b></span>
+      <span>Lives: <b id="bo-lives">3</b></span>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="arc-status" id="bo-status" role="status" aria-live="polite"></p>
+
+    <div class="arc-stage"><canvas id="bo-canvas" aria-label="Breakout game"></canvas></div>
+
+    <div class="arc-controls">
+      <button type="button" class="arc-btn" id="bo-left" aria-label="Move left">◀</button>
+      <button type="button" class="arc-btn arc-btn--primary" id="bo-launch">Launch</button>
+      <button type="button" class="arc-btn" id="bo-right" aria-label="Move right">▶</button>
+    </div>
+
+    <p class="game-note">
+      Move the paddle to keep the ball in play and destroy every brick. You have 3 lives;
+      you lose one whenever the ball drops past your paddle.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Breakout</h2>
+      <ul>
+        <li>Move the paddle left and right with the arrow keys or A/D (or the on-screen buttons).</li>
+        <li>Press Space (or <strong>Launch</strong>) to send the ball up from the paddle.</li>
+        <li>Each brick you hit is worth 10 points. Hitting the ball with the edge of the paddle changes its angle.</li>
+        <li>You have 3 lives. Clear every brick to win.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/breakout.js"></script>
+  <script src="../js/breakout-ui.js"></script>
+</body>
+</html>

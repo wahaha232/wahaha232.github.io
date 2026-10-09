@@ -4,7 +4,7 @@
   "private": true,
   "description": "PlayHub — pure front-end board game portal (vanilla HTML/CSS/JS)",
   "scripts": {
-    "test": "node scripts/test-chess.cjs && node scripts/test-chess-ui.cjs && node scripts/test-othello.cjs && node scripts/test-checkers.cjs && node scripts/test-snakes-ladders.cjs && node scripts/test-dominoes.cjs && node scripts/test-battleship.cjs && node scripts/test-morris.cjs && node scripts/test-ludo.cjs && node scripts/test-backgammon.cjs && node scripts/test-solitaire.cjs && node scripts/test-puzzle.cjs && node scripts/test-space-invaders.cjs && node scripts/test-quiz.cjs && node scripts/test-freecell.cjs && node scripts/test-spider.cjs && node scripts/test-pyramid.cjs && node scripts/test-tripeaks.cjs && node scripts/test-sliding.cjs && node scripts/test-minesweeper.cjs && node scripts/test-sudoku.cjs"
+    "test": "node scripts/test-chess.cjs && node scripts/test-chess-ui.cjs && node scripts/test-othello.cjs && node scripts/test-checkers.cjs && node scripts/test-snakes-ladders.cjs && node scripts/test-dominoes.cjs && node scripts/test-battleship.cjs && node scripts/test-morris.cjs && node scripts/test-ludo.cjs && node scripts/test-backgammon.cjs && node scripts/test-solitaire.cjs && node scripts/test-puzzle.cjs && node scripts/test-space-invaders.cjs && node scripts/test-quiz.cjs && node scripts/test-freecell.cjs && node scripts/test-spider.cjs && node scripts/test-pyramid.cjs && node scripts/test-tripeaks.cjs && node scripts/test-sliding.cjs && node scripts/test-minesweeper.cjs && node scripts/test-sudoku.cjs && node scripts/test-snake.cjs && node scripts/test-breakout.cjs && node scripts/test-pong.cjs"
   },
   "devDependencies": {
     "jsdom": "^24.0.0"

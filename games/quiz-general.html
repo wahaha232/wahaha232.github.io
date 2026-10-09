@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Knowledge Quiz - Play Free Online | PlayHub</title>
+  <meta name="description" content="Play a free online general-knowledge quiz — 10 questions with instant feedback and a score at the end. No download, no sign-up." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="General Knowledge Quiz - Free Online | PlayHub" />
+  <meta property="og:description" content="Test your general knowledge with a quick free online trivia quiz." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/quiz-general.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/quiz.css" />
+  <script src="../js/device.js"></script>
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="quiz.html">← Back to Quiz</a>
+
+    <header class="game-header">
+      <h1>❓ General Knowledge</h1>
+      <p>Play Free Online · 10 Questions</p>
+    </header>
+
+    <div class="qz-layout">
+      <div class="qz-main">
+        <div class="qz-card">
+          <div class="qz-top">
+            <span id="quiz-progress">Question 1 / 10</span>
+            <span>Score: <span id="quiz-score">0</span></span>
+          </div>
+          <p class="qz-question" id="quiz-question"></p>
+          <div class="qz-options" id="quiz-options"></div>
+          <p class="qz-feedback" id="quiz-feedback" role="status" aria-live="polite"></p>
+          <div class="qz-actions">
+            <button type="button" class="btn-new" id="quiz-next" hidden>Next</button>
+            <button type="button" class="btn-new" id="quiz-restart" hidden>Play Again</button>
+          </div>
+        </div>
+      </div>
+      <aside class="qz-side"><div class="ad-slot ad-slot--rect"></div></aside>
+    </div>
+
+    <p class="game-note">Pick the answer you think is correct. Your final score is shown at the end.</p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Quiz</h2>
+      <ul>
+        <li>Read each question and tap one of the four answers.</li>
+        <li>Feedback is instant — the correct answer is highlighted in green.</li>
+        <li>Your score goes up by one for every correct answer.</li>
+        <li>After the last question you'll see your total and can play again.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/quiz.js"></script>
+  <script src="../js/quiz-ui.js"></script>
+</body>
+</html>

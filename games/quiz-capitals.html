@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Capitals Quiz - Play Free Online | PlayHub</title>
+  <meta name="description" content="Play a free online world capitals quiz — name the capital city of each country with instant feedback. No download, no sign-up." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="World Capitals Quiz - Free Online | PlayHub" />
+  <meta property="og:description" content="How well do you know the world's capital cities? Take the free quiz." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/quiz-capitals.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/quiz.css" />
+  <script src="../js/device.js"></script>
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="quiz.html">← Back to Quiz</a>
+
+    <header class="game-header">
+      <h1>🌍 World Capitals</h1>
+      <p>Play Free Online · Geography Quiz</p>
+    </header>
+
+    <div class="qz-layout">
+      <div class="qz-main">
+        <div class="qz-card">
+          <div class="qz-top">
+            <span id="quiz-progress">Question 1 / 10</span>
+            <span>Score: <span id="quiz-score">0</span></span>
+          </div>
+          <p class="qz-question" id="quiz-question"></p>
+          <div class="qz-options" id="quiz-options"></div>
+          <p class="qz-feedback" id="quiz-feedback" role="status" aria-live="polite"></p>
+          <div class="qz-actions">
+            <button type="button" class="btn-new" id="quiz-next" hidden>Next</button>
+            <button type="button" class="btn-new" id="quiz-restart" hidden>Play Again</button>
+          </div>
+        </div>
+      </div>
+      <aside class="qz-side"><div class="ad-slot ad-slot--rect"></div></aside>
+    </div>
+
+    <p class="game-note">Pick the capital city for each country. Your final score is shown at the end.</p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play the World Capitals Quiz</h2>
+      <ul>
+        <li>Each question asks for a country's capital city.</li>
+        <li>Tap the answer you believe is correct — feedback is instant.</li>
+        <li>Watch out: some countries have a bigger, more famous city that isn't the capital.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    window.QUIZ_BANK = [
+      { q: "What is the capital of France?", options: ["Paris", "Lyon", "Marseille", "Nice"], answer: 0 },
+      { q: "What is the capital of Japan?", options: ["Tokyo", "Osaka", "Kyoto", "Nagoya"], answer: 0 },
+      { q: "What is the capital of Australia?", options: ["Sydney", "Melbourne", "Canberra", "Perth"], answer: 2 },
+      { q: "What is the capital of Canada?", options: ["Toronto", "Vancouver", "Ottawa", "Montreal"], answer: 2 },
+      { q: "What is the capital of Italy?", options: ["Milan", "Rome", "Naples", "Turin"], answer: 1 },
+      { q: "What is the capital of Spain?", options: ["Barcelona", "Madrid", "Seville", "Valencia"], answer: 1 },
+      { q: "What is the capital of Brazil?", options: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"], answer: 2 },
+      { q: "What is the capital of Egypt?", options: ["Cairo", "Alexandria", "Giza", "Luxor"], answer: 0 },
+      { q: "What is the capital of Germany?", options: ["Munich", "Berlin", "Hamburg", "Frankfurt"], answer: 1 },
+      { q: "What is the capital of India?", options: ["Mumbai", "New Delhi", "Kolkata", "Chennai"], answer: 1 }
+    ];
+  </script>
+  <script src="../js/quiz-ui.js"></script>
+</body>
+</html>

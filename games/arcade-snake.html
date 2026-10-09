@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake - Play Free Online Arcade Game | PlayHub</title>
+  <meta name="description" content="Play Snake online for free — steer the snake, eat the food and grow without hitting the walls or yourself. Arrow keys, WASD or the on-screen pad." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Snake - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Classic free online Snake — grow as long as you can without crashing." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/arcade-snake.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/arcade.css" />
+  <script src="../js/device.js"></script>
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="space-invaders.html">← Back to Arcade</a>
+
+    <header class="game-header">
+      <h1>🐍 Snake</h1>
+      <p>Play Free Online · Arcade</p>
+    </header>
+
+    <div class="arc-toolbar">
+      <span>Score: <b id="snake-score">0</b></span>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="arc-status" id="snake-status" role="status" aria-live="polite"></p>
+
+    <div class="arc-stage"><canvas id="snake-canvas" aria-label="Snake game"></canvas></div>
+
+    <div class="arc-dpad">
+      <button type="button" class="arc-btn" id="snake-up" aria-label="Up">▲</button>
+      <button type="button" class="arc-btn" id="snake-left" aria-label="Left">◀</button>
+      <button type="button" class="arc-btn" id="snake-right" aria-label="Right">▶</button>
+      <button type="button" class="arc-btn" id="snake-down" aria-label="Down">▼</button>
+    </div>
+
+    <p class="game-note">
+      Steer the snake to eat the red food. Each bite makes you longer and scores a point.
+      Don't hit the walls or your own tail.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Snake</h2>
+      <ul>
+        <li>Use the arrow keys or WASD (or the on-screen pad on touch screens) to change direction.</li>
+        <li>Eat the food to grow longer and add a point to your score.</li>
+        <li>The snake keeps moving — you can't stop, and you can't immediately reverse into yourself.</li>
+        <li>The game ends if you run into a wall or your own body. Fill the whole board to win.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/snake.js"></script>
+  <script src="../js/snake-ui.js"></script>
+</body>
+</html>

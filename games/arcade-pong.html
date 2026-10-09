@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pong - Play Free Online | PlayHub</title>
+  <meta name="description" content="Play Pong online for free — the original arcade classic. Keep the ball in play and beat the computer to 5 points." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Pong - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Classic free online Pong vs the computer — first to 5 wins." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/arcade-pong.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/arcade.css" />
+  <script src="../js/device.js"></script>
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="space-invaders.html">← Back to Arcade</a>
+
+    <header class="game-header">
+      <h1>🏓 Pong</h1>
+      <p>Play Free Online · Arcade</p>
+    </header>
+
+    <div class="arc-toolbar">
+      <span>You: <b id="pg-player">0</b></span>
+      <span>CPU: <b id="pg-ai">0</b></span>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="arc-status" id="pg-status" role="status" aria-live="polite"></p>
+
+    <div class="arc-stage"><canvas id="pg-canvas" aria-label="Pong game"></canvas></div>
+
+    <div class="arc-controls">
+      <button type="button" class="arc-btn" id="pg-up" aria-label="Move up">▲</button>
+      <button type="button" class="arc-btn" id="pg-down" aria-label="Move down">▼</button>
+    </div>
+
+    <p class="game-note">
+      You are the blue paddle on the left. Keep the ball past the computer's paddle to score.
+      The first player to 5 points wins.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Pong</h2>
+      <ul>
+        <li>Move your paddle up and down with the arrow keys or W/S (or the on-screen buttons).</li>
+        <li>Return the ball; where it hits your paddle changes the angle it bounces off at.</li>
+        <li>Score a point when the ball passes the computer's paddle on the right.</li>
+        <li>First to 5 points wins the match.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/pong.js"></script>
+  <script src="../js/pong-ui.js"></script>
+</body>
+</html>

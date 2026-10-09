@@ -3,79 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz - Play Free Online Trivia Quiz | PlayHub</title>
-  <meta
-    name="description"
-    content="Play a free online trivia quiz — 10 general-knowledge questions with instant feedback and a score at the end. No download, no sign-up."
-  />
+  <title>Quiz Games - Play Free Online Trivia | PlayHub</title>
+  <meta name="description" content="Play free online quizzes — general knowledge, maths and world capitals. Pick a quiz and play instantly. No download, no sign-up." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PlayHub" />
-  <meta property="og:title" content="Quiz - Free Online Trivia | PlayHub" />
-  <meta property="og:description" content="Test your general knowledge with a quick free online trivia quiz." />
+  <meta property="og:title" content="Quiz Games - Play Free Online | PlayHub" />
+  <meta property="og:description" content="General Knowledge, Maths and World Capitals quizzes — all free online." />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
   <link rel="canonical" href="https://wahaha232.github.io/games/quiz.html" />
-  <link rel="sitemap" type="application/xml" href="../sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/quiz.css" />
-  <!-- Cookie 同意 + Google Consent Mode v2 -->
-  <script src="../js/consent.js"></script>
-  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
   <script src="../js/device.js"></script>
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="page page--narrow">
     <a class="back-link" href="../index.html">← Back to Games</a>
 
     <header class="game-header">
-      <h1>❓ Quiz</h1>
-      <p>Play Free Online · General Knowledge</p>
+      <h1>❓ Quiz Games</h1>
+      <p>3 Free Online Quizzes · Play Instantly</p>
     </header>
 
-    <div class="qz-layout">
-      <div class="qz-main">
-        <div class="qz-card">
-          <div class="qz-top">
-            <span id="quiz-progress">Question 1 / 10</span>
-            <span>Score: <span id="quiz-score">0</span></span>
-          </div>
-          <p class="qz-question" id="quiz-question"></p>
-          <div class="qz-options" id="quiz-options"></div>
-          <p class="qz-feedback" id="quiz-feedback" role="status" aria-live="polite"></p>
-          <div class="qz-actions">
-            <button type="button" class="btn-new" id="quiz-next" hidden>Next</button>
-            <button type="button" class="btn-new" id="quiz-restart" hidden>Play Again</button>
-          </div>
-        </div>
+    <section class="featured">
+      <div class="game-grid">
+        <a class="game-card game-card--active" href="quiz-general.html" aria-label="General Knowledge Quiz">
+          <span class="game-card__thumb game-card__thumb--orange">
+            <span class="game-card__emoji" aria-hidden="true">❓</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">General Knowledge</span>
+            <span class="game-card__desc">10 mixed questions</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card--active" href="quiz-math.html" aria-label="Math Quiz">
+          <span class="game-card__thumb game-card__thumb--purple">
+            <span class="game-card__emoji" aria-hidden="true">➗</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">Math Quiz</span>
+            <span class="game-card__desc">Mental arithmetic</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
+
+        <a class="game-card game-card--active" href="quiz-capitals.html" aria-label="World Capitals Quiz">
+          <span class="game-card__thumb game-card__thumb--dark">
+            <span class="game-card__emoji" aria-hidden="true">🌍</span>
+          </span>
+          <span class="game-card__meta">
+            <span class="game-card__name">World Capitals</span>
+            <span class="game-card__desc">Geography quiz</span>
+            <span class="game-card__btn game-card__btn--play">▶ PLAY NOW</span>
+          </span>
+        </a>
       </div>
-
-      <aside class="qz-side">
-        <div class="ad-slot ad-slot--rect"></div>
-      </aside>
-    </div>
-
-    <p class="game-note">
-      Pick the answer you think is correct. You'll see straight away whether you got it right,
-      and your final score is shown at the end.
-    </p>
+    </section>
 
     <article class="content-card how-to-play">
-      <h2>How to play Quiz</h2>
+      <h2>About the quizzes</h2>
       <ul>
-        <li>Read each question and tap one of the four answers.</li>
-        <li>Feedback is instant — the correct answer is highlighted in green.</li>
-        <li>Your score goes up by one for every correct answer.</li>
-        <li>After the last question you'll see your total score and can play again.</li>
+        <li><strong>General Knowledge</strong> — a mix of everyday questions from science, geography and more.</li>
+        <li><strong>Math Quiz</strong> — quick mental arithmetic; remember the order of operations.</li>
+        <li><strong>World Capitals</strong> — name the capital city of each country.</li>
       </ul>
     </article>
 
     <div class="ad-slot ad-slot--leaderboard"></div>
   </div>
-
-  <script src="../js/quiz.js"></script>
-  <script src="../js/quiz-ui.js"></script>
 </body>
 </html>

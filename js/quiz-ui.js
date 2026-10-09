@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  var game = new Quiz();
+  var game = new Quiz(window.QUIZ_BANK || undefined);
   var progressEl = document.getElementById("quiz-progress");
   var scoreEl = document.getElementById("quiz-score");
   var questionEl = document.getElementById("quiz-question");

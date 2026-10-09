@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Quiz - Play Free Online | PlayHub</title>
+  <meta name="description" content="Play a free online maths quiz — quick arithmetic questions with instant feedback and a score at the end. No download, no sign-up." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Math Quiz - Free Online | PlayHub" />
+  <meta property="og:description" content="Test your mental arithmetic with a quick free online maths quiz." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/quiz-math.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/quiz.css" />
+  <script src="../js/device.js"></script>
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="quiz.html">← Back to Quiz</a>
+
+    <header class="game-header">
+      <h1>➗ Math Quiz</h1>
+      <p>Play Free Online · Mental Arithmetic</p>
+    </header>
+
+    <div class="qz-layout">
+      <div class="qz-main">
+        <div class="qz-card">
+          <div class="qz-top">
+            <span id="quiz-progress">Question 1 / 10</span>
+            <span>Score: <span id="quiz-score">0</span></span>
+          </div>
+          <p class="qz-question" id="quiz-question"></p>
+          <div class="qz-options" id="quiz-options"></div>
+          <p class="qz-feedback" id="quiz-feedback" role="status" aria-live="polite"></p>
+          <div class="qz-actions">
+            <button type="button" class="btn-new" id="quiz-next" hidden>Next</button>
+            <button type="button" class="btn-new" id="quiz-restart" hidden>Play Again</button>
+          </div>
+        </div>
+      </div>
+      <aside class="qz-side"><div class="ad-slot ad-slot--rect"></div></aside>
+    </div>
+
+    <p class="game-note">Work out each sum and tap the correct answer. A perfect run scores 10/10.</p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play the Math Quiz</h2>
+      <ul>
+        <li>Each question is a short arithmetic problem.</li>
+        <li>Tap one of the four answers — you'll see straight away if you got it right.</li>
+        <li>Remember the order of operations: multiply and divide before you add and subtract.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/quiz.js"></script>
+  <script>
+    window.QUIZ_BANK = [
+      { q: "7 + 8 = ?", options: ["15", "14", "16", "17"], answer: 0 },
+      { q: "9 × 6 = ?", options: ["54", "45", "56", "63"], answer: 0 },
+      { q: "12 ÷ 4 = ?", options: ["2", "3", "4", "6"], answer: 1 },
+      { q: "15 − 7 = ?", options: ["7", "8", "9", "6"], answer: 1 },
+      { q: "What is 3 squared (3²)?", options: ["6", "9", "12", "8"], answer: 1 },
+      { q: "100 ÷ 10 = ?", options: ["10", "11", "9", "20"], answer: 0 },
+      { q: "25 + 17 = ?", options: ["42", "41", "43", "32"], answer: 0 },
+      { q: "8 × 8 = ?", options: ["64", "56", "72", "68"], answer: 0 },
+      { q: "5 + 5 × 2 = ?", options: ["15", "20", "10", "12"], answer: 0 },
+      { q: "Half of 90 = ?", options: ["45", "40", "50", "35"], answer: 0 }
+    ];
+  </script>
+  <script src="../js/quiz-ui.js"></script>
+</body>
+</html>
