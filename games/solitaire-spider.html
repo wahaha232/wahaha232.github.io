@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spider Solitaire - Play Free Online | PlayHub</title>
+  <meta
+    name="description"
+    content="Play Spider Solitaire online for free — two decks across ten columns. Build same-suit runs from King to Ace to clear them. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Spider Solitaire - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Play Spider Solitaire online — two decks, ten columns, collect same-suit runs." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/solitaire-spider.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cards.css" />
+  <link rel="stylesheet" href="../css/solitaire-games.css" />
+  <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="solitaire.html">← Back to Solitaire</a>
+
+    <header class="game-header">
+      <h1>🕷️ Spider Solitaire</h1>
+      <p>Play Free Online · Two Decks</p>
+    </header>
+
+    <div class="sol-toolbar">
+      <span>Moves: <b id="sp-moves">0</b></span>
+      <span>Sets: <b id="sp-done">0/8</b></span>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="sol-status" id="sp-status" role="status" aria-live="polite"></p>
+
+    <div class="sol-scroll">
+      <div class="sol-board">
+        <div id="sp-board"></div>
+        <div class="sol-side-inline">
+          <span class="sol-side__label" style="color:#eaf6ee;">Deck</span>
+          <div id="sp-stock" style="position:relative;cursor:pointer;"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="game-note">
+      Drag is not required: click a same-suit descending run, then click the column you want it on.
+      Click the deck to deal one more card to every column.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Spider Solitaire</h2>
+      <ul>
+        <li>104 cards (two decks) are dealt into 10 columns; only the top card of each column starts face up.</li>
+        <li>You may place a card on a card of one higher rank, regardless of suit.</li>
+        <li>A run of the <strong>same suit</strong> in descending order can be moved together.</li>
+        <li>Assemble a complete same-suit sequence King → Ace and it is removed automatically. Clear eight sequences to win.</li>
+        <li>Click the deck to deal a new row of 10 face-up cards (one per column).</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/cards-ui.js"></script>
+  <script src="../js/solitaire-spider.js"></script>
+  <script src="../js/solitaire-spider-ui.js"></script>
+</body>
+</html>

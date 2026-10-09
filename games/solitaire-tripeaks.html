@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TriPeaks Solitaire - Play Free Online | PlayHub</title>
+  <meta
+    name="description"
+    content="Play TriPeaks Solitaire online for free — tap exposed cards one rank above or below the waste, and clear all three peaks. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="TriPeaks Solitaire - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Play TriPeaks Solitaire online — chain-clearing fun, clear the three peaks." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/solitaire-tripeaks.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cards.css" />
+  <link rel="stylesheet" href="../css/solitaire-games.css" />
+  <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="solitaire.html">← Back to Solitaire</a>
+
+    <header class="game-header">
+      <h1>⛰️ TriPeaks Solitaire</h1>
+      <p>Play Free Online · Clear the Peaks</p>
+    </header>
+
+    <div class="sol-toolbar">
+      <span>Moves: <b id="tp-moves">0</b></span>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="sol-status" id="tp-status" role="status" aria-live="polite"></p>
+
+    <div class="sol-split">
+      <div class="sol-scroll">
+        <div class="sol-board">
+          <div id="tp-board"></div>
+        </div>
+      </div>
+
+      <aside class="sol-side">
+        <div class="sol-side__pile">
+          <span class="sol-side__label">Waste</span>
+          <div id="tp-waste" style="position:relative;cursor:pointer;"></div>
+        </div>
+        <div class="sol-side__pile">
+          <span class="sol-side__label">Stock</span>
+          <div id="tp-stock" style="position:relative;cursor:pointer;"></div>
+        </div>
+        <div class="ad-slot ad-slot--rect"></div>
+      </aside>
+    </div>
+
+    <p class="game-note">
+      Tap an exposed card that is one rank above or below the waste card. Aces and Kings count as
+      neighbours. Turn the stock when you get stuck, and clear all 28 peak cards to win.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play TriPeaks Solitaire</h2>
+      <ul>
+        <li>28 cards are laid out in three overlapping peaks; only cards with nothing resting on them are exposed.</li>
+        <li>Play an exposed card onto the waste if its rank is one higher or one lower than the top card — Aces and Kings wrap round (A ↔ K).</li>
+        <li>Click the stock pile to turn over a new waste card when you cannot play.</li>
+        <li>Clear all 28 layout cards to win.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/cards-ui.js"></script>
+  <script src="../js/solitaire-tripeaks.js"></script>
+  <script src="../js/solitaire-tripeaks-ui.js"></script>
+</body>
+</html>

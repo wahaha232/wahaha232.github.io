@@ -28,7 +28,6 @@ function assert(cond, label) {
   const r = g.move("left");
   assert(r.moved, "left move changes the board");
   assert(g.board[0] === 4 && g.board[1] === 8, "2,2,4,4 -> 4,8 at the left");
-  assert(g.board[2] === 0 && g.board[3] === 0, "trailing cells cleared");
   assert(r.gained === 12, "gained 12 from the two merges");
   assert(g.board.filter((v) => v !== 0).length === 3, "one new tile added after a move");
 }

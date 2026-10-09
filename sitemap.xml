@@ -73,6 +73,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://wahaha232.github.io/games/solitaire-klondike.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wahaha232.github.io/games/solitaire-freecell.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wahaha232.github.io/games/solitaire-spider.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wahaha232.github.io/games/solitaire-pyramid.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wahaha232.github.io/games/solitaire-tripeaks.html</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wahaha232.github.io/games/puzzle.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>monthly</changefreq>

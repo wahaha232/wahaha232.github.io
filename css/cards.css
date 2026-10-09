@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════════════════════════════
+   Shared Solitaire card visuals (Klondike/FreeCell/Spider/Pyramid/TriPeaks)
+   ═══════════════════════════════════════════════════════════════ */
+
+.sc-card {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--sc-w, 46px);
+  height: var(--sc-h, 64px);
+  border-radius: 7px;
+  background: #ffffff;
+  border: 1px solid #cdd8e6;
+  box-shadow: 0 2px 4px rgba(16, 32, 58, 0.18);
+  color: #122744;
+  font-weight: 800;
+  user-select: none;
+  cursor: pointer;
+}
+
+.sc-card__rank {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  font-size: calc(var(--sc-w, 46px) * 0.36);
+  line-height: 1;
+}
+
+.sc-card__suit {
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  font-size: calc(var(--sc-w, 46px) * 0.4);
+  line-height: 1;
+}
+
+.sc-card--red .sc-card__rank,
+.sc-card--red .sc-card__suit {
+  color: #d32b2b;
+}
+
+.sc-card--down {
+  background: repeating-linear-gradient(135deg, #2f6bd6 0 6px, #3f7de6 6px 12px);
+  border-color: #2a5cb8;
+}
+
+.sc-card--down .sc-card__back {
+  position: absolute;
+  inset: 4px;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.sc-slot {
+  box-sizing: border-box;
+  width: var(--sc-w, 46px);
+  height: var(--sc-h, 64px);
+  border-radius: 7px;
+  border: 2px dashed rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.sc-card.is-selected {
+  outline: 3px solid #ffd76a;
+  outline-offset: 1px;
+}
+
+.sc-card.is-legal {
+  box-shadow: 0 0 0 3px rgba(40, 166, 45, 0.55);
+}
+
+/* Touch devices: bigger tap targets */
+html.is-touch .sc-card,
+html.is-touch .sc-slot {
+  --sc-w: 52px;
+  --sc-h: 72px;
+}
+
+@media (max-width: 640px) {
+  .sc-card,
+  .sc-slot {
+    --sc-w: 40px;
+    --sc-h: 56px;
+  }
+}

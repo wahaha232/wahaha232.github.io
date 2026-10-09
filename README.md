@@ -27,7 +27,8 @@ Pure HTML / CSS / vanilla JavaScript. No build step.
 
 All thirteen games are original, self-built code that runs entirely in your browser —
 nothing is embedded from a third party: 10 classic board/card games plus the 2048 number
-puzzle, an arcade shooter and a trivia quiz.
+puzzle, an arcade shooter and a trivia quiz. The **Solitaire Online** card opens a hub with
+five Solitaire variants: Klondike, FreeCell, Spider, Pyramid and TriPeaks.
 
 Each game follows a consistent split: `js/<game>.js` (engine, no DOM) + `js/<game>-ui.js`
 (UI) + its own `css/<game>.css` (or the shared `css/board-game.css` for the 8×8-grid

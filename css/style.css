@@ -868,5 +868,57 @@ a {
   background: transparent;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   Device-adaptive tweaks (classes set by js/device.js)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* On-screen game pad only where there is a touch screen (keyboard is
+   the primary input on desktops). */
+html.no-touch .si-controls {
+  display: none;
+}
+
+html.is-touch .si-controls {
+  display: flex;
+}
+
+/* Bigger, easier tap targets on touch devices */
+html.is-touch .site-nav__link,
+html.is-touch .btn-new,
+html.is-touch .si-btn,
+html.is-touch .qz-opt,
+html.is-touch .cookie-consent__btn {
+  min-height: 44px;
+}
+
+/* Phones: tighten spacing and use full-width headering */
+html.device-mobile .site-header__bar {
+  padding: 12px 14px;
+}
+
+html.device-mobile .hero {
+  padding: 28px 16px 0;
+}
+
+html.device-mobile .game-header h1 {
+  font-size: 1.5rem;
+}
+
+html.device-mobile .game-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Tablets: two columns of cards */
+html.device-tablet .game-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Touch: avoid hover-only affordances */
+@media (hover: none) {
+  .game-card--active:hover {
+    transform: none;
+  }
+}
+
 
 

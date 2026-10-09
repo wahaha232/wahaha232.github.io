@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pyramid Solitaire - Play Free Online | PlayHub</title>
+  <meta
+    name="description"
+    content="Play Pyramid Solitaire online for free — remove pairs of exposed cards that add up to 13, and clear the whole pyramid. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="Pyramid Solitaire - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Play Pyramid Solitaire online — pair cards that total 13 to clear the pyramid." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/solitaire-pyramid.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cards.css" />
+  <link rel="stylesheet" href="../css/solitaire-games.css" />
+  <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="solitaire.html">← Back to Solitaire</a>
+
+    <header class="game-header">
+      <h1>🔺 Pyramid Solitaire</h1>
+      <p>Play Free Online · Pair Cards to 13</p>
+    </header>
+
+    <div class="sol-toolbar">
+      <span>Moves: <b id="py-moves">0</b></span>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="sol-status" id="py-status" role="status" aria-live="polite"></p>
+
+    <div class="sol-split">
+      <div class="sol-scroll">
+        <div class="sol-board">
+          <div id="py-board"></div>
+        </div>
+      </div>
+
+      <aside class="sol-side">
+        <div class="sol-side__pile">
+          <span class="sol-side__label">Waste</span>
+          <div id="py-waste" style="position:relative;cursor:pointer;"></div>
+        </div>
+        <div class="sol-side__pile">
+          <span class="sol-side__label">Stock</span>
+          <div id="py-stock" style="position:relative;cursor:pointer;"></div>
+        </div>
+        <div class="ad-slot ad-slot--rect"></div>
+      </aside>
+    </div>
+
+    <p class="game-note">
+      Click two exposed cards that add up to 13 to remove them (an Ace counts as 1, a Queen as 12).
+      A King is worth 13 and is removed on its own.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play Pyramid Solitaire</h2>
+      <ul>
+        <li>28 cards form a pyramid of 7 rows. A card is only available once the cards resting on it have been removed.</li>
+        <li>Click two available cards whose values add up to 13 to remove both of them (Ace = 1, Jack = 11, Queen = 12).</li>
+        <li>A King counts as 13 and is discarded by itself.</li>
+        <li>The top card of the waste pile can be paired with an available pyramid card.</li>
+        <li>Click the stock pile to turn over the next card. Clear the entire pyramid to win.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/cards-ui.js"></script>
+  <script src="../js/solitaire-pyramid.js"></script>
+  <script src="../js/solitaire-pyramid-ui.js"></script>
+</body>
+</html>

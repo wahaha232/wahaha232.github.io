@@ -1,0 +1,184 @@
+/* ═══════════════════════════════════════════════════════════════
+   Solitaire family — page layouts (FreeCell / Spider / Pyramid / TriPeaks)
+   Card visuals live in cards.css (.sc-card / .sc-slot).
+   ═══════════════════════════════════════════════════════════════ */
+
+.sol-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #122744;
+}
+
+.sol-status {
+  margin: 0 0 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #122744;
+}
+
+.sol-scroll {
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.sol-board {
+  position: relative;
+  display: inline-block;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 16px;
+  background: radial-gradient(circle at 50% 0, #2f8a56 0%, #1f6f43 70%);
+  box-shadow: 0 18px 36px rgba(16, 32, 58, 0.22);
+}
+
+/* FreeCell ------------------------------------------------------ */
+#fc-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.fc-spacer {
+  flex: 1 1 24px;
+}
+
+.sc-pile {
+  width: var(--sc-w, 46px);
+}
+
+.sc-pile--found,
+.sc-pile--free {
+  position: relative;
+}
+
+#fc-board {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.sc-col {
+  position: relative;
+  width: var(--sc-w, 46px);
+  min-height: 340px;
+}
+
+.sc-col .sc-card {
+  position: absolute;
+  left: 0;
+}
+
+/* Spider ------------------------------------------------------- */
+#sp-board {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+#sp-board .sc-card,
+#sp-board .sc-slot,
+#sp-board .sc-col {
+  --sc-w: 40px;
+  --sc-h: 56px;
+}
+
+.sc-col--sp {
+  min-height: 400px;
+}
+
+.sol-side-inline {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #eaf6ee;
+  font-weight: 700;
+}
+
+.sp-stock__count,
+.py-count,
+.tp-count {
+  font-weight: 800;
+  color: #122744;
+  background: #ffd76a;
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 13px;
+}
+
+/* Pyramid / TriPeaks ------------------------------------------- */
+.sol-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sol-side {
+  flex: 0 1 220px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sol-side__pile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.sol-side__label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #6b7a93;
+}
+
+#py-board,
+#tp-board {
+  position: relative;
+}
+
+/* Fixed card size so the JS-computed absolute positions stay aligned
+   (small screens scroll instead of shrinking). */
+#py-board .sc-card {
+  --sc-w: 52px;
+  --sc-h: 72px;
+}
+
+#tp-board .sc-card {
+  --sc-w: 48px;
+  --sc-h: 66px;
+}
+
+.sc-card--removed {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.is-free {
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  #sp-board {
+    gap: 5px;
+  }
+  #sp-board .sc-card,
+  #sp-board .sc-slot,
+  #sp-board .sc-col {
+    --sc-w: 30px;
+    --sc-h: 42px;
+  }
+}

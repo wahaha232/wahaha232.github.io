@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreeCell Solitaire - Play Free Online | PlayHub</title>
+  <meta
+    name="description"
+    content="Play FreeCell Solitaire online for free — every card is face up; use the four free cells to send all cards to the foundations. No download, no sign-up."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PlayHub" />
+  <meta property="og:title" content="FreeCell Solitaire - Play Free Online | PlayHub" />
+  <meta property="og:description" content="Play FreeCell Solitaire online — all cards face up, 4 free cells, almost always solvable." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="canonical" href="https://wahaha232.github.io/games/solitaire-freecell.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/cards.css" />
+  <link rel="stylesheet" href="../css/solitaire-games.css" />
+  <script src="../js/device.js"></script>
+  <!-- Google AdSense 載入腳本（已啟用：ca-pub-1512317781873771） -->
+  <script src="../js/consent.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="page page--narrow">
+    <a class="back-link" href="solitaire.html">← Back to Solitaire</a>
+
+    <header class="game-header">
+      <h1>🃏 FreeCell Solitaire</h1>
+      <p>Play Free Online · All Cards Face Up</p>
+    </header>
+
+    <div class="sol-toolbar">
+      <span>Moves: <b id="fc-moves">0</b></span>
+      <button type="button" class="btn-new" id="btn-new">New Game</button>
+    </div>
+    <p class="sol-status" id="fc-status" role="status" aria-live="polite"></p>
+
+    <div class="sol-scroll">
+      <div class="sol-board">
+        <div id="fc-top"></div>
+        <div id="fc-board"></div>
+      </div>
+    </div>
+
+    <p class="game-note">
+      Select a card or a valid sequence, then click where you want to move it.
+      Double-click a card to send it straight to a foundation.
+    </p>
+
+    <article class="content-card how-to-play">
+      <h2>How to play FreeCell</h2>
+      <ul>
+        <li>All 52 cards are dealt face up into 8 columns.</li>
+        <li>The four free cells (top-left) each hold a single card temporarily; the four foundations (top-right) are built up by suit from Ace to King.</li>
+        <li>In the tableau, cards build down in alternating colors — a red 6 goes on a black 7, and so on.</li>
+        <li>You can move a whole run at once if it is already in descending, alternating-color order. The length you can move depends on how many free cells and empty columns you have.</li>
+        <li>Move all 52 cards to the foundations to win.</li>
+      </ul>
+    </article>
+
+    <div class="ad-slot ad-slot--leaderboard"></div>
+  </div>
+
+  <script src="../js/cards-ui.js"></script>
+  <script src="../js/solitaire-freecell.js"></script>
+  <script src="../js/solitaire-freecell-ui.js"></script>
+</body>
+</html>
