@@ -99,22 +99,46 @@
   }
 
   // Third-party ad networks, loaded ONLY after the visitor accepts.
-  // Rendered inside a sandboxed-by-default child document (iframe srcdoc)
-  // so the networks' document.write cannot overwrite the PlayHub page.
-  var THIRD_PARTY_ADS_HTML =
-    '<!doctype html><html><head><meta charset="utf-8">' +
-    "<style>html,body{margin:0;padding:0;background:transparent}</style>" +
-    "</head><body>" +
+  // Each network renders in its own dedicated iframe (srcdoc) so its
+  // document.write cannot overwrite the PlayHub page, and each frame is
+  // auto-sized to its content so every ad is visible with no scrollbar.
+  var AD_NETWORKS = [
     '<script async="async" data-cfasync="false" src="https://pl26441868.profitableratecpmnetwork.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"><\/script>' +
-    '<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>' +
+      '<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>',
     '<script>atOptions = {"key":"9880b603e09cd45358e7c041df1e827e","format":"iframe","height":250,"width":300,"params":{}};<\/script>' +
-    '<script src="https://www.highrevenueformat.com/9880b603e09cd45358e7c041df1e827e/invoke.js"><\/script>' +
-    "</body></html>";
+      '<script src="https://www.highrevenueformat.com/9880b603e09cd45358e7c041df1e827e/invoke.js"><\/script>'
+  ];
+
+  function adDoc(inner) {
+    return (
+      '<!doctype html><html><head><meta charset="utf-8">' +
+      "<style>html,body{margin:0;padding:0;background:transparent;text-align:center;overflow:hidden}</style>" +
+      "</head><body>" +
+      inner +
+      "</body></html>"
+    );
+  }
+
+  function sizeFrame(frame) {
+    try {
+      var doc = frame.contentDocument;
+      if (!doc || !doc.body) return;
+      var h = Math.max(
+        doc.documentElement ? doc.documentElement.scrollHeight : 0,
+        doc.body.scrollHeight
+      );
+      if (h > 0) frame.style.height = h + "px";
+    } catch (e) {
+      /* cross-document access not allowed — keep the default height */
+    }
+  }
 
   function injectAdNetworks() {
+    if (!document.body) return;
     if (document.querySelector("[data-thirdparty-ads]")) return;
 
     var host =
+      document.querySelector("[data-thirdparty-ads-host]") ||
       document.querySelector(".ad-slot--leaderboard") ||
       document.querySelector(".ad-slot");
 
@@ -122,19 +146,44 @@
     wrap.className = "thirdparty-ads";
     wrap.setAttribute("data-thirdparty-ads", "");
 
-    var frame = document.createElement("iframe");
-    frame.className = "thirdparty-ads__frame";
-    frame.setAttribute("title", "Advertisement");
-    frame.setAttribute("loading", "lazy");
-    frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
-    frame.srcdoc = THIRD_PARTY_ADS_HTML;
+    var frames = [];
+    AD_NETWORKS.forEach(function (inner) {
+      var frame = document.createElement("iframe");
+      frame.className = "thirdparty-ads__frame";
+      frame.setAttribute("title", "Advertisement");
+      frame.setAttribute("scrolling", "no");
+      frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
+      frame.srcdoc = adDoc(inner);
+      frame.addEventListener("load", function () {
+        sizeFrame(frame);
+      });
+      wrap.appendChild(frame);
+      frames.push(frame);
+    });
 
-    wrap.appendChild(frame);
-
-    if (host && host.parentNode) {
+    if (host && host.parentNode && host !== document.body) {
       host.parentNode.insertBefore(wrap, host);
-    } else if (document.body) {
+    } else {
       document.body.appendChild(wrap);
+    }
+
+    // Keep every frame sized to its content as the (async) ads load/grow.
+    var ticks = 0;
+    var timer = window.setInterval(function () {
+      frames.forEach(sizeFrame);
+      if (++ticks > 24) window.clearInterval(timer);
+    }, 500);
+
+    if (window.ResizeObserver) {
+      frames.forEach(function (frame) {
+        try {
+          new window.ResizeObserver(function () {
+            sizeFrame(frame);
+          }).observe(frame.contentDocument.documentElement);
+        } catch (e) {
+          /* ignore */
+        }
+      });
     }
   }
 
