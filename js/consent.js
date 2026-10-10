@@ -42,9 +42,10 @@
     if (el && el.parentNode) el.parentNode.removeChild(el);
   }
 
-  function buildBanner() {
-    if (stored === "granted" || stored === "denied") return;
-    if (document.getElementById("cookie-consent")) return;
+  function buildBanner(force) {
+    if (!force && (stored === "granted" || stored === "denied")) return;
+    var existing = document.getElementById("cookie-consent");
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
 
     var banner = document.createElement("div");
     banner.id = "cookie-consent";
@@ -164,11 +165,28 @@
     }
   }
 
+  // Allow other UI (e.g. a "cookie settings" button) to re-open the banner.
+  window.PlayHubConsent = {
+    open: function () {
+      buildBanner(true);
+    }
+  };
+
   ready(function () {
     if (stored === "granted") {
       injectAdNetworks();
     } else if (stored !== "denied") {
       buildBanner();
+    }
+
+    var buttons = document.querySelectorAll("[data-cookie-settings]");
+    for (var i = 0; i < buttons.length; i++) {
+      (function (btn) {
+        btn.addEventListener("click", function (event) {
+          event.preventDefault();
+          buildBanner(true);
+        });
+      })(buttons[i]);
     }
   });
 })();

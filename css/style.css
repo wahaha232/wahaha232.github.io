@@ -827,6 +827,25 @@ a {
   color: #ffffff;
 }
 
+/* "Change cookie preferences" button (e.g. on the Privacy page) */
+.cookie-settings-btn {
+  display: inline-block;
+  margin: 4px 0 0;
+  padding: 8px 16px;
+  border: 2px solid #3f6cc6;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1f4fb0;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.cookie-settings-btn:hover {
+  background: #eef4ff;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    第三方廣告網路（同意後由 js/consent.js 注入，置於 iframe 內）
    ═══════════════════════════════════════════════════════════════ */
