@@ -119,6 +119,7 @@
       var frame = document.createElement("iframe");
       frame.className = "thirdparty-ads__frame";
       frame.setAttribute("title", "Advertisement");
+      frame.setAttribute("loading", "lazy");
       frame.setAttribute("scrolling", "no");
       frame.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
       frame.srcdoc = adDoc(inner);
