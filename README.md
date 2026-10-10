@@ -1,7 +1,8 @@
 # PlayHub — Free Online Games
 
-🎮 A casual online games portal. **10 games are playable right now** — 9 classic board
-games plus Solitaire — with no accounts, no downloads and no sign-up. **Click → Play.**
+🎮 A casual online games portal. **25 games are playable right now** — classic board and
+card games, Solitaire, puzzles, arcade games and quizzes — with no accounts, no downloads
+and no sign-up. **Click → Play.**
 
 🔗 Live site: https://wahaha232.github.io/
 
@@ -9,35 +10,25 @@ Pure HTML / CSS / vanilla JavaScript. No build step.
 
 ## Games
 
-| # | Game | Engine |
-| --- | --- | --- |
-| 1 | Easy Chess | self-built |
-| 2 | Checkers | self-built |
-| 3 | Ludo | self-built |
-| 4 | Othello Reversi | self-built |
-| 5 | Backgammon | self-built |
-| 6 | Nine Men's Morris | self-built |
-| 7 | Dominoes | self-built |
-| 8 | Classic Battleship | self-built |
-| 9 | Snakes & Ladders | self-built |
-| 10 | Solitaire Online | self-built |
-| 11 | Puzzle Games (2048) | self-built |
-| 12 | Space Invaders | self-built |
-| 13 | Quiz | self-built |
+Five category hubs open from the homepage; each hub links its playable games.
 
-All thirteen games are original, self-built code that runs entirely in your browser —
-nothing is embedded from a third party: 10 classic board/card games plus the 2048 number
-puzzle, an arcade shooter and a trivia quiz. The **Solitaire Online** card opens a hub with
-five Solitaire variants: Klondike, FreeCell, Spider, Pyramid and TriPeaks.
+| Category (hub) | Games |
+| --- | --- |
+| **Board Games** — `board-games.html` | Easy Chess, Checkers, Ludo, Othello Reversi, Backgammon, Nine Men's Morris, Dominoes, Classic Battleship, Snakes & Ladders |
+| **Solitaire** — `games/solitaire.html` | Klondike, FreeCell, Spider, Pyramid, TriPeaks |
+| **Puzzle** — `games/puzzle.html` | 2048, Sliding Puzzle, Minesweeper, Sudoku |
+| **Arcade** — `games/space-invaders.html` | Space Invaders, Snake, Breakout, Pong |
+| **Quiz** — `games/quiz.html` | General Knowledge, Math, World Capitals |
 
-Each game follows a consistent split: `js/<game>.js` (engine, no DOM) + `js/<game>-ui.js`
-(UI) + its own `css/<game>.css` (or the shared `css/board-game.css` for the 8×8-grid
-games). Each has an engine test script under `scripts/`.
+All 25 games are original, self-built code that runs entirely in your browser — nothing is
+embedded from a third party. Each game follows a consistent split: `js/<game>.js` (engine,
+no DOM) + `js/<game>-ui.js` (UI) + its own `css/<game>.css` (or the shared
+`css/board-game.css` / `css/cards.css`). Each has an engine test script under `scripts/`.
 
 ## Homepage
 
 The homepage (`index.html`) is real HTML (not an image): a hero with an `<h1>`, a
-Featured Games grid, the mobile nav toggle and a "Coming Soon" modal. The ad area sits
+Featured Games grid and the mobile nav toggle. The ad area sits
 below the featured games (before the footer); `js/consent.js` injects each third-party ad
 network into its own iframe only after consent and auto-sizes it so every ad is visible
 without a scrollbar.
@@ -50,22 +41,16 @@ are English-only; the localized category pages link through to them.
 
 ## Cookies & advertising
 
-Google AdSense is enabled. `js/consent.js` sets **Google Consent Mode v2** defaults to
-`denied` and loads *before* the AdSense loader on every page, then shows a small
-accept/decline banner (`localStorage`, key `playhub-consent-v1`). For full EEA/UK
-compliance, configure a Google-certified CMP in the AdSense account as well.
-
-Publisher ID: `ca-pub-1512317781873771` (`ads.txt` present).
-
-Additional third-party ad networks are loaded on the AdSense pages **only after the
-visitor accepts** — `js/consent.js` injects them into a sandboxed iframe rendered in the
-reserved ad slot (so their `document.write` cannot overwrite the page):
+This site does **not** use Google AdSense or Google Analytics. Advertising is delivered by
+third-party ad networks, loaded **only after the visitor accepts** the cookie notice.
+`js/consent.js` shows an accept/decline banner (`localStorage`, key `playhub-consent-v1`)
+and, on acceptance, injects each ad network into its own sandboxed iframe (so their
+`document.write` cannot overwrite the page) sized to fit its content:
 
 - `profitableratecpmnetwork.com` via `invoke.js` + `<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab">`.
 - `highrevenueformat.com` via `atOptions` + `invoke.js` (300×250 iframe).
 
-Note: mixing Google AdSense with third-party pop-under/CPM networks can violate AdSense
-policy — review before relying on them in production.
+The Privacy Policy (en/es/fr) describes these third-party advertising cookies.
 
 ## Engine tests
 
@@ -80,7 +65,7 @@ npm test
 
 ```
 /
-├── index.html            # Homepage (hero + featured cards + all-games list)
+├── index.html            # Homepage (hero + featured category cards)
 ├── board-games.html      # Board Games category (cards from js/games.js)
 ├── about.html / contact.html / privacy.html
 ├── es/ fr/               # Spanish / French marketing pages
@@ -92,13 +77,13 @@ npm test
 │   └── chess.css / ludo.css / backgammon.css / morris.css
 │       / dominoes.css / battleship.css / snakes-ladders.css
 ├── js/
-│   ├── consent.js        # cookie banner + Consent Mode v2
+│   ├── consent.js        # cookie banner + third-party ad-network gating
 │   ├── games.js          # game data (used by board-games.html)
-│   ├── main.js           # card generator + Coming Soon modal
+│   ├── main.js           # card generator (board-games grid)
 │   └── <game>.js + <game>-ui.js
 ├── scripts/              # Node test scripts (one per self-built game)
 ├── games/                # playable game pages
-├── assets/               # favicon + game cover images (.webp)
+├── assets/               # favicon + game cover images (.webp / .svg)
 └── shibuya/              # separate Shibuya live-cam microsite
 ```
 
@@ -126,8 +111,8 @@ Open http://localhost:8080/
 ## SEO
 
 - `robots.txt` allows all crawlers and points to `sitemap.xml`.
-- `sitemap.xml` lists the homepage, board-games, the 10 games, about/contact/privacy and
-  the `es/` + `fr/` marketing pages.
+- `sitemap.xml` lists the homepage, board-games, the 25 games and 5 category hubs,
+  about/contact/privacy and the `es/` + `fr/` marketing pages.
 - Indexable pages declare `rel="canonical"`; the Board Games / About / Contact / Privacy
   pages declare `hreflang` alternates (en / es / fr / x-default).
 - All paths are relative, so the site works under the GitHub Pages path.

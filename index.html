@@ -37,11 +37,8 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Cookie 同意 + Google Consent Mode v2（預設 denied，接受後才開放）
-       置於 AdSense 載入腳本之前，確保預設同意狀態先套用。 -->
+  <!-- Cookie consent: third-party ad networks load only after acceptance -->
   <script src="js/consent.js"></script>
-  <!-- Google AdSense（已啟用：ca-pub-1512317781873771） -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
   <script src="js/device.js"></script>
 </head>
 <body>
@@ -148,7 +145,6 @@
 
   </main>
 
-  <!-- 頁底 Footer：About / Contact / Privacy 連結（Google AdSense 需要可見的入口） -->
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p class="site-footer__brand">🎮 PlayHub</p>
@@ -157,18 +153,7 @@
     <p class="site-footer__copy">© 2026 PlayHub</p>
   </footer>
 
-  <!-- Coming Soon 提示彈窗（尚未開發的遊戲） -->
-  <div class="modal is-hidden" id="soon-modal" role="dialog" aria-modal="true" aria-labelledby="soon-title">
-    <div class="modal__box">
-      <button class="modal__close" id="soon-close" type="button" aria-label="Close">×</button>
-      <p class="modal__icon" aria-hidden="true">🔒</p>
-      <h2 class="modal__title" id="soon-title">Coming Soon</h2>
-      <p class="modal__game" id="soon-name">Puzzle Games</p>
-      <p class="modal__text">This game is currently under development.</p>
-    </div>
-  </div>
-
-  <script>
+<script>
     (function () {
       "use strict";
 
@@ -188,43 +173,7 @@
         });
       }
 
-      // ── Coming Soon 彈窗 ──
-      var modal = document.getElementById("soon-modal");
-      var modalName = document.getElementById("soon-name");
-      var close = document.getElementById("soon-close");
-      if (!modal) return;
-
-      function show(name) {
-        if (modalName) modalName.textContent = name;
-        modal.classList.remove("is-hidden");
-        if (close) close.focus();
-      }
-      function hide() {
-        modal.classList.add("is-hidden");
-      }
-
-      if (close) close.addEventListener("click", hide);
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) hide();
-      });
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") hide();
-      });
-
-      function bindSoon(el) {
-        el.addEventListener("click", function (event) {
-          event.preventDefault();
-          show(el.getAttribute("data-soon"));
-        });
-        el.addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            show(el.getAttribute("data-soon"));
-          }
-        });
-      }
-      document.querySelectorAll(".game-card[data-soon]").forEach(bindSoon);
-    })();
+})();
   </script>
 
   <noscript>

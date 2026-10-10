@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Space Invaders">
+  <rect width="200" height="200" rx="24" fill="#0b1220"/>
+  <g fill="#28a62d">
+    <rect x="70" y="56" width="12" height="12"/>
+    <rect x="118" y="56" width="12" height="12"/>
+    <rect x="58" y="68" width="84" height="28" rx="6"/>
+    <rect x="80" y="68" width="40" height="12" fill="#0b1220"/>
+    <rect x="70" y="96" width="60" height="18" rx="4"/>
+    <rect x="48" y="114" width="14" height="14"/>
+    <rect x="70" y="114" width="60" height="14"/>
+    <rect x="138" y="114" width="14" height="14"/>
+  </g>
+  <rect x="92" y="150" width="16" height="10" fill="#3ea6ff"/>
+</svg>

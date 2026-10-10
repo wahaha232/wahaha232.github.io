@@ -100,7 +100,7 @@ const games = [
     id: "puzzle",
     name: "Puzzle Games",
     cat: "puzzle",
-    image: "assets/games/puzzle.webp",
+    image: "assets/games/puzzle.svg",
     url: "games/puzzle.html",
     status: "available"
   },
@@ -108,7 +108,7 @@ const games = [
     id: "space-invaders",
     name: "Space Invaders",
     cat: "arcade",
-    image: "assets/games/space-invaders.webp",
+    image: "assets/games/space-invaders.svg",
     url: "games/space-invaders.html",
     status: "available"
   },
@@ -116,7 +116,7 @@ const games = [
     id: "quiz",
     name: "Quiz",
     cat: "trivia",
-    image: "assets/games/quiz.webp",
+    image: "assets/games/quiz.svg",
     url: "games/quiz.html",
     status: "available"
   }

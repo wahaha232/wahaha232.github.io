@@ -34,10 +34,8 @@
 
   <link rel="stylesheet" href="../css/style.css" />
 
-  <!-- Cookie 同意 + Google Consent Mode v2（預設 denied） -->
+  <!-- Cookie consent: third-party ad networks load only after acceptance -->
   <script src="../js/consent.js"></script>
-  <!-- Google AdSense（已啟用：ca-pub-1512317781873771） -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1512317781873771" crossorigin="anonymous"></script>
   <script src="../js/device.js"></script>
 </head>
 <body>
@@ -102,7 +100,7 @@
         </a>
 
         <!-- Juegos de Puzzle（可玩） -->
-        <a class="game-card game-card--active" href="games/puzzle.html" aria-label="Juegos de Puzzle">
+        <a class="game-card game-card--active" href="../games/puzzle.html" aria-label="Juegos de Puzzle">
           <span class="game-card__thumb game-card__thumb--purple">
             <span class="game-card__emoji" aria-hidden="true">🧩</span>
           </span>
@@ -114,7 +112,7 @@
         </a>
 
         <!-- Space Invaders（可玩） -->
-        <a class="game-card game-card--active" href="games/space-invaders.html" aria-label="Space Invaders">
+        <a class="game-card game-card--active" href="../games/space-invaders.html" aria-label="Space Invaders">
           <span class="game-card__thumb game-card__thumb--dark">
             <span class="game-card__emoji" aria-hidden="true">👾</span>
           </span>
@@ -126,7 +124,7 @@
         </a>
 
         <!-- Quiz（可玩） -->
-        <a class="game-card game-card--active" href="games/quiz.html" aria-label="Quiz">
+        <a class="game-card game-card--active" href="../games/quiz.html" aria-label="Quiz">
           <span class="game-card__thumb game-card__thumb--orange">
             <span class="game-card__emoji" aria-hidden="true">❓</span>
           </span>
@@ -152,17 +150,7 @@
     <p class="site-footer__copy">© 2026 PlayHub</p>
   </footer>
 
-  <div class="modal is-hidden" id="soon-modal" role="dialog" aria-modal="true" aria-labelledby="soon-title">
-    <div class="modal__box">
-      <button class="modal__close" id="soon-close" type="button" aria-label="Cerrar">×</button>
-      <p class="modal__icon" aria-hidden="true">🔒</p>
-      <h2 class="modal__title" id="soon-title">Próximamente</h2>
-      <p class="modal__game" id="soon-name">Juegos de Puzzle</p>
-      <p class="modal__text">Este juego está en desarrollo.</p>
-    </div>
-  </div>
-
-  <script>
+<script>
     (function () {
       "use strict";
 
@@ -181,42 +169,7 @@
         });
       }
 
-      var modal = document.getElementById("soon-modal");
-      var modalName = document.getElementById("soon-name");
-      var close = document.getElementById("soon-close");
-      if (!modal) return;
-
-      function show(name) {
-        if (modalName) modalName.textContent = name;
-        modal.classList.remove("is-hidden");
-        if (close) close.focus();
-      }
-      function hide() {
-        modal.classList.add("is-hidden");
-      }
-
-      if (close) close.addEventListener("click", hide);
-      modal.addEventListener("click", function (event) {
-        if (event.target === modal) hide();
-      });
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") hide();
-      });
-
-      function bindSoon(el) {
-        el.addEventListener("click", function (event) {
-          event.preventDefault();
-          show(el.getAttribute("data-soon"));
-        });
-        el.addEventListener("keydown", function (event) {
-          if (event.key === "Enter" || event.key === " ") {
-            event.preventDefault();
-            show(el.getAttribute("data-soon"));
-          }
-        });
-      }
-      document.querySelectorAll(".game-card[data-soon]").forEach(bindSoon);
-    })();
+})();
   </script>
 
   <noscript>

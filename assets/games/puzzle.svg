@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Puzzle Games">
+  <rect width="200" height="200" rx="24" fill="#e8892f"/>
+  <rect x="28" y="28" width="64" height="64" rx="12" fill="#ffe3bd"/>
+  <rect x="108" y="28" width="64" height="64" rx="12" fill="#ffe3bd"/>
+  <rect x="28" y="108" width="64" height="64" rx="12" fill="#ffe3bd"/>
+  <rect x="108" y="108" width="64" height="64" rx="12" fill="#ffd29a"/>
+  <text x="60" y="72" font-size="30" font-family="Arial,Helvetica,sans-serif" font-weight="bold" fill="#8a4a00" text-anchor="middle">2</text>
+  <text x="140" y="72" font-size="30" font-family="Arial,Helvetica,sans-serif" font-weight="bold" fill="#8a4a00" text-anchor="middle">4</text>
+  <text x="60" y="152" font-size="30" font-family="Arial,Helvetica,sans-serif" font-weight="bold" fill="#8a4a00" text-anchor="middle">8</text>
+  <text x="140" y="152" font-size="26" font-family="Arial,Helvetica,sans-serif" font-weight="bold" fill="#8a4a00" text-anchor="middle">16</text>
+</svg>

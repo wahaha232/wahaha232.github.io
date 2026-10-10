@@ -1,16 +1,13 @@
 // ═══════════════════════════════════════════════════════════════
-// PlayHub — Cookie consent banner + Google Consent Mode v2
+// PlayHub — Cookie consent banner + gating for third-party ad networks
 //
-// Loaded synchronously BEFORE the AdSense loader so the default
-// consent state is applied before any Google script runs.
+// This site does NOT use Google AdSense or Google Analytics.
+// Advertising is delivered by third-party ad networks that are injected
+// ONLY after the visitor accepts. Each network renders in its own iframe
+// (srcdoc) so its document.write cannot overwrite the page, and each frame
+// is auto-sized to its content so every ad is fully visible (no scrollbar).
 //
-//   - Default: all ad/analytics storage "denied".
-//   - Accept / Decline buttons in a small banner store the choice
-//     in localStorage and update Consent Mode accordingly.
-//
-// NOTE: for full EEA/UK compliance Google also recommends a Google-
-// certified CMP configured in the AdSense account. This script only
-// provides Consent Mode defaults + a lightweight notice.
+// The visitor's choice is stored in localStorage (key: playhub-consent-v1).
 // ═══════════════════════════════════════════════════════════════
 
 (function () {
@@ -23,31 +20,6 @@
     stored = window.localStorage.getItem(KEY);
   } catch (e) {
     stored = null;
-  }
-
-  // Google Consent Mode v2 — denied until the visitor accepts.
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  window.gtag = window.gtag || gtag;
-
-  var granted = stored === "granted";
-  gtag("consent", "default", {
-    ad_storage: granted ? "granted" : "denied",
-    ad_user_data: granted ? "granted" : "denied",
-    ad_personalization: granted ? "granted" : "denied",
-    analytics_storage: granted ? "granted" : "denied",
-    wait_for_update: 500
-  });
-
-  function update(state) {
-    gtag("consent", "update", {
-      ad_storage: state,
-      ad_user_data: state,
-      ad_personalization: state,
-      analytics_storage: state
-    });
   }
 
   function privacyHref() {
@@ -65,7 +37,6 @@
     } catch (e) {
       /* storage unavailable — still apply for this page view */
     }
-    update(state);
     if (state === "granted") injectAdNetworks();
     var el = document.getElementById("cookie-consent");
     if (el && el.parentNode) el.parentNode.removeChild(el);
@@ -81,8 +52,8 @@
     banner.setAttribute("role", "dialog");
     banner.setAttribute("aria-label", "Cookie consent");
     banner.innerHTML =
-      '<p class="cookie-consent__text">We use cookies for advertising ' +
-      "(Google AdSense) and to understand site usage. See our " +
+      '<p class="cookie-consent__text">We use cookies and similar technologies for ' +
+      "advertising and to understand basic site usage. See our " +
       '<a href="' + privacyHref() + '">Privacy Policy</a>.</p>' +
       '<div class="cookie-consent__actions">' +
       '<button type="button" class="cookie-consent__btn cookie-consent__btn--ghost" data-consent="denied">Decline</button>' +
@@ -98,10 +69,7 @@
     document.body.appendChild(banner);
   }
 
-  // Third-party ad networks, loaded ONLY after the visitor accepts.
-  // Each network renders in its own dedicated iframe (srcdoc) so its
-  // document.write cannot overwrite the PlayHub page, and each frame is
-  // auto-sized to its content so every ad is visible with no scrollbar.
+  // Third-party ad networks (loaded ONLY after the visitor accepts).
   var AD_NETWORKS = [
     '<script async="async" data-cfasync="false" src="https://pl26441868.profitableratecpmnetwork.com/7d9bb8a39fc580ee58de14d8a8e63eab/invoke.js"><\/script>' +
       '<div id="container-7d9bb8a39fc580ee58de14d8a8e63eab"></div>',
