@@ -21,7 +21,8 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
-  <link rel="canonical" href="https://wahaha232.github.io/es/" />
+  <link rel="canonical" href="https://wahaha232.github.io/es/" />
+  <link rel="manifest" href="/manifest.webmanifest" />
   <link rel="alternate" hreflang="en" href="https://wahaha232.github.io/" />
   <link rel="alternate" hreflang="es" href="https://wahaha232.github.io/es/" />
   <link rel="alternate" hreflang="fr" href="https://wahaha232.github.io/fr/" />
@@ -37,8 +38,32 @@
   <!-- Cookie consent: third-party ad networks load only after acceptance -->
   <script src="../js/consent.js"></script>
   <script src="../js/device.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PlayHub",
+      "url": "https://wahaha232.github.io/es/",
+      "inLanguage": "es"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Categorías de juegos de PlayHub",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Juegos de Mesa", "url": "https://wahaha232.github.io/es/board-games.html" },
+        { "@type": "ListItem", "position": 2, "name": "Solitario", "url": "https://wahaha232.github.io/games/solitaire.html" },
+        { "@type": "ListItem", "position": 3, "name": "Juegos de Puzzle", "url": "https://wahaha232.github.io/games/puzzle.html" },
+        { "@type": "ListItem", "position": 4, "name": "Juegos Arcade", "url": "https://wahaha232.github.io/games/space-invaders.html" },
+        { "@type": "ListItem", "position": 5, "name": "Quiz", "url": "https://wahaha232.github.io/games/quiz.html" }
+      ]
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
   <header class="site-header">
     <div class="site-header__bar">
@@ -67,7 +92,7 @@
     </div>
   </header>
 
-  <main class="page">
+  <main class="page" id="main">
 
     <section class="featured" id="games" aria-labelledby="featured-title">
       <div class="featured__head">
@@ -78,60 +103,60 @@
         <!-- Juegos de Mesa -->
         <a class="game-card game-card--active" href="board-games.html" aria-label="Juegos de Mesa">
           <span class="game-card__thumb">
-            <img src="../assets/games/chess.webp" alt="Juegos de Mesa" loading="lazy" width="400" height="400" />
+            <img src="../assets/games/chess.webp" alt="" loading="lazy" width="400" height="400" />
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Juegos de Mesa</span>
             <span class="game-card__desc">Ajedrez, Damas, Ludo y más</span>
-            <span class="game-card__btn game-card__btn--play">▶ JUGAR AHORA</span>
+            <span class="game-card__btn game-card__btn--play">▶ Explorar</span>
           </span>
         </a>
 
         <!-- Solitario -->
         <a class="game-card game-card--active" href="../games/solitaire.html" aria-label="Solitario Online">
           <span class="game-card__thumb">
-            <img src="../assets/games/solitaire.webp" alt="Solitario Online" loading="lazy" width="400" height="400" />
+            <img src="../assets/games/solitaire.webp" alt="" loading="lazy" width="400" height="400" />
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Solitario Online</span>
-            <span class="game-card__desc">El clásico juego de cartas Klondike</span>
-            <span class="game-card__btn game-card__btn--play">▶ JUGAR AHORA</span>
+            <span class="game-card__desc">Klondike, FreeCell, Spider y más</span>
+            <span class="game-card__btn game-card__btn--play">▶ Explorar</span>
           </span>
         </a>
 
         <!-- Juegos de Puzzle（可玩） -->
         <a class="game-card game-card--active" href="../games/puzzle.html" aria-label="Juegos de Puzzle">
-          <span class="game-card__thumb game-card__thumb--purple">
-            <span class="game-card__emoji" aria-hidden="true">🧩</span>
+          <span class="game-card__thumb">
+            <img src="../assets/games/puzzle.svg" alt="" loading="lazy" width="400" height="400" />
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Juegos de Puzzle</span>
             <span class="game-card__desc">2048, deslizante, buscaminas y sudoku</span>
-            <span class="game-card__btn game-card__btn--play">▶ JUGAR AHORA</span>
+            <span class="game-card__btn game-card__btn--play">▶ Explorar</span>
           </span>
         </a>
 
-        <!-- Space Invaders（可玩） -->
-        <a class="game-card game-card--active" href="../games/space-invaders.html" aria-label="Space Invaders">
-          <span class="game-card__thumb game-card__thumb--dark">
-            <span class="game-card__emoji" aria-hidden="true">👾</span>
+        <!-- Juegos Arcade（分類入口） -->
+        <a class="game-card game-card--active" href="../games/space-invaders.html" aria-label="Juegos Arcade">
+          <span class="game-card__thumb">
+            <img src="../assets/games/space-invaders.svg" alt="" loading="lazy" width="400" height="400" />
           </span>
           <span class="game-card__meta">
-            <span class="game-card__name">Space Invaders</span>
+            <span class="game-card__name">Juegos Arcade</span>
             <span class="game-card__desc">Space Invaders, Snake, Breakout y Pong</span>
-            <span class="game-card__btn game-card__btn--play">▶ JUGAR AHORA</span>
+            <span class="game-card__btn game-card__btn--play">▶ Explorar</span>
           </span>
         </a>
 
         <!-- Quiz（可玩） -->
         <a class="game-card game-card--active" href="../games/quiz.html" aria-label="Quiz">
-          <span class="game-card__thumb game-card__thumb--orange">
-            <span class="game-card__emoji" aria-hidden="true">❓</span>
+          <span class="game-card__thumb">
+            <img src="../assets/games/quiz.svg" alt="" loading="lazy" width="400" height="400" />
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Quiz</span>
             <span class="game-card__desc">Cultura general, matemáticas y capitales</span>
-            <span class="game-card__btn game-card__btn--play">▶ JUGAR AHORA</span>
+            <span class="game-card__btn game-card__btn--play">▶ Explorar</span>
           </span>
         </a>
       </div>

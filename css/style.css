@@ -348,24 +348,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90px;
   margin: 30px auto;
 }
 
-.ad-slot--leaderboard { height: 90px;  max-width: 728px; } /* 728×90 Leaderboard */
-.ad-slot--rect        { height: 250px; max-width: 300px; } /* 300×250 矩形 */
-.ad-slot--banner      { height: 100px; max-width: 320px; } /* 320×100 手機橫幅 */
+.ad-slot--leaderboard { max-width: 728px; } /* 728×90 Leaderboard */
+.ad-slot--rect        { max-width: 300px; } /* 300×250 矩形 */
+.ad-slot--banner      { max-width: 320px; } /* 320×100 手機橫幅 */
 
-/* 空版位不顯示虛線框與「Advertisement」字樣，避免看起來像壞掉；
-   固定高度仍保留，以避免廣告注入時的 CLS。 */
+/* 空版位不顯示標籤；第三方廣告由 js/consent.js 於同意後注入。 */
 .ad-slot__label {
   display: none;
-}
-
-.ad-slot .adsbygoogle {
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -951,6 +943,61 @@ html.device-tablet .game-grid {
 
 .site-footer__copy a:hover {
   color: #ffffff;
+}
+
+/* Skip link (hidden until focused) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 300;
+  padding: 10px 16px;
+  background: #0f57c4;
+  color: #ffffff;
+  border-radius: 0 0 10px 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+  outline: 3px solid #ffb703;
+  outline-offset: 2px;
+}
+
+/* Visible keyboard focus for interactive elements */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible {
+  outline: 3px solid #ffb703;
+  outline-offset: 2px;
+}
+
+/* Subtle press feedback */
+.btn-new:active,
+.arc-btn:active,
+.si-btn:active,
+.qz-opt:active,
+.su-key:active,
+.ms-face:active {
+  transform: translateY(1px);
+}
+
+/* Bigger touch targets on touch devices */
+html.is-touch .arc-btn,
+html.is-touch .si-btn,
+html.is-touch .su-key,
+html.is-touch .ms-face {
+  min-height: 44px;
+}
+
+html.is-touch .lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 6px;
 }
 
 

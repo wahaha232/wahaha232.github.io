@@ -28,7 +28,7 @@
 
     var img = document.createElement("img");
     img.src = game.image;
-    img.alt = game.name;
+    img.alt = "";
     img.loading = "lazy";
     img.width = 400;
     img.height = 400;

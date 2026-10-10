@@ -1,0 +1,16 @@
+{
+  "name": "PlayHub — Free Online Games",
+  "short_name": "PlayHub",
+  "description": "Free online classic games — board games, Solitaire, puzzles, arcade and quizzes. No download, no sign-up.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f57c4",
+  "theme_color": "#0f57c4",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
