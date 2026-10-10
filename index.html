@@ -3,24 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
   <title>PlayHub - 10 Free Online Games: Chess, Checkers, Ludo &amp; More</title>
   <meta
     name="description"
-    content="Play 10 classic games online for free at PlayHub — Chess, Checkers, Ludo, Othello, Backgammon, Nine Men's Morris, Dominoes, Battleship, Snakes &amp; Ladders and Solitaire. No download, no sign-up."
+    content="Play chess, checkers, ludo, solitaire and more classic games online for free. No download, no sign-up — just pick a game and play."
   />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PlayHub" />
-  <meta property="og:title" content="PlayHub - Free Online Games" />
+  <meta property="og:title" content="PlayHub - 10 Free Online Games: Chess, Checkers, Ludo &amp; More" />
   <meta
     property="og:description"
-    content="Play 10 classic games online for free — Chess, Checkers, Ludo, Solitaire and more. No download, no sign-up."
+    content="Play chess, checkers, ludo, solitaire and more classic games online for free. No download, no sign-up — just pick a game and play."
   />
   <meta property="og:url" content="https://wahaha232.github.io/" />
   <meta property="og:image" content="https://wahaha232.github.io/assets/games/chess.webp" />
+  <!-- TODO: 換成 1200x630 專屬分享圖後，再加入 og:image:width=1200 與 og:image:height=630 -->
+  <meta property="og:image:alt" content="PlayHub - free online board, card and puzzle games" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta name="twitter:image" content="https://wahaha232.github.io/assets/games/chess.webp" />
   <meta name="theme-color" content="#0f57c4" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PlayHub - 10 Free Online Games: Chess, Checkers, Ludo &amp; More" />
+  <meta name="twitter:description" content="Play chess, checkers, ludo, solitaire and more classic games online for free. No download, no sign-up — just pick a game and play." />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="canonical" href="https://wahaha232.github.io/" />
@@ -40,8 +49,8 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Cookie consent: third-party ad networks load only after acceptance -->
-  <script src="js/consent.js"></script>
-  <script src="js/device.js"></script>
+  <script src="js/consent.js" defer></script>
+  <script src="js/device.js" defer></script>
   <script src="js/pwa.js"></script>
   <script type="application/ld+json">
     {
@@ -49,8 +58,7 @@
       "@type": "WebSite",
       "name": "PlayHub",
       "url": "https://wahaha232.github.io/",
-      "description": "Play 25 classic games online for free — board games, Solitaire, puzzles, arcade and quizzes. No download, no sign-up.",
-      "inLanguage": "en"
+      "inLanguage": ["en", "es", "fr"]
     }
   </script>
   <script type="application/ld+json">
@@ -62,7 +70,7 @@
         { "@type": "ListItem", "position": 1, "name": "Board Games", "url": "https://wahaha232.github.io/board-games.html" },
         { "@type": "ListItem", "position": 2, "name": "Solitaire", "url": "https://wahaha232.github.io/games/solitaire.html" },
         { "@type": "ListItem", "position": 3, "name": "Puzzle Games", "url": "https://wahaha232.github.io/games/puzzle.html" },
-        { "@type": "ListItem", "position": 4, "name": "Arcade Games", "url": "https://wahaha232.github.io/games/space-invaders.html" },
+        { "@type": "ListItem", "position": 4, "name": "Space Invaders", "url": "https://wahaha232.github.io/games/space-invaders.html" },
         { "@type": "ListItem", "position": 5, "name": "Quiz", "url": "https://wahaha232.github.io/games/quiz.html" }
       ]
     }
@@ -77,12 +85,12 @@
         <span class="site-logo__icon" aria-hidden="true">🎮</span>Play<span class="site-logo__accent">Hub</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a class="site-nav__link" href="/">Home</a>
+        <a class="site-nav__link" href="/" aria-current="page">Home</a>
         <a class="site-nav__link" href="about.html">About</a>
         <a class="site-nav__link" href="privacy.html">Privacy</a>
-        <a class="site-nav__link site-nav__link--lang" href="index.html" aria-current="true">EN</a>
-        <a class="site-nav__link site-nav__link--lang" href="es/">ES</a>
-        <a class="site-nav__link site-nav__link--lang" href="fr/">FR</a>
+        <a class="site-nav__link site-nav__link--lang" href="/" aria-current="page">EN</a>
+        <a class="site-nav__link site-nav__link--lang" href="es/" lang="es" hreflang="es">ES</a>
+        <a class="site-nav__link site-nav__link--lang" href="fr/" lang="fr" hreflang="fr">FR</a>
       </nav>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="site-nav" aria-expanded="false">
         <span class="nav-toggle__bar"></span>
@@ -92,8 +100,8 @@
     </div>
 
     <div class="hero">
-      <h1 class="hero__title">PlayHub</h1>
-      <p class="hero__sub">Free Online Games — Play Instantly</p>
+      <h1 class="hero__title">Free Online Games</h1>
+      <p class="hero__sub">Play Instantly with PlayHub</p>
       <p class="hero__tagline">25 free games across board games, Solitaire, puzzles, arcade and quizzes — no download, no sign-up.</p>
     </div>
   </header>
@@ -109,7 +117,7 @@
         <!-- Board Games（分類入口） -->
         <a class="game-card game-card--active" href="board-games.html" aria-label="Board Games">
           <span class="game-card__thumb">
-            <img src="assets/games/chess.webp" alt="" loading="lazy" width="400" height="400" />
+            <img src="assets/games/chess.webp" alt="" fetchpriority="high" width="400" height="400" />
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Board Games</span>
@@ -121,7 +129,7 @@
         <!-- Solitaire（可玩） -->
         <a class="game-card game-card--active" href="games/solitaire.html" aria-label="Solitaire Online">
           <span class="game-card__thumb">
-            <img src="assets/games/solitaire.webp" alt="" loading="lazy" width="400" height="400" />
+            <img src="assets/games/solitaire.webp" alt="" width="400" height="400" />
           </span>
           <span class="game-card__meta">
             <span class="game-card__name">Solitaire Online</span>

@@ -1,5 +1,5 @@
 # robots.txt for PlayHub (https://wahaha232.github.io/)
-# Site is fully public — allow all crawlers.
+# Site is fully public. Allow all crawlers.
 
 User-agent: *
 Allow: /
