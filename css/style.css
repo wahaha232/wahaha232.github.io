@@ -942,6 +942,13 @@ html.device-tablet .game-grid {
   text-underline-offset: 3px;
 }
 
+/* Preferred language remembered in localStorage (js/lang.js) */
+.site-nav__link--lang[data-preferred] {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* Redesigned footer (categories, not a repeat of the top nav) */
 .site-footer__tagline {
   max-width: 560px;
