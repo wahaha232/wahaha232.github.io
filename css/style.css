@@ -249,7 +249,6 @@ a {
   transform: translateY(-5px);
   border-color: var(--blue);
   box-shadow: var(--shadow-hover);
-  outline: none;
 }
 
 .game-card__thumb {
